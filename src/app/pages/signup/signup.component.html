@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="content">
+    <p class="title">Sign Up</p>
+    <form
+      [formGroup]="registerForm"
+      [action]="registerUser()"
+      class="signup-form"
+    >
+      <input
+        type="text"
+        placeholder="Username*"
+        class="input"
+        formControlName="username"
+      />
+      <input
+        type="email"
+        placeholder="Email*"
+        class="input"
+        formControlName="email"
+      />
+      <input
+        type="password"
+        placeholder="Password*"
+        class="input"
+        formControlName="password"
+      />
+      <input
+        type="password"
+        placeholder="Retype password*"
+        class="input"
+        formControlName="repeatPassword"
+      />
+      <button type="submit" class="button" [disabled]="!registerForm.valid">
+        Submit
+      </button>
+    </form>
+  </div>
+</div>

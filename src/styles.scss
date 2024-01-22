@@ -10,14 +10,70 @@ body {
   user-select: none;
 }
 :root {
-  --primary: rgba(0, 0, 0, 0.545);
+  --primary: rgba(0, 0, 0, 0.397);
+  --input: rgba(0, 0, 0, 0.566);
+  --button: #558e59fa;
+  --button-text: #86ffc7;
+  --danger: red;
+  --success: green;
   --action: #be6b1b;
-  --action-active: #c7b55f;
+  --action-active: #e4e2d5;
   --action-background: #be6a1b32;
   --action-background-active: #ece1ad44;
 }
-input {
+
+.input {
+  background-color: var(--input);
   font-family: "Poppins", sans-serif;
+  letter-spacing: 1px;
+  font-size: 1.1em;
+  font-weight: 200;
+  border-radius: 5px 5px 0 0;
+  margin: auto;
+  width: 80%;
+  color: var(--action-active);
+  outline: none;
+  border: none;
+  padding: 0.2em 0.5em;
+}
+input::placeholder {
+  font-size: 12px;
+  letter-spacing: 0;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.button {
+  all: unset;
+  margin: auto 0;
+  background-color: var(--primary);
+  padding: 0.7rem 2rem;
+  align-self: flex-end;
+  color: var(--button-text);
+  background-color: var(--button);
+  font-family: "Poppins", sans-serif;
+  border-radius: 15px;
+  text-decoration: dashed;
+  box-shadow: -1px -1px 20px 0px rgba(255, 255, 255, 0.481);
+  transition-duration: 0.3s;
+}
+
+.button:disabled {
+  color: gray;
+  box-shadow: none;
+  background-color: var(--primary);
+}
+
+.title {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  letter-spacing: 1px;
+
+  padding-right: 3rem;
+  font-size: calc(16px + 1vw);
+  color: var(--action);
+
+  margin: 0 0 3rem 0;
 }
 
 @font-face {

@@ -8,7 +8,7 @@
       [formGroup]="loginInput"
     >
       <input
-        type="text"
+        type="email"
         placeholder="Email*"
         id="email"
         class="input"
@@ -16,18 +16,21 @@
       />
 
       <input
-        type="text"
+        type="password"
         class="input"
         name="password"
         placeholder="Password*"
         formControlName="password"
       />
-      <input
-        type="submit"
-        value="Login"
-        class="button"
-        [disabled]="!loginInput.valid"
-      />
+      <div class="footer">
+        <div class="question-container">
+          <p class="question">Don't have an account?</p>
+          <a routerLink="/signup" class="action">Create Account</a>
+        </div>
+        <button type="submit" class="button" [disabled]="!loginInput.valid">
+          Login
+        </button>
+      </div>
     </form>
   </div>
 </div>

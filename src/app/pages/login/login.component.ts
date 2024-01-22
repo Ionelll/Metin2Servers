@@ -6,12 +6,12 @@ import {
   ReactiveFormsModule,
 } from '@angular/forms';
 import { LoginService } from '../../services/login.service';
-import { MatInputModule } from '@angular/material/input';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [ReactiveFormsModule, MatInputModule],
+  imports: [ReactiveFormsModule, RouterLink],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
 })

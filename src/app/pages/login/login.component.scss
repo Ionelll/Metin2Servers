@@ -4,19 +4,17 @@
   padding-top: 6rem;
   background-image: url("../../../assets/login-background.jpg");
   background-attachment: fixed;
-  background-size: 120%;
+  background-size: 110%;
   background-repeat: no-repeat;
-  overflow: hidden;
 }
 .content {
-  margin: auto;
   width: 40%;
-
+  position: fixed;
   background-color: var(--primary);
   border-radius: 15px;
   padding: 1rem 3rem;
+  left: 20vw;
 }
-
 .ng-invalid:not(form) {
   border-bottom: 1px solid red;
 }
@@ -24,10 +22,10 @@
   color: rgba(255, 0, 0, 0.825);
 }
 .ng-untouched:not(form) {
-  border-bottom: 1px solid white;
+  border: none;
 }
 .ng-untouched:not(form)::placeholder {
-  color: gray;
+  color: white;
 }
 .ng-valid:not(form) {
   border-bottom: 1px solid green;
@@ -42,49 +40,40 @@
   display: flex;
   justify-content: center;
 }
-.input {
-  margin: auto;
-  background-color: transparent;
-  width: 80%;
+
+.question {
   color: white;
-  outline: none;
-  border: none;
-  border-bottom: 1px solid var(--action-active);
-  padding: 0.2em 0.5em;
+  font-size: 10px;
+  padding: 0;
+  text-align: center;
+  width: 100%;
 }
-.button {
-  all: unset;
-  margin-top: 1rem;
-  background-color: rgb(52, 52, 52);
-  padding: 0.7rem 2rem;
-  align-self: flex-end;
+.question-container {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0;
+  background-color: var(--primary);
+  height: fit-content;
+  text-wrap: nowrap;
+}
+.action {
+  font-size: 14px;
+  background-color: var(--primary);
   color: var(--action);
-  font-family: "Metin", sans-serif;
-  border-radius: 15px;
-  box-shadow: -1px -1px 20px 0px rgba(255, 255, 255, 0.215);
-  border: 1px solid gray;
-  transition-duration: 0.3s;
-  &:hover {
-    background-color: rgb(74, 74, 74);
-  }
-}
-.button:disabled {
-  color: gray;
-  &:hover {
-    background-color: rgb(52, 52, 52);
-  }
-}
-.title {
-  font-family: "Poppins", sans-serif;
   font-weight: 400;
   letter-spacing: 1px;
-
-  padding-right: 3rem;
-  font-size: calc(16px + 1vw);
-  color: var(--action);
-
-  margin: 0 0 3rem 0;
+  &:hover {
+    color: var(--action-active);
+  }
 }
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 @media screen and (max-width: 800px) {
   .container {
     width: 100%;

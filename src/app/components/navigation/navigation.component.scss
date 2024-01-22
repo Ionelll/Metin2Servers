@@ -6,7 +6,7 @@
   justify-content: end;
   padding: 0.5rem 1rem;
   z-index: 100;
-  background-color: rgba(0, 0, 0, 0.166);
+  background-color: var(--primary);
 }
 .action-container {
   display: flex;
@@ -25,5 +25,4 @@
 .icon {
   transform: scale(1.6);
   margin: auto;
-  text-shadow: -2px -1px 1px black;
 }
