@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'designbygny_m2';
+    src: url('designbygny_m2.woff2') format('woff2'),
+        url('designbygny_m2.woff') format('woff'),
+        url('designbygny_m2.ttf') format('truetype'),
+        url('designbygny_m2.svg#designbygny_m2') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

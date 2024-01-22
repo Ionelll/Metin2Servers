@@ -1,0 +1,94 @@
+.container {
+  width: 100%;
+  height: 100%;
+  padding-top: 6rem;
+  background-image: url("../../../assets/login-background.jpg");
+  background-attachment: fixed;
+  background-size: 120%;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+.content {
+  margin: auto;
+  width: 40%;
+
+  background-color: var(--primary);
+  border-radius: 15px;
+  padding: 1rem 3rem;
+}
+
+.ng-invalid:not(form) {
+  border-bottom: 1px solid red;
+}
+.ng-invalid:not(form)::placeholder {
+  color: rgba(255, 0, 0, 0.825);
+}
+.ng-untouched:not(form) {
+  border-bottom: 1px solid white;
+}
+.ng-untouched:not(form)::placeholder {
+  color: gray;
+}
+.ng-valid:not(form) {
+  border-bottom: 1px solid green;
+}
+.login-form {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  row-gap: 4rem;
+  margin: auto;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+}
+.input {
+  margin: auto;
+  background-color: transparent;
+  width: 80%;
+  color: white;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid var(--action-active);
+  padding: 0.2em 0.5em;
+}
+.button {
+  all: unset;
+  margin-top: 1rem;
+  background-color: rgb(52, 52, 52);
+  padding: 0.7rem 2rem;
+  align-self: flex-end;
+  color: var(--action);
+  font-family: "Metin", sans-serif;
+  border-radius: 15px;
+  box-shadow: -1px -1px 20px 0px rgba(255, 255, 255, 0.215);
+  border: 1px solid gray;
+  transition-duration: 0.3s;
+  &:hover {
+    background-color: rgb(74, 74, 74);
+  }
+}
+.button:disabled {
+  color: gray;
+  &:hover {
+    background-color: rgb(52, 52, 52);
+  }
+}
+.title {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  letter-spacing: 1px;
+
+  padding-right: 3rem;
+  font-size: calc(16px + 1vw);
+  color: var(--action);
+
+  margin: 0 0 3rem 0;
+}
+@media screen and (max-width: 800px) {
+  .container {
+    width: 100%;
+    padding: 1rem;
+    margin: 1rem;
+  }
+}

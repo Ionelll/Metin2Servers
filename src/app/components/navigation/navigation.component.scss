@@ -1,0 +1,29 @@
+.container {
+  position: fixed;
+  top: 0;
+  right: 3rem;
+  display: flex;
+  justify-content: end;
+  padding: 0.5rem 1rem;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.166);
+}
+.action-container {
+  display: flex;
+  justify-content: end;
+  z-index: 100;
+  background-color: transparent;
+}
+.home {
+  border-radius: 50%;
+  padding: 0.5rem 0.7rem;
+
+  &:hover {
+    border-color: var(--action-active);
+  }
+}
+.icon {
+  transform: scale(1.6);
+  margin: auto;
+  text-shadow: -2px -1px 1px black;
+}

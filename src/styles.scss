@@ -1,1 +1,61 @@
-/* You can add global styles to this file, and also import other style files */
+@use "@angular/material" as mat;
+
+$my-palette: mat.$indigo-palette;
+html,
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  background-color: #000000;
+  user-select: none;
+}
+:root {
+  --primary: rgba(0, 0, 0, 0.545);
+  --action: #be6b1b;
+  --action-active: #c7b55f;
+  --action-background: #be6a1b32;
+  --action-background-active: #ece1ad44;
+}
+input {
+  font-family: "Poppins", sans-serif;
+}
+
+@font-face {
+  font-family: "Metin";
+  src: url("assets/transfonter.org-20240121-134909/designbygny_m2.eot"); /* IE9 Compat Modes */
+  src: url("assets/transfonter.org-20240121-134909/designbygny_m2.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-IE8 */
+      url("assets/transfonter.org-20240121-134909/designbygny_m2.woff")
+      format("woff"),
+    /* Modern Browsers */
+      url("assets/transfonter.org-20240121-134909/designbygny_m2.ttf")
+      format("truetype"),
+    /* Safari, Android, iOS */
+      url("assets/transfonter.org-20240121-134909/designbygny_m2.svg#svgFontName")
+      format("svg"); /* Legacy iOS */
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+.action {
+  all: unset;
+  color: var(--action);
+  font-size: 16px;
+  font-family: "Metin", sans-serif;
+  font-weight: 600;
+  transition-duration: 0.5s;
+  text-align: center;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  &:hover {
+    color: var(--action-active);
+    border-color: var(--action-active);
+  }
+}

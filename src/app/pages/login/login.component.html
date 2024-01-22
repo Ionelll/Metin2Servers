@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="content">
+    <p class="title">Login</p>
+    <form
+      [action]="login()"
+      id="userCredentials"
+      class="login-form"
+      [formGroup]="loginInput"
+    >
+      <input
+        type="text"
+        placeholder="Email*"
+        id="email"
+        class="input"
+        formControlName="email"
+      />
+
+      <input
+        type="text"
+        class="input"
+        name="password"
+        placeholder="Password*"
+        formControlName="password"
+      />
+      <input
+        type="submit"
+        value="Login"
+        class="button"
+        [disabled]="!loginInput.valid"
+      />
+    </form>
+  </div>
+</div>
