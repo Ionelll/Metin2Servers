@@ -10,7 +10,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './filter-modal.component.scss',
 })
 export class FilterModalComponent implements AfterViewInit {
-  modalStatus: boolean;
+  modalStatus: boolean = false;
 
   constructor(private filterService: FilterService) {}
 
