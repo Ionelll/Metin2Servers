@@ -23,10 +23,7 @@
         formControlName="password"
       />
       <div class="footer">
-        <div class="question-container">
-          <p class="question">Don't have an account?</p>
-          <a routerLink="/signup" class="action">Create Account</a>
-        </div>
+        <a routerLink="/signup" class="action">Create Account</a>
         <button type="submit" class="button" [disabled]="!loginInput.valid">
           Login
         </button>

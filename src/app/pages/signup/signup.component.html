@@ -27,6 +27,7 @@
       <input
         type="password"
         placeholder="Retype password*"
+        [pattern]="registerForm.controls.password.value"
         class="input"
         formControlName="repeatPassword"
       />

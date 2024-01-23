@@ -1,7 +1,7 @@
 .container {
-  position: fixed;
   top: 0;
   right: 3rem;
+  position: absolute;
   display: flex;
   justify-content: end;
   padding: 0.5rem 1rem;
@@ -22,7 +22,21 @@
     border-color: var(--action-active);
   }
 }
+
+.back-top-container {
+  position: fixed;
+  bottom: 3rem;
+  right: 3rem;
+}
 .icon {
-  transform: scale(1.6);
-  margin: auto;
+  transform: scale(2);
+  font-weight: 900;
+}
+.back-top {
+  display: none;
+}
+@media screen and (max-width: 900px) {
+  .container {
+    right: 0.5rem;
+  }
 }

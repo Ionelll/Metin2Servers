@@ -1,0 +1,45 @@
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.filters-container {
+  max-width: 80%;
+  margin: auto;
+  background-color: var(--primary);
+  box-shadow: -1px 0px 0px 2px rgba(255, 255, 255, 0.4274509804);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 15px;
+  padding: 0.2rem 1rem;
+}
+.filter-button {
+  all: unset;
+  color: var(--action-active);
+  padding: 0.3rem 0.8rem;
+}
+.content {
+  display: flex;
+  gap: 0.5rem;
+  text-wrap: nowrap;
+}
+.input {
+  background-color: rgba(255, 255, 255, 0.164);
+  border-radius: 8px;
+  margin: 0 auto;
+}
+.input::placeholder {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+}
+.container {
+  display: flex;
+  gap: 1rem;
+}
+option {
+  background-color: var(--primary);
+  color: white;
+}
+.search {
+  width: 30rem;
+}

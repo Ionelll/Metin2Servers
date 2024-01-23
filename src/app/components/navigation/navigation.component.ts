@@ -19,4 +19,7 @@ export class NavigationComponent {
       }
     });
   }
+  goTop() {
+    window.scrollTo(0, 0);
+  }
 }

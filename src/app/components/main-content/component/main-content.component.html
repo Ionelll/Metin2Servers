@@ -1,0 +1,40 @@
+<div class="filters-container">
+  <div class="container">
+    <div class="content">
+      <p class="label">Sort by:</p>
+      <select name="sortBy" id="sortBy" class="input">
+        <option value="Rating">Rating</option>
+        <option value="Name">Name</option>
+        <option value="Region">Region</option>
+        <option value="CurrentEvents">CurrentEvents</option>
+      </select>
+    </div>
+
+    <div class="content">
+      <p class="label">Order:</p>
+      <button
+        class="filter-button"
+        *ngIf="toggleOrder === 'Ascending'"
+        (click)="toggleOrder = 'Descending'; sortServerList('Descending')"
+      >
+        <mat-icon>arrow_upward</mat-icon>
+      </button>
+      <button
+        class="filter-button"
+        *ngIf="toggleOrder === 'Descending'"
+        (click)="toggleOrder = 'Ascending'; sortServerList('Ascending')"
+      >
+        <mat-icon>arrow_downward</mat-icon>
+      </button>
+    </div>
+  </div>
+  <div class="container">
+    <div class="content">
+      <input type="text" class="input search" placeholder="Search..." />
+    </div>
+  </div>
+</div>
+<div class="card-grid" *ngFor="let item of servers">
+  <p class="label">{{ item.name }}</p>
+  <app-server-card [item]="item.url"></app-server-card>
+</div>

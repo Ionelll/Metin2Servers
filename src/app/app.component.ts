@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { NavigationComponent } from './components/navigation/navigation.component';
-import { MainContentComponent } from './components/main-content/main-content.component';
+import { MainContentComponent } from './components/main-content/component/main-content.component';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 import {
   animate,
@@ -12,6 +12,7 @@ import {
   trigger,
 } from '@angular/animations';
 import { ChildrenOutletContexts } from '@angular/router';
+import { HostListener } from '@angular/core';
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -21,6 +22,7 @@ import { ChildrenOutletContexts } from '@angular/router';
     NavigationComponent,
     MainContentComponent,
     LandingPageComponent,
+    MainContentComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',

@@ -6,6 +6,10 @@
 img {
   width: 70%;
   object-fit: contain;
+  align-self: center;
   overflow: hidden;
   margin: auto;
+}
+.router {
+  padding: 3rem 2rem;
 }
