@@ -1,4 +1,7 @@
 <div class="container">
+  <a routerLink="login" class="action profile" *ngIf="currentRoute === '/'">
+    <mat-icon class="icon">person</mat-icon>
+  </a>
   <a routerLink="" class="action home" *ngIf="currentRoute != '/'">
     <mat-icon class="icon">home</mat-icon>
   </a>

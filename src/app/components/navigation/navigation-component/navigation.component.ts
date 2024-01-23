@@ -13,7 +13,7 @@ import { NgIf } from '@angular/common';
 export class NavigationComponent {
   currentRoute: string = '';
   constructor(private router: Router) {
-    router.events.forEach((event) => {
+    this.router.events.forEach((event) => {
       if (event instanceof NavigationEnd) {
         this.currentRoute = event.url;
       }

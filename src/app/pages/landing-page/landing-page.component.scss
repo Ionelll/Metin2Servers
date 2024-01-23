@@ -13,3 +13,13 @@ img {
 .router {
   padding: 3rem 2rem;
 }
+@media screen and (max-width: 500px) {
+  .router {
+    padding: 0.5rem;
+  }
+}
+@media screen and (max-width: 1100px) {
+  img {
+    width: 100%;
+  }
+}

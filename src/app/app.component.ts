@@ -1,9 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import { NavigationComponent } from './components/navigation/navigation.component';
-import { MainContentComponent } from './components/main-content/component/main-content.component';
-import { LandingPageComponent } from './pages/landing-page/landing-page.component';
+import { NavigationComponent } from './components/navigation/navigation-component/navigation.component';
 import {
   animate,
   query,
@@ -12,18 +10,11 @@ import {
   trigger,
 } from '@angular/animations';
 import { ChildrenOutletContexts } from '@angular/router';
-import { HostListener } from '@angular/core';
+
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [
-    CommonModule,
-    RouterOutlet,
-    NavigationComponent,
-    MainContentComponent,
-    LandingPageComponent,
-    MainContentComponent,
-  ],
+  imports: [CommonModule, RouterOutlet, NavigationComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
   animations: [
