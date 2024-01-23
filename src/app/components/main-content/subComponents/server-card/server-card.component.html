@@ -1,4 +1,9 @@
 <div class="container">
-  <p>{{ item }}</p>
-  <img [src]="item" alt="" />
+  <div class="img-container">
+    <img class="banner" [src]="item.banner" alt="" />
+  </div>
+  <div class="footer">
+    <p class="title">{{ item.name }}</p>
+    <p class="text">{{ item.description }}</p>
+  </div>
 </div>

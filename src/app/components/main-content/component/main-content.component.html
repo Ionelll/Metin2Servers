@@ -34,7 +34,8 @@
     </div>
   </div>
 </div>
-<div class="card-grid" *ngFor="let item of servers">
-  <p class="label">{{ item.name }}</p>
-  <app-server-card [item]="item.url"></app-server-card>
+<div class="card-grid">
+  <div *ngFor="let item of servers">
+    <app-server-card [item]="item"></app-server-card>
+  </div>
 </div>

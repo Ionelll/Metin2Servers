@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { User } from '../models/user.model';
+import { UserModel } from '../models/user.model';
 import { Subject, repeat } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class SignupService {
-  private user = new Subject<User>();
+  private user = new Subject<UserModel>();
   private role: string = '';
   constructor(private http: HttpClient) {}
 

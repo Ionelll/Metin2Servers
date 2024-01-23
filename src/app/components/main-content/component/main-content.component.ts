@@ -5,6 +5,7 @@ import { NgFor } from '@angular/common';
 import { CommonModule } from '@angular/common';
 import { ServerService } from '../../../services/server.service';
 import { MatIconModule } from '@angular/material/icon';
+import { ServerModel } from '../../../models/server.model';
 
 @Component({
   selector: 'app-main-content',
@@ -15,7 +16,7 @@ import { MatIconModule } from '@angular/material/icon';
 })
 export class MainContentComponent implements AfterViewInit {
   constructor(private serverService: ServerService) {}
-  servers: { name: string; url: string }[] = [{ name: 'NO SERVERS', url: '' }];
+  servers: ServerModel[] = [{ name: 'NO SERVERS' }];
   toggleOrder = 'Ascending';
   sortServerList(order: string) {
     this.servers.reverse();

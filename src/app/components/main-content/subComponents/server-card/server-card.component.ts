@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-
+import { ServerModel } from '../../../../models/server.model';
 @Component({
   selector: 'app-server-card',
   standalone: true,
@@ -8,5 +8,5 @@ import { Component, Input } from '@angular/core';
   styleUrl: './server-card.component.scss',
 })
 export class ServerCardComponent {
-  @Input() item: string;
+  @Input() item: ServerModel;
 }

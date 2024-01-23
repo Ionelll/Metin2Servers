@@ -1,6 +1,10 @@
 .card-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  gap: 2rem;
+  padding: 3rem 6rem;
+  background-color: var(--primary);
+  border-radius: 15px;
 }
 .filters-container {
   max-width: 80%;
@@ -12,6 +16,7 @@
   align-items: center;
   border-radius: 15px;
   padding: 0.2rem 1rem;
+  margin-bottom: 3rem;
 }
 .filter-button {
   all: unset;
