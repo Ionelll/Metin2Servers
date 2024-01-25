@@ -9,6 +9,7 @@ body {
   background-color: #000000;
   user-select: none;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 :root {
   --primary: rgba(0, 0, 0, 0.64);
@@ -17,7 +18,7 @@ body {
   --button-text: #86ffc7;
   --danger: red;
   --success: green;
-  --action: #be6b1b;
+  --action: #ff8611;
   --action-active: #e4e2d5;
   --action-background: #be6a1b32;
   --action-background-active: #ece1ad44;
@@ -100,15 +101,6 @@ input::placeholder {
       url("assets/transfonter.org-20240121-134909/designbygny_m2.svg#svgFontName")
       format("svg"); /* Legacy iOS */
 }
-
-html,
-body {
-  height: 100%;
-}
-body {
-  margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-}
 .action {
   all: unset;
   color: var(--action);
@@ -117,10 +109,9 @@ body {
   font-weight: 600;
   transition-duration: 0.5s;
   text-align: center;
-  padding: 0.7rem 2rem;
   cursor: pointer;
+  text-wrap: nowrap;
   &:hover {
     color: var(--action-active);
-    border-color: var(--action-active);
   }
 }

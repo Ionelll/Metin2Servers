@@ -18,11 +18,14 @@ import {
   animations: [
     trigger('slide', [
       transition(':enter', [
-        style({ transform: 'translateY(-100%)' }),
-        animate('0.3s ease', style({ trasform: 'translateY(0)' })),
+        style({ transform: 'translateY(-100%)', opacity: 0 }),
+        animate('0.3s 0.1s ease', style({ trasform: 'translateY(0)' })),
       ]),
       transition(':leave', [
-        animate('0.3s ease', style({ transform: 'translateY(-100%)' })),
+        animate(
+          '0.3s ease',
+          style({ transform: 'translateY(-100%)', opacity: 0 })
+        ),
       ]),
     ]),
   ],

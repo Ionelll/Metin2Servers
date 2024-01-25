@@ -7,7 +7,7 @@
   background-image: url("../../../assets/login-background.jpg");
   background-attachment: fixed;
   background-size: cover;
-  background-position: right top;
+
   background-repeat: no-repeat;
 }
 .content {
@@ -46,15 +46,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-.action {
-  background-color: var(--primary);
-  border-radius: 15px;
-  padding: 0.7rem 2rem;
-  &:hover {
-    background-color: var(--button);
-    color: var(--button-text);
-  }
 }
 
 @media screen and (max-width: 900px) {
