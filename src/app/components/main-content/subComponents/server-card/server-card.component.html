@@ -1,4 +1,35 @@
 <div class="container" (mouseover)="hover = true" (mouseleave)="hover = false">
+  <div class="rating">
+    <mat-icon [ngClass]="{ star: true, 'star-active': item.rating >= 1 }"
+      >star_rate</mat-icon
+    >
+    <mat-icon [ngClass]="{ star: true, 'star-active': item.rating >= 2 }"
+      >star_rate</mat-icon
+    >
+    <mat-icon [ngClass]="{ star: true, 'star-active': item.rating >= 3 }"
+      >star_rate</mat-icon
+    >
+    <mat-icon [ngClass]="{ star: true, 'star-active': item.rating >= 4 }"
+      >star_rate</mat-icon
+    >
+    <mat-icon [ngClass]="{ star: true, 'star-active': item.rating >= 5 }"
+      >star_rate</mat-icon
+    >
+  </div>
+  <p class="title">{{ item.name }}</p>
+  <div class="img-container">
+    <img class="banner" [src]="item.banner" alt="" />
+  </div>
+  <div class="footer">
+    <label class="label">School type</label>
+    <p class="text">{{ item.category }}</p>
+    <label class="label">Focus</label>
+    <p class="text">{{ item.focus }}</p>
+    <label class="label">Languages</label>
+    <p class="text">{{ item.languages }}</p>
+    <label class="label">Player base</label>
+    <p class="text">{{ item.playerBase }}</p>
+  </div>
   <div class="actions" *ngIf="hover" @slide>
     <div class="rate">
       <label class="label">Your Rating</label>
@@ -37,36 +68,5 @@
     <a href="{{ item.website }}" target="_blank" class="website action"
       >Website</a
     >
-  </div>
-  <div class="rating">
-    <mat-icon [ngClass]="{ star: true, 'star-active': item.rating >= 1 }"
-      >star_rate</mat-icon
-    >
-    <mat-icon [ngClass]="{ star: true, 'star-active': item.rating >= 2 }"
-      >star_rate</mat-icon
-    >
-    <mat-icon [ngClass]="{ star: true, 'star-active': item.rating >= 3 }"
-      >star_rate</mat-icon
-    >
-    <mat-icon [ngClass]="{ star: true, 'star-active': item.rating >= 4 }"
-      >star_rate</mat-icon
-    >
-    <mat-icon [ngClass]="{ star: true, 'star-active': item.rating >= 5 }"
-      >star_rate</mat-icon
-    >
-  </div>
-  <div class="img-container">
-    <img class="banner" [src]="item.banner" alt="" />
-  </div>
-  <div class="footer">
-    <p class="title">{{ item.name }}</p>
-    <label class="label">School type</label>
-    <p class="text">{{ item.category }}</p>
-    <label class="label">Focus</label>
-    <p class="text">{{ item.focus }}</p>
-    <label class="label">Languages</label>
-    <p class="text">{{ item.languages }}</p>
-    <label class="label">Player base</label>
-    <p class="text">{{ item.playerBase }}</p>
   </div>
 </div>
