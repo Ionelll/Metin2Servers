@@ -1,9 +1,72 @@
-<div class="container">
+<div class="container" (mouseover)="hover = true" (mouseleave)="hover = false">
+  <div class="actions" *ngIf="hover" @slide>
+    <a href="{{ item.website }}" target="_blank" class="website"
+      >Visit website</a
+    >
+
+    <div class="rate">
+      <mat-icon
+        [ngClass]="{ star: true, 'star-active': rate >= 1 }"
+        (mouseenter)="rate = 1"
+        (mouseleave)="rate = 0"
+        >star_rate</mat-icon
+      >
+
+      <mat-icon
+        [ngClass]="{ star: true, 'star-active': rate >= 2 }"
+        (mouseover)="rate = 2"
+        (mouseleave)="rate = 0"
+        >star_rate</mat-icon
+      >
+      <mat-icon
+        [ngClass]="{ star: true, 'star-active': rate >= 3 }"
+        (mouseenter)="rate = 3"
+        (mouseleave)="rate = 0"
+        >star_rate</mat-icon
+      >
+      <mat-icon
+        [ngClass]="{ star: true, 'star-active': rate >= 4 }"
+        (mouseenter)="rate = 4"
+        (mouseleave)="rate = 0"
+        >star_rate</mat-icon
+      >
+      <mat-icon
+        [ngClass]="{ star: true, 'star-active': rate >= 5 }"
+        (mouseenter)="rate = 5"
+        (mouseleave)="rate = 0"
+        >star_rate</mat-icon
+      >
+    </div>
+  </div>
+  <div class="rating">
+    <mat-icon [ngClass]="{ star: true, 'star-active': item.rating >= 1 }"
+      >star_rate</mat-icon
+    >
+    <mat-icon [ngClass]="{ star: true, 'star-active': item.rating >= 2 }"
+      >star_rate</mat-icon
+    >
+    <mat-icon [ngClass]="{ star: true, 'star-active': item.rating >= 3 }"
+      >star_rate</mat-icon
+    >
+    <mat-icon [ngClass]="{ star: true, 'star-active': item.rating >= 4 }"
+      >star_rate</mat-icon
+    >
+    <mat-icon [ngClass]="{ star: true, 'star-active': item.rating >= 5 }"
+      >star_rate</mat-icon
+    >
+  </div>
   <div class="img-container">
     <img class="banner" [src]="item.banner" alt="" />
   </div>
   <div class="footer">
     <p class="title">{{ item.name }}</p>
-    <p class="text">{{ item.description }}</p>
+    <label class="label">School type</label>
+    <p class="text">{{ item.category }}</p>
+    <label class="label">Focus</label>
+    <p class="text">{{ item.focus }}</p>
+    <label class="label">Languages</label>
+    <p class="text">{{ item.languages }}</p>
+    <label class="label">Player base</label>
+    <p class="text">{{ item.playerBase }}</p>
   </div>
 </div>

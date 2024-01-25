@@ -11,7 +11,7 @@ body {
   scroll-behavior: smooth;
 }
 :root {
-  --primary: rgba(0, 0, 0, 0.397);
+  --primary: rgba(0, 0, 0, 0.64);
   --input: rgba(0, 0, 0, 0.566);
   --button: #558e59fa;
   --button-text: #86ffc7;
@@ -41,10 +41,18 @@ input::placeholder {
   font-weight: 400;
   font-style: italic;
 }
+.select {
+  border: 1px solid var(--action-active);
+  border-radius: 5px;
+  &:focus {
+    border-color: white;
+  }
+}
 .label {
   color: var(--action-active);
   text-align: center;
   font-size: 12px;
+  text-wrap: nowrap;
 }
 .button {
   all: unset;

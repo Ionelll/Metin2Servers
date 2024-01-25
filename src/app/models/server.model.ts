@@ -6,7 +6,10 @@ export interface ServerModel {
   maxLevel?: string;
   rating?: number;
   category?: string;
-  startDate?: string;
+  releaseDate?: Date;
+  playerBase?: number;
+  languages?: string[];
+  focus?: string;
   comments?: {
     username: string;
     userPhoto: string;

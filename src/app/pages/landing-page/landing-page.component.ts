@@ -16,7 +16,6 @@ export class LandingPageComponent {
     });
   }
   scrollTrack() {
-    console.log(window.scrollY);
     if (window.scrollY > 200) {
       document.getElementById('back-top').classList.remove('back-top');
     } else {

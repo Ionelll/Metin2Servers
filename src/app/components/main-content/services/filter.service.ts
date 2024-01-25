@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Subject } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
+import { ServerService } from '../../../services/server.service';
 
 @Injectable({ providedIn: 'root' })
 export class FilterService {
+  constructor(private serversService: ServerService) {}
   private modalStatus = new BehaviorSubject<boolean>(false);
   openModal() {
     this.modalStatus.next(true);
@@ -12,5 +14,8 @@ export class FilterService {
   }
   closeModal() {
     this.modalStatus.next(false);
+  }
+  setModalStatus(value: boolean) {
+    this.modalStatus.next(value);
   }
 }

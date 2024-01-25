@@ -9,6 +9,7 @@ import { ServerModel } from '../../../models/server.model';
 import { ServersConstant } from '../../../models/servers.constant';
 import { FilterService } from '../services/filter.service';
 import { FilterModalComponent } from '../subComponents/filter-modal/filter-modal.component';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-main-content',
@@ -19,6 +20,7 @@ import { FilterModalComponent } from '../subComponents/filter-modal/filter-modal
     CommonModule,
     MatIconModule,
     FilterModalComponent,
+    FormsModule,
   ],
   templateUrl: './main-content.component.html',
   styleUrl: './main-content.component.scss',
@@ -28,22 +30,34 @@ export class MainContentComponent implements AfterViewInit {
     private serverService: ServerService,
     private filterService: FilterService
   ) {}
-  public servers: any;
+  public servers: ServerModel[];
   toggleOrder = 'Ascending';
-  sortServerList(order: string) {
-    this.servers.reverse();
-  }
+  searchValue: string;
+  noServers = false;
 
   ngAfterViewInit(): void {
     setTimeout(() => {
       this.serverService.getServers().subscribe((res) => {
         if (res) this.servers = res;
-        console.log(res);
+        if (this.servers.length <= 0) this.noServers = true;
+        else this.noServers = false;
       });
     });
   }
 
   openModal() {
     this.filterService.openModal();
+  }
+  reloadServers() {
+    this.serverService.callServers();
+    this.searchValue = '';
+  }
+  searchServer(event) {
+    if (
+      event.inputType === 'deleteContentForward' ||
+      event.inputType === 'deleteContentBackward'
+    )
+      this.serverService.callServers();
+    this.serverService.filterByName(this.searchValue);
   }
 }

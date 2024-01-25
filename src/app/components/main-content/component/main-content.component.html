@@ -1,48 +1,23 @@
 <app-filter-modal></app-filter-modal>
-<div class="filters-burger">
-  <button class="action" (click)="openModal()">
-    FILTERS
-    <mat-icon>menu</mat-icon>
-  </button>
-</div>
-
 <div class="filters-container">
-  <div class="container">
-    <div class="content">
-      <p class="label">Sort by:</p>
-      <select name="sortBy" id="sortBy" class="input">
-        <option value="Rating">Rating</option>
-        <option value="Name">Name</option>
-        <option value="Region">Region</option>
-        <option value="CurrentEvents">CurrentEvents</option>
-      </select>
-    </div>
-
-    <div class="content">
-      <p class="label">Order:</p>
-      <button
-        class="filter-button"
-        *ngIf="toggleOrder === 'Ascending'"
-        (click)="toggleOrder = 'Descending'; sortServerList('Descending')"
-      >
-        <mat-icon>arrow_upward</mat-icon>
-      </button>
-      <button
-        class="filter-button"
-        *ngIf="toggleOrder === 'Descending'"
-        (click)="toggleOrder = 'Ascending'; sortServerList('Ascending')"
-      >
-        <mat-icon>arrow_downward</mat-icon>
-      </button>
-    </div>
+  <div class="actions">
+    <button class="action" (click)="openModal()">
+      FILTERS
+      <mat-icon>menu</mat-icon>
+    </button>
+    <button class="action" (click)="reloadServers()">Reset</button>
   </div>
-  <div class="container">
-    <div class="content">
-      <input type="text" class="input search" placeholder="Search..." />
-    </div>
-  </div>
+  <input
+    type="text"
+    class="input search"
+    placeholder="Search..."
+    [(ngModel)]="searchValue"
+    (input)="searchServer($event)"
+  />
 </div>
+
 <div class="card-grid">
+  <p class="no-servers" *ngIf="noServers">! No servers found !</p>
   <div *ngFor="let item of servers">
     <app-server-card [item]="item"></app-server-card>
   </div>
