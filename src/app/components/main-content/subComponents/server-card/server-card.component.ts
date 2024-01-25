@@ -19,7 +19,10 @@ import {
     trigger('slide', [
       transition(':enter', [
         style({ transform: 'translateY(-100%)', opacity: 0 }),
-        animate('0.3s 0.1s ease', style({ trasform: 'translateY(0)' })),
+        animate(
+          '0.3s 0.1s ease',
+          style({ transform: 'translateY(0)', opacity: 1 })
+        ),
       ]),
       transition(':leave', [
         animate(
