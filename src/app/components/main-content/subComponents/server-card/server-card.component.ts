@@ -18,17 +18,11 @@ import {
   animations: [
     trigger('slide', [
       transition(':enter', [
-        style({ transform: 'translateY(-100%)', opacity: 0 }),
-        animate(
-          '0.3s 0.1s ease',
-          style({ transform: 'translateY(0)', opacity: 1 })
-        ),
+        style({ transform: 'translateY(-100%)' }),
+        animate('0.3s 0.1s ease', style({ transform: 'translateY(0)' })),
       ]),
       transition(':leave', [
-        animate(
-          '0.3s ease',
-          style({ transform: 'translateY(-100%)', opacity: 0 })
-        ),
+        animate('0.3s ease', style({ transform: 'translateY(-100%)' })),
       ]),
     ]),
   ],
@@ -37,4 +31,10 @@ export class ServerCardComponent {
   @Input() item: ServerModel;
   public rate = 0;
   public hover: boolean;
+  public media = false;
+  constructor() {
+    console.log(window.innerWidth);
+    if (window.innerWidth < 800) this.media = true;
+    else this.media = false;
+  }
 }

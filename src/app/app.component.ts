@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import { NavigationComponent } from './components/navigation/navigation-component/navigation.component';
+import { NavigationComponent } from './components/navigation/navigation.component';
 import {
   animate,
   query,
@@ -30,15 +30,19 @@ import { ChildrenOutletContexts } from '@angular/router';
               position: 'absolute',
               height: '100%',
               width: '100%',
-              opacity: 0,
             }),
           ],
           { optional: true }
         ),
-        // Animate the new page in
-        query(':enter', [animate('1s ease', style({ opacity: 1 }))], {
-          optional: true,
-        }),
+        query(':enter', [style({ opacity: 0 })], { optional: true }),
+        group([
+          query(':enter', [animate('0.5s 0.2s ease', style({ opacity: 1 }))], {
+            optional: true,
+          }),
+          query(':leave', [animate('0.3s ease', style({ opacity: 0 }))], {
+            optional: true,
+          }),
+        ]),
       ]),
     ]),
   ],
