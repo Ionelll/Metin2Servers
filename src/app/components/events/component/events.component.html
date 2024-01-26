@@ -1,0 +1,19 @@
+<div class="title">News</div>
+<div class="container">
+  <button class="arrow-left">
+    <mat-icon>arrow_back_ios_new</mat-icon>
+  </button>
+  <div class="carousel-content">
+    <div class="" *ngFor="let event of eventsList">
+      <app-event-card
+        [event]="event"
+        [focusedEvent]="focusedEvent"
+        [eventsLength]="eventsLength"
+      ></app-event-card>
+    </div>
+  </div>
+  <button class="arrow-right">
+    <mat-icon>arrow_forward_ios_new</mat-icon>
+  </button>
+  <div class="img-container"></div>
+</div>

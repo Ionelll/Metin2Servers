@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { MainContentComponent } from '../../components/main-content/component/main-content.component';
-import { RouterOutlet } from '@angular/router';
+import { EventsComponent } from '../../components/events/component/events.component';
 
 @Component({
   selector: 'app-landing-page',
   standalone: true,
-  imports: [MainContentComponent, RouterOutlet],
+  imports: [MainContentComponent, EventsComponent],
   templateUrl: './landing-page.component.html',
   styleUrl: './landing-page.component.scss',
 })

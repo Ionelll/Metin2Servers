@@ -1,0 +1,13 @@
+.container {
+  padding: 0 3rem;
+  display: flex;
+}
+.carousel-content {
+  display: flex;
+  overflow: hidden;
+  justify-content: space-around;
+}
+.title {
+  margin-left: 4vw;
+  font-family: "Metin", sans-serif;
+}

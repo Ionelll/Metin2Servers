@@ -3,6 +3,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { MainContentComponent } from './components/main-content/component/main-content.component';
+import { EventsComponent } from './components/events/component/events.component';
 
 export const routes: Routes = [
   {
@@ -13,7 +14,6 @@ export const routes: Routes = [
   {
     path: '',
     component: LandingPageComponent,
-    children: [{ path: '', component: MainContentComponent }],
     data: { animation: 'LandingPage' },
   },
   {

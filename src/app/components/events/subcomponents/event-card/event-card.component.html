@@ -1,0 +1,14 @@
+<div
+  [ngClass]="{
+    'container-focused': event.eventId === focusedEvent,
+    container: hide,
+    'container-prevoius': event.eventId === focusedEvent - 1,
+    'container-next': event.eventId === focusedEvent + 1
+  }"
+>
+  <p class="name">{{ event.name }}</p>
+  <p class="server">{{ event.server }}</p>
+  <p class="dates">{{ event.startDate }}</p>
+  <p class="dates">{{ event.endDate }}</p>
+  <p class="text">{{ event.description }}</p>
+</div>
