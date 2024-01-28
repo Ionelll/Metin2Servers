@@ -18,20 +18,16 @@ import {
   animations: [
     trigger('slide', [
       transition(':enter', [
-        style({ transform: 'translateY(-100%)', boxShadow: 'none' }),
+        style({ transform: 'translateY(-100%)' }),
         animate(
-          '0.3s 0.1s ease',
+          '0.3s ease',
           style({
             transform: 'translateY(0)',
-            boxShadow: '0px 1px 20px 3px rgba(255, 255, 255, 0.486)',
           })
         ),
       ]),
       transition(':leave', [
-        animate(
-          '0.3s ease',
-          style({ transform: 'translateY(-100%)', boxShadow: 'none' })
-        ),
+        animate('0.3s ease', style({ transform: 'translateY(-100%)' })),
       ]),
     ]),
   ],

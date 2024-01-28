@@ -1,14 +1,19 @@
 <div
   [ngClass]="{
-    'container-focused': event.eventId === focusedEvent,
-    container: hide,
-    'container-prevoius': event.eventId === focusedEvent - 1,
-    'container-next': event.eventId === focusedEvent + 1
+    container: true,
+    'container-hidden':
+      event.eventId != focusedEvent || focusedEvent - 1 || focusedEvent + 1
   }"
 >
+  <p style="color: var(--action-active); font-size: larger">
+    {{ event.eventId }}
+  </p>
+  <div class="img-container">
+    <img src="{{ event.photo }}" alt="" />
+  </div>
   <p class="name">{{ event.name }}</p>
   <p class="server">{{ event.server }}</p>
   <p class="dates">{{ event.startDate }}</p>
   <p class="dates">{{ event.endDate }}</p>
-  <p class="text">{{ event.description }}</p>
+  <!-- <p class="text">{{ event.description }}</p> -->
 </div>

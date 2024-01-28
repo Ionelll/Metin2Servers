@@ -48,32 +48,52 @@
     <div class="rate">
       <label class="label">Your Rating</label>
       <mat-icon
-        [ngClass]="{ star: true, 'star-active': rate >= 1 }"
+        [ngClass]="{
+          star: true,
+          'star-action': true,
+          'star-active': rate >= 1
+        }"
         (mouseover)="rate = 1"
         (mouseleave)="rate = 0"
         >star_rate</mat-icon
       >
 
       <mat-icon
-        [ngClass]="{ star: true, 'star-active': rate >= 2 }"
+        [ngClass]="{
+          star: true,
+          'star-active': rate >= 2,
+          'star-action': true
+        }"
         (mouseover)="rate = 2"
         (mouseleave)="rate = 0"
         >star_rate</mat-icon
       >
       <mat-icon
-        [ngClass]="{ star: true, 'star-active': rate >= 3 }"
+        [ngClass]="{
+          star: true,
+          'star-action': true,
+          'star-active': rate >= 3
+        }"
         (mouseover)="rate = 3"
         (mouseleave)="rate = 0"
         >star_rate</mat-icon
       >
       <mat-icon
-        [ngClass]="{ star: true, 'star-active': rate >= 4 }"
+        [ngClass]="{
+          star: true,
+          'star-action': true,
+          'star-active': rate >= 4
+        }"
         (mouseover)="rate = 4"
         (mouseleave)="rate = 0"
         >star_rate</mat-icon
       >
       <mat-icon
-        [ngClass]="{ star: true, 'star-active': rate >= 5 }"
+        [ngClass]="{
+          star: true,
+          'star-action': true,
+          'star-active': rate >= 5
+        }"
         (mouseover)="rate = 5"
         (mouseleave)="rate = 0"
         >star_rate</mat-icon

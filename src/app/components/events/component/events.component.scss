@@ -1,13 +1,17 @@
 .container {
   padding: 0 3rem;
   display: flex;
+  justify-content: center;
+  gap: 3rem;
+  max-height: 15rem;
+  position: relative;
 }
-.carousel-content {
-  display: flex;
-  overflow: hidden;
-  justify-content: space-around;
-}
+
 .title {
   margin-left: 4vw;
   font-family: "Metin", sans-serif;
+}
+.arrow-right {
+  grid-column: 5;
+  grid-row: 1;
 }

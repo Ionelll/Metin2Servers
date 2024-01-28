@@ -15,7 +15,7 @@ import { MatIconModule } from '@angular/material/icon';
 export class EventsComponent implements OnInit {
   constructor(private eventsService: EventsService) {}
   public eventsList: EventsModel[];
-  public focusedEvent: number = 1;
+  public focusedEvent: number = 3;
   public eventsLength: number;
 
   ngOnInit(): void {
