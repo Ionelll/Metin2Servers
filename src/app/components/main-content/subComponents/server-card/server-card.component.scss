@@ -6,7 +6,6 @@
   border-bottom: 6px solid var(--action);
   &:hover {
     transform: scale(1.1);
-    border-radius: 15px 15px 0 0;
   }
 }
 .container::after {
@@ -161,7 +160,6 @@
   .container {
     &:hover {
       transform: scale(1.05);
-      border-radius: 15px 15px 0 0;
     }
   }
 }
