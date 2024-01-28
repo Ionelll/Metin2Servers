@@ -2,8 +2,7 @@ import { Routes } from '@angular/router';
 import { LoginComponent } from './pages/login/login.component';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 import { SignupComponent } from './pages/signup/signup.component';
-import { MainContentComponent } from './components/main-content/component/main-content.component';
-import { EventsComponent } from './components/events/component/events.component';
+import { ProfilePageComponent } from './pages/profile-page/profile-page.component';
 
 export const routes: Routes = [
   {
@@ -21,5 +20,11 @@ export const routes: Routes = [
     component: SignupComponent,
     data: { animation: 'SignupPage' },
   },
+  {
+    path: 'profile',
+    component: ProfilePageComponent,
+    data: { animation: 'ProfilePage' },
+  },
+
   { path: '**', redirectTo: '' },
 ];

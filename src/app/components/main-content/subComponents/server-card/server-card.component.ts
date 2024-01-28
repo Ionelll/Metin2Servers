@@ -20,7 +20,7 @@ import {
       transition(':enter', [
         style({ transform: 'translateY(-100%)' }),
         animate(
-          '0.3s ease',
+          '0.3s 0.2s ease',
           style({
             transform: 'translateY(0)',
           })

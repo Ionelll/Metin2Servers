@@ -1,11 +1,12 @@
 .container {
-  border-radius: 15px;
+  border-radius: 16px;
   position: relative;
   transition: 0.3s ease;
   margin: auto;
   border-bottom: 6px solid var(--action);
+  transition-duration: 0.5s;
   &:hover {
-    transform: scale(1.1);
+    transform: scale(1.05) translate3d(0, -2rem, 0);
   }
 }
 .container::after {
@@ -30,12 +31,12 @@
   background-position: center;
   backdrop-filter: brightness(100%);
   box-shadow: inset 1px 1px 15px -2px rgba(255, 255, 255, 0.425);
-  transition-duration: 0.2s;
-  animation: fade2 0.2s ease;
+  transition: box-shadow 0.3s ease;
+  animation: fade2 0.3s ease;
 }
 .container:hover::after {
   box-shadow: inset 1px 1px 20px -2px rgba(255, 255, 255, 0.812);
-  transition-duration: 0.2s;
+  transition-duration: 0.3s;
   background: linear-gradient(
     to right bottom,
     rgb(0 0 0 / 0%) 30%,
@@ -47,7 +48,7 @@
     rgb(255 255 255 / 0%)
   );
 
-  animation: fade 0.2s ease;
+  animation: fade 0.3s ease;
 }
 
 .img-container {
@@ -80,7 +81,8 @@
   margin-bottom: 0.3rem;
 }
 .text {
-  color: var(--action-active);
+  color: var(--action);
+  font-weight: 900;
   width: 100%;
   margin: 0;
   text-align: center;
@@ -124,6 +126,8 @@
   color: var(--action);
 }
 .rate {
+  position: relative;
+  transform: scale(0.8);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -134,18 +138,17 @@
   width: 100%;
   height: 2rem;
   bottom: -3.5rem;
-  border-bottom: 6px solid var(--action);
   left: 0;
   background-color: black;
   display: flex;
   justify-content: space-around;
   align-items: center;
   border-radius: 0 0 15px 15px;
+  border-bottom: 6px solid var(--action);
   padding: 1rem 0 0.5rem 0;
 }
 .website {
   text-align: center;
-  align-self: center;
   margin: 0;
   padding: 0.5rem;
 }
@@ -156,7 +159,7 @@
   align-items: center;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1000px) {
   .container {
     &:hover {
       transform: scale(1.05);

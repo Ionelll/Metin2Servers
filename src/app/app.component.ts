@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import {
   animate,
@@ -8,7 +8,6 @@ import {
   style,
   transition,
   trigger,
-  animateChild,
   group,
 } from '@angular/animations';
 import { ChildrenOutletContexts } from '@angular/router';
@@ -49,7 +48,13 @@ import { ChildrenOutletContexts } from '@angular/router';
 })
 export class AppComponent {
   title = 'Metin2ServerList';
-  constructor(private contexts: ChildrenOutletContexts) {}
+  loading: boolean;
+  constructor(
+    private contexts: ChildrenOutletContexts,
+    private router: Router
+  ) {
+    this.loading = true;
+  }
 
   getAnimation() {
     return this.contexts.getContext('primary')?.route?.snapshot?.data?.[
