@@ -51,6 +51,6 @@ export class FilterModalComponent implements AfterViewInit {
   }
 
   reloadServers() {
-    this.serversService.callServers();
+    this.serversService.reloadServers();
   }
 }

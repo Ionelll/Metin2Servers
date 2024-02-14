@@ -1,12 +1,7 @@
 <div class="container">
   <div class="content">
-    <p class="title">Login</p>
-    <form
-      [action]="login()"
-      id="userCredentials"
-      class="login-form"
-      [formGroup]="loginInput"
-    >
+    <p class="title login">Login</p>
+    <form id="userCredentials" class="login-form" [formGroup]="loginInput">
       <input
         type="email"
         placeholder="Email*"
@@ -22,12 +17,12 @@
         placeholder="Password*"
         formControlName="password"
       />
-      <div class="footer">
-        <a routerLink="/signup" class="action">Create Account</a>
-        <button type="submit" class="button" [disabled]="!loginInput.valid">
-          Login
-        </button>
-      </div>
     </form>
+    <div class="footer">
+      <a routerLink="/signup" class="action">Create Account</a>
+      <button (click)="login()" class="button" [disabled]="!loginInput.valid">
+        Login
+      </button>
+    </div>
   </div>
 </div>

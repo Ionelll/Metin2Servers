@@ -6,14 +6,14 @@
       *ngIf="orderToggle === 'Ascending'"
       (click)="orderToggle = 'Descending'"
     >
-      <mat-icon>arrow_upward</mat-icon>
+      <mat-icon>arrow_downward</mat-icon>
     </button>
     <button
       class="filter-button"
       *ngIf="orderToggle === 'Descending'"
       (click)="orderToggle = 'Ascending'"
     >
-      <mat-icon>arrow_downward</mat-icon>
+      <mat-icon>arrow_upward</mat-icon>
     </button>
     <label for="sortby" class="label label1">Sort by</label>
     <select

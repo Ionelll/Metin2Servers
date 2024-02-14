@@ -26,10 +26,10 @@
   color: rgba(255, 0, 0, 0.825);
 }
 .ng-untouched:not(form) {
-  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.592);
 }
 .ng-untouched:not(form)::placeholder {
-  color: white;
+  color: rgba(255, 255, 255, 0.67);
 }
 .ng-valid:not(form) {
   border-bottom: 1px solid green;
@@ -37,9 +37,13 @@
 .login-form {
   display: flex;
   flex-direction: column;
-  row-gap: 4rem;
-  margin-bottom: 2rem;
+  row-gap: 2rem;
+  padding: 2rem;
   justify-content: center;
+  margin: 1rem 0 3rem 0;
+}
+.login {
+  margin: 0;
 }
 .footer {
   display: flex;

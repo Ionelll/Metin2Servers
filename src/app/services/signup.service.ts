@@ -11,14 +11,19 @@ export class SignupService {
 
   registerUser(userInput: {
     email: string | null;
-    username: string | null;
     password: string | null;
     repeatPassword: string | null;
-    role: string | null;
   }) {
-    const { repeatPassword, ...userInputFinal } = userInput;
+    const { repeatPassword, ...credentials } = userInput;
     if (userInput.password === userInput.repeatPassword) {
-      userInputFinal.role = this.role;
+      this.http
+        .post<UserModel>(
+          'https://metins-be.onrender.com/api/register',
+          credentials
+        )
+        .subscribe((res) => {
+          this.user.next(res);
+        });
     }
   }
 }

@@ -6,13 +6,15 @@ import { ServerModel } from '../models/server.model';
 @Injectable({ providedIn: 'root' })
 export class ServerService {
   public Servers = new BehaviorSubject<ServerModel[]>(ServersConstant);
-
+  private filteredServers = new Subject<ServerModel[]>();
   getServers() {
     return this.Servers.asObservable();
   }
-  callServers() {
-    const servers = this.sortBy(ServersConstant, 'rating');
-    this.Servers.next(servers);
+  getFilteredServers() {
+    return this.filteredServers.asObservable();
+  }
+  reloadServers() {
+    this.filteredServers.next(this.Servers.value);
   }
 
   sortBy(servers: ServerModel[], key: string) {
@@ -41,14 +43,15 @@ export class ServerService {
     const sortedServers = this.sortBy(servers, sortBy);
     if (order === 'Ascending') sortedServers.reverse();
     console.log(sortedServers);
-    this.Servers.next(sortedServers);
+    this.filteredServers.next(sortedServers);
   }
 
   filterByName(value: string) {
-    let servers = [...this.Servers.value];
-    let filteredServers = servers.filter((item) => {
+    const servers = [...this.Servers.value];
+    const filteredServers = servers.filter((item) => {
       return item.name.toLocaleLowerCase().match(value.toLowerCase());
     });
-    this.Servers.next(filteredServers);
+    const sortedServers = this.sortBy(filteredServers, 'rating');
+    this.filteredServers.next(sortedServers.reverse());
   }
 }

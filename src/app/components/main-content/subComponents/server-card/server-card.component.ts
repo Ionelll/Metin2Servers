@@ -1,15 +1,9 @@
-import { Component, Input } from '@angular/core';
+import { AfterViewInit, Component, Input } from '@angular/core';
 import { ServerModel } from '../../../../models/server.model';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import {
-  style,
-  transition,
-  trigger,
-  query,
-  animate,
-} from '@angular/animations';
+import { style, transition, trigger, animate } from '@angular/animations';
 @Component({
   selector: 'app-server-card',
   standalone: true,
@@ -33,17 +27,36 @@ import {
     ]),
   ],
 })
-export class ServerCardComponent {
+export class ServerCardComponent implements AfterViewInit {
   @Input() item: ServerModel;
   public rate = 0;
   public hover: boolean;
-  public media = false;
+  public media: boolean;
   constructor() {
-    console.log(window.innerWidth);
-    if (window.innerWidth < 800) this.media = true;
+    if (window.innerWidth < 1000) this.media = true;
     else this.media = false;
+
+    if (this.media) {
+      this.hover = true;
+    }
   }
   linkToWebsite(link: string) {
-    window.open('https://google.com', '_blanck');
+    window.open(link, '_blanck');
+  }
+
+  mouseLeave() {
+    if (this.media) this.hover = true;
+    else this.hover = false;
+  }
+
+  ngAfterViewInit(): void {
+    if (this.media) {
+      document
+        .getElementById('hover')
+        .classList.add('.hover-container:hover::after');
+      document
+        .getElementById('hover')
+        .classList.remove('.hover-container::after');
+    }
   }
 }

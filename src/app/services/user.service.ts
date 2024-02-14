@@ -10,13 +10,12 @@ export class UserService {
   public user = new BehaviorSubject<UserModel>(undefined);
 
   login(userInput: { email: string | null; password: string | null }) {
-    if (userInput)
+    if (userInput.email && userInput.password)
       this.http
         .post<UserModel>(`https://metins-be.onrender.com/api/login`, userInput)
         .subscribe((res) => {
           this.user.next(res);
         });
-    else return;
   }
   getUser() {
     return this.user.asObservable();

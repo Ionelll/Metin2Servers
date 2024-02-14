@@ -1,17 +1,7 @@
 <div class="container">
   <div class="content">
     <p class="title">Sign Up</p>
-    <form
-      [formGroup]="registerForm"
-      [action]="registerUser()"
-      class="signup-form"
-    >
-      <input
-        type="text"
-        placeholder="Username*"
-        class="input"
-        formControlName="username"
-      />
+    <form [formGroup]="registerForm" class="signup-form">
       <input
         type="email"
         placeholder="Email*"
@@ -21,7 +11,7 @@
       <input
         type="password"
         placeholder="Password*"
-        class="input"
+        class="input password"
         formControlName="password"
       />
       <input
@@ -31,9 +21,13 @@
         class="input"
         formControlName="repeatPassword"
       />
-      <button type="submit" class="button" [disabled]="!registerForm.valid">
-        Submit
-      </button>
     </form>
+    <button
+      (click)="registerUser()"
+      class="button"
+      [disabled]="!registerForm.valid"
+    >
+      Submit
+    </button>
   </div>
 </div>

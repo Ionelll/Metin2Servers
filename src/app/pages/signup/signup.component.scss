@@ -8,6 +8,7 @@
   background-attachment: fixed;
   background-size: cover;
 }
+
 .ng-invalid:not(form) {
   border-bottom: 1px solid red;
 }
@@ -15,10 +16,10 @@
   color: rgba(255, 0, 0, 0.825);
 }
 .ng-untouched:not(form) {
-  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.592);
 }
 .ng-untouched:not(form)::placeholder {
-  color: white;
+  color: rgba(255, 255, 255, 0.67);
 }
 .ng-valid:not(form) {
   border-bottom: 1px solid green;

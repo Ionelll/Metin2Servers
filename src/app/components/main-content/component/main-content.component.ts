@@ -25,7 +25,7 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './main-content.component.html',
   styleUrl: './main-content.component.scss',
 })
-export class MainContentComponent implements AfterViewInit {
+export class MainContentComponent implements OnInit {
   constructor(
     private serverService: ServerService,
     private filterService: FilterService
@@ -35,13 +35,16 @@ export class MainContentComponent implements AfterViewInit {
   searchValue: string;
   noServers = false;
 
-  ngAfterViewInit(): void {
-    setTimeout(() => {
-      this.serverService.getServers().subscribe((res) => {
-        if (res) this.servers = res;
-        if (this.servers.length <= 0) this.noServers = true;
-        else this.noServers = false;
-      });
+  ngOnInit(): void {
+    this.serverService.getServers().subscribe((res) => {
+      if (res) this.servers = res;
+      if (this.servers.length <= 0) this.noServers = true;
+      else this.noServers = false;
+    });
+    this.serverService.getFilteredServers().subscribe((res) => {
+      if (res) this.servers = res;
+      if (this.servers.length <= 0) this.noServers = true;
+      else this.noServers = false;
     });
   }
 
@@ -49,7 +52,7 @@ export class MainContentComponent implements AfterViewInit {
     this.filterService.openModal();
   }
   reloadServers() {
-    this.serverService.callServers();
+    this.serverService.reloadServers();
     this.searchValue = '';
   }
   searchServer(event) {
@@ -57,7 +60,7 @@ export class MainContentComponent implements AfterViewInit {
       event.inputType === 'deleteContentForward' ||
       event.inputType === 'deleteContentBackward'
     )
-      this.serverService.callServers();
+      this.serverService.reloadServers();
     this.serverService.filterByName(this.searchValue);
   }
 }
