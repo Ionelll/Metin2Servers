@@ -21,7 +21,7 @@ export class FilterModalComponent implements AfterViewInit {
   focusValue: string;
   categoryValue: string;
   languageValue: string;
-  sortbyValue: string;
+  sortbyValue = 'rating';
 
   constructor(
     private filterService: FilterService,

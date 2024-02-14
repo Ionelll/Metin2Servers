@@ -1,47 +1,45 @@
-<div class="container" (mouseover)="hover = true" (mouseleave)="hover = false">
-  <div class="rating-container">
-    <p class="title">{{ item.name }}</p>
+<div
+  class="container"
+  (click)="linkToWebsite(item.website)"
+  (mouseover)="hover = true"
+  (mouseleave)="hover = false"
+>
+  <div class="img-container">
+    <img class="banner" [src]="item.banner" alt="" />
+  </div>
+  <div class="footer">
     <div class="rating">
-      <mat-icon [ngClass]="{ star: true, 'star-active': item.rating >= 1 }"
-        >star_rate</mat-icon
-      >
-      <mat-icon [ngClass]="{ star: true, 'star-active': item.rating >= 2 }"
-        >star_rate</mat-icon
-      >
-      <mat-icon [ngClass]="{ star: true, 'star-active': item.rating >= 3 }"
+      <mat-icon [ngClass]="{ star: true, 'star-active': item.rating >= 5 }"
         >star_rate</mat-icon
       >
       <mat-icon [ngClass]="{ star: true, 'star-active': item.rating >= 4 }"
         >star_rate</mat-icon
       >
-      <mat-icon [ngClass]="{ star: true, 'star-active': item.rating >= 5 }"
+      <mat-icon [ngClass]="{ star: true, 'star-active': item.rating >= 3 }"
+        >star_rate</mat-icon
+      >
+      <mat-icon [ngClass]="{ star: true, 'star-active': item.rating >= 2 }"
+        >star_rate</mat-icon
+      >
+      <mat-icon [ngClass]="{ star: true, 'star-active': item.rating >= 1 }"
         >star_rate</mat-icon
       >
     </div>
-  </div>
-  <div class="img-container">
-    <img class="banner" [src]="item.banner" alt="" />
-  </div>
-  <div class="footer">
-    <div>
-      <div class="footer-item">
-        <label class="label col1">School type</label>
-        <p class="text col2">{{ item.category }}</p>
-      </div>
-      <div class="footer-item">
-        <label class="label col1">Languages</label>
-        <p class="text col2">{{ item.languages }}</p>
-      </div>
-    </div>
-    <div>
-      <div class="footer-item">
-        <label class="label col3 row1">Focus</label>
-        <p class="text col4 row1">{{ item.focus }}</p>
-      </div>
-      <div class="footer-item">
-        <label class="label col3">Player base</label>
-        <p class="text col4">{{ item.playerBase }}</p>
-      </div>
+    <p class="title">{{ item.name }}</p>
+
+    <hr />
+    <div class="details">
+      <label class="label">School type</label>
+      <p class="text">{{ item.category }}</p>
+
+      <label class="label">Languages</label>
+      <p class="text">{{ item.languages }}</p>
+
+      <label class="label">Focus</label>
+      <p class="text">{{ item.focus }}</p>
+
+      <label class="label">Player base</label>
+      <p class="text">{{ item.playerBase }}</p>
     </div>
   </div>
   <div class="actions" *ngIf="hover" @slide>
@@ -99,8 +97,7 @@
         >star_rate</mat-icon
       >
     </div>
-    <a href="{{ item.website }}" target="_blank" class="website action"
-      >Website</a
-    >
+
+    <a routerLink="ticket" class="action website">Create Ticket</a>
   </div>
 </div>

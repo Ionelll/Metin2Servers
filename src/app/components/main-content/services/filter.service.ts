@@ -4,7 +4,6 @@ import { ServerService } from '../../../services/server.service';
 
 @Injectable({ providedIn: 'root' })
 export class FilterService {
-  constructor(private serversService: ServerService) {}
   private modalStatus = new BehaviorSubject<boolean>(false);
   openModal() {
     this.modalStatus.next(true);

@@ -1,1 +1,14 @@
-<p>profile-page works!</p>
+<div class="container">
+  <div class="header">
+    <p class="title">{{ user.username }}</p>
+  </div>
+  <div class="content">
+    <label for="email" class="label">e-mail</label>
+    <input
+      type="text"
+      class="input"
+      value="{{ user.email }}"
+      [disabled]="!edit"
+    />
+  </div>
+</div>

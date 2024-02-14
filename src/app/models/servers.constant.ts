@@ -1,6 +1,6 @@
 export var ServersConstant = [
   {
-    name: 'abc',
+    name: 'Thor Legends Reborn',
     rating: 12,
     languages: ['Ro'],
     category: 'OldSchool',
@@ -11,7 +11,7 @@ export var ServersConstant = [
       'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo aspernatur, eligendi adipisci accusamus ipsam unde consectetur nesciunt laboriosam ut pariatur quo asperiores rem iure, error sunt tempora hic odit alias earum commodi. Laborum molestias corporis doloribus corrupti minus quos ut recusandae quod est tempora repudiandae iure esse consectetur odit vel iste ipsum quasi, aspernatur debitis rerum explicabo ratione hic delectus magnam! Necessitatibus vero beatae ab nobis fugiat nihil autem porro atque incidunt explicabo blanditiis aperiam aut accusamus repellendus, iusto placeat qui vitae amet. Exercitationem doloremque ex natus nisi perferendis a modi tempore voluptate quisquam facere, minima facilis? Magni, recusandae natus!',
   },
   {
-    name: 'acb',
+    name: 'Zenit - Beyond Limits',
     rating: 3,
     languages: ['Ger'],
     category: 'OldSchool',
@@ -21,7 +21,7 @@ export var ServersConstant = [
       'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo aspernatur, eligendi adipisci accusamus ipsam unde consectetur nesciunt laboriosam ut pariatur quo asperiores rem iure, error sunt tempora hic odit alias earum commodi. Laborum molestias corporis doloribus corrupti minus quos ut recusandae quod est tempora repudiandae iure esse consectetur odit vel iste ipsum quasi, aspernatur debitis rerum explicabo ratione hic delectus magnam! Necessitatibus vero beatae ab nobis fugiat nihil autem porro atque incidunt explicabo blanditiis aperiam aut accusamus repellendus, iusto placeat qui vitae amet. Exercitationem doloremque ex natus nisi perferendis a modi tempore voluptate quisquam facere, minima facilis? Magni, recusandae natus!',
   },
   {
-    name: 'acb1',
+    name: 'Shiva.International',
     rating: 2,
     category: 'NewSchool',
     languages: ['Ro'],
@@ -29,7 +29,7 @@ export var ServersConstant = [
     banner: '../../../../../assets/login-background.jpg',
   },
   {
-    name: 'Server3',
+    name: 'Ashiro2',
     rating: 4,
     category: 'NewSchool',
     languages: ['Ro'],
@@ -37,7 +37,7 @@ export var ServersConstant = [
     banner: '../../../../../assets/login-background.jpg',
   },
   {
-    name: 'Server4',
+    name: 'Loranda2 - Hype Server - Start Soon',
     rating: 3,
     category: 'NewSchool',
     languages: ['Ro'],
@@ -45,7 +45,7 @@ export var ServersConstant = [
     banner: '../../../../../assets/login-background.jpg',
   },
   {
-    name: 'Server5',
+    name: 'Azyrah',
     rating: 4,
     category: 'NewSchool',
     languages: ['Ro'],
@@ -53,7 +53,7 @@ export var ServersConstant = [
     banner: '../../../../../assets/login-background.jpg',
   },
   {
-    name: 'Server6',
+    name: 'Age of Magis',
     rating: 2,
     category: 'NewSchool',
     languages: ['Ro'],
@@ -61,7 +61,7 @@ export var ServersConstant = [
     banner: '../../../../../assets/login-background.jpg',
   },
   {
-    name: 'Server7',
+    name: 'Osiris2 - Power Unleashed',
     rating: 5,
     category: 'NewSchool',
     languages: ['Ro'],
@@ -69,7 +69,7 @@ export var ServersConstant = [
     banner: '../../../../../assets/login-background.jpg',
   },
   {
-    name: 'Server8',
+    name: 'Astra2',
     rating: 4,
     category: 'NewSchool',
     languages: ['Ro'],
@@ -77,7 +77,7 @@ export var ServersConstant = [
     banner: '../../../../../assets/login-background.jpg',
   },
   {
-    name: 'Server9',
+    name: 'Sineria - die wieder zum Leben erweckte Nostalgie',
     rating: 4,
     category: 'NewSchool',
     languages: ['Ro'],
@@ -85,7 +85,7 @@ export var ServersConstant = [
     banner: '../../../../../assets/login-background.jpg',
   },
   {
-    name: 'Server10',
+    name: '~ SEISHIN ~ Follow your soul ~ JOIN NOW ~',
     rating: 2,
     category: 'NewSchool',
     languages: ['Ro'],
@@ -93,7 +93,7 @@ export var ServersConstant = [
     banner: '../../../../../assets/login-background.jpg',
   },
   {
-    name: 'Server11',
+    name: 'Alderoth | Start Date: 22.12.2023 |',
     rating: 2,
     category: 'NewSchool',
     languages: ['Ro'],
@@ -101,7 +101,7 @@ export var ServersConstant = [
     banner: '../../../../../assets/login-background.jpg',
   },
   {
-    name: 'Server12',
+    name: 'Yeogsa - Classic Hardcore Experience - New Administration',
     rating: 2,
     category: 'NewSchool',
     languages: ['Ro'],
@@ -109,7 +109,7 @@ export var ServersConstant = [
     banner: '../../../../../assets/login-background.jpg',
   },
   {
-    name: 'Server13',
+    name: 'Land of Heroes EU',
     rating: 2,
     category: 'NewSchool',
     languages: ['Ro'],
@@ -117,7 +117,7 @@ export var ServersConstant = [
     banner: '../../../../../assets/login-background.jpg',
   },
   {
-    name: 'Server14',
+    name: 'Old Metin2 | Untouched Metin2',
     rating: 1,
     category: 'NewSchool',
     languages: ['Ro'],
@@ -125,7 +125,7 @@ export var ServersConstant = [
     banner: '../../../../../assets/login-background.jpg',
   },
   {
-    name: 'Server15',
+    name: 'Aegis2',
     rating: 0,
     category: 'NewSchool',
     languages: ['Ro', 'Ger'],
@@ -133,7 +133,7 @@ export var ServersConstant = [
     banner: '../../../../../assets/login-background.jpg',
   },
   {
-    name: 'Server16',
+    name: 'MT2 AlphA - Server PvM - PvP Level 250 Easy',
     rating: 0,
     category: 'NewSchool',
     languages: ['Ro'],
@@ -141,7 +141,7 @@ export var ServersConstant = [
     banner: '../../../../../assets/login-background.jpg',
   },
   {
-    name: 'Server17',
+    name: 'Metin2SG!',
     rating: 0,
     category: 'NewSchool',
     languages: ['Ro'],
@@ -149,7 +149,7 @@ export var ServersConstant = [
     banner: '../../../../../assets/login-background.jpg',
   },
   {
-    name: 'Server18',
+    name: 'Metin2Pika International Server -250level- Farm for DC',
     rating: 0,
     category: 'NewSchool',
     languages: ['Ro'],

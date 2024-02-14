@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { ServerModel } from '../../../../models/server.model';
 import { MatIconModule } from '@angular/material/icon';
+import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import {
   style,
@@ -12,7 +13,7 @@ import {
 @Component({
   selector: 'app-server-card',
   standalone: true,
-  imports: [MatIconModule, CommonModule],
+  imports: [MatIconModule, CommonModule, RouterLink],
   templateUrl: './server-card.component.html',
   styleUrl: './server-card.component.scss',
   animations: [
@@ -41,5 +42,8 @@ export class ServerCardComponent {
     console.log(window.innerWidth);
     if (window.innerWidth < 800) this.media = true;
     else this.media = false;
+  }
+  linkToWebsite(link: string) {
+    window.open('https://google.com', '_blanck');
   }
 }

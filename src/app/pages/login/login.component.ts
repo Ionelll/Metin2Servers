@@ -5,7 +5,7 @@ import {
   Validators,
   ReactiveFormsModule,
 } from '@angular/forms';
-import { LoginService } from '../../services/login.service';
+import { UserService } from '../../services/user.service';
 import { RouterLink } from '@angular/router';
 
 @Component({
@@ -16,12 +16,12 @@ import { RouterLink } from '@angular/router';
   styleUrl: './login.component.scss',
 })
 export class LoginComponent {
-  constructor(private loginService: LoginService) {}
+  constructor(private userService: UserService) {}
   public loginInput = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl('', Validators.required),
   });
   login() {
-    this.loginService.login(this.loginInput.getRawValue());
+    this.userService.login(this.loginInput.getRawValue());
   }
 }

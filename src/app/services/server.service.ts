@@ -29,8 +29,6 @@ export class ServerService {
     focus: string,
     order: string
   ) {
-    this.callServers();
-
     let servers = [...this.Servers.value];
     if (language || category || focus) {
       servers = servers.filter(
@@ -49,7 +47,7 @@ export class ServerService {
   filterByName(value: string) {
     let servers = [...this.Servers.value];
     let filteredServers = servers.filter((item) => {
-      return item.name.includes(value);
+      return item.name.toLocaleLowerCase().match(value.toLowerCase());
     });
     this.Servers.next(filteredServers);
   }
