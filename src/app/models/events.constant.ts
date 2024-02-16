@@ -32,7 +32,7 @@ export var eventsConst = [
   {
     server: 'ThoreServer',
     eventId: 4,
-    photo: '../../../../../assets/login-background.jpg',
+    photo: '../../../../../assets/background1.jpg',
     name: 'Max LVL rush!!!',
     description:
       'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate nulla provident officia mollitia, esse quod ex ducimus.',
@@ -52,7 +52,7 @@ export var eventsConst = [
   {
     server: 'ThoreServer',
     eventId: 6,
-    photo: '../../../../../assets/login-background.jpg',
+    photo: '../../../../../assets/backgrounf1.jpg',
     name: 'Max LVL rush!!!',
     description:
       'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate nulla provident officia mollitia, esse quod ex ducimus.',

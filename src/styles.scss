@@ -58,10 +58,7 @@ input::placeholder {
   font-weight: 200;
   text-wrap: nowrap;
 }
-.label::after {
-  content: " :";
-  font-weight: 400;
-}
+
 .button {
   all: unset;
   cursor: pointer;

@@ -1,17 +1,57 @@
 .container {
-  padding: 0 3rem;
-  display: flex;
-  justify-content: center;
-  gap: 3rem;
-  max-height: 15rem;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: 0.5fr 0.5fr 1fr;
+  box-shadow: inset 1px 1px 15px -2px rgba(255, 255, 255, 0.971);
   position: relative;
 }
+.content {
+  gap: 2rem;
+  grid-column: 2/4;
+  grid-row: 2;
+  border-radius: 8px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
 
+.left-img {
+  height: 35rem;
+  top: -5rem;
+  z-index: 1;
+  grid-row: 1/3;
+  grid-column: 1/3;
+  position: absolute;
+}
 .title {
   margin-left: 4vw;
   font-family: "Metin", sans-serif;
+  grid-column: 2/4;
+  text-align: center;
 }
 .arrow-right {
   grid-column: 5;
   grid-row: 1;
+}
+
+.arrow {
+  position: relative;
+  z-index: 10;
+}
+
+.boxes {
+  display: flex;
+  margin: auto;
+  gap: 1em;
+}
+.box {
+  background-color: var(--action);
+  height: 1rem;
+  width: 2rem;
+}
+.box-active {
+  background-color: var(--action-active);
+}
+.buttons {
+  display: flex;
 }

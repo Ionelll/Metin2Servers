@@ -11,12 +11,6 @@ import { CommonModule } from '@angular/common';
 })
 export class EventCardComponent implements OnInit {
   @Input() event: EventsModel;
-  @Input() focusedEvent: number;
-  @Input() eventsLength: number;
-  public hide: boolean;
-  ngOnInit(): void {
-    this.hide =
-      this.event.eventId !=
-      (this.focusedEvent && this.focusedEvent - 1 && this.focusedEvent + 1);
-  }
+
+  ngOnInit(): void {}
 }
