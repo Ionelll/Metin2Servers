@@ -1,6 +1,5 @@
 <div class="container">
   <img src="../../../../assets/character4.png" class="left-img" />
-  <div class="title">News</div>
 
   <div class="content" [@carousel-animation]="x">
     @for (event of eventsList; track event;let i = $index) {
@@ -10,29 +9,24 @@
       *ngIf="i === x"
     ></app-event-card>
     }
-
-    <div class="buttons">
-      <button
-        class="arrow"
-        (click)="
-          x == 0 ? (x = eventsList.length - 1) : (x = x - 1); resetTimer()
-        "
-      >
-        <mat-icon>arrow_back_ios_new</mat-icon>
-      </button>
-      <div class="boxes">
-        @for (event of eventsList; track event; let i =$index) {
-        <div [ngClass]="{ box: true, 'box-active': i === x }"></div>
-        }
-      </div>
-      <button
-        class="arrow"
-        (click)="
-          x == eventsList.length - 1 ? (x = 0) : (x = x + 1); resetTimer()
-        "
-      >
-        <mat-icon>arrow_forward_ios_new</mat-icon>
-      </button>
+  </div>
+  <div class="buttons">
+    <button
+      class="arrow"
+      (click)="x == 0 ? (x = eventsList.length - 1) : (x = x - 1); resetTimer()"
+    >
+      <mat-icon>arrow_back_ios_new</mat-icon>
+    </button>
+    <div class="boxes">
+      @for (event of eventsList; track event; let i =$index) {
+      <div [ngClass]="{ box: true, 'box-active': i === x }"></div>
+      }
     </div>
+    <button
+      class="arrow"
+      (click)="x == eventsList.length - 1 ? (x = 0) : (x = x + 1); resetTimer()"
+    >
+      <mat-icon>arrow_forward_ios_new</mat-icon>
+    </button>
   </div>
 </div>

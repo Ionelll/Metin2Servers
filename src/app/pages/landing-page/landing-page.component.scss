@@ -3,6 +3,28 @@
   padding-top: 2rem;
   flex-direction: column;
 }
+.actions {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  gap: 5rem;
+  margin-bottom: 5rem;
+}
+.button {
+  background: linear-gradient(to top, var(--action), transparent 30%);
+  letter-spacing: 2px;
+  color: var(--action);
+  font-size: 2em;
+  font-weight: 600;
+  padding: 1rem 5rem;
+  box-shadow: none;
+  // border: 3px solid var(--action);
+  &:hover {
+    background-color: var(--action);
+    color: var(--action-active);
+  }
+}
+
 img {
   width: 70%;
   object-fit: contain;

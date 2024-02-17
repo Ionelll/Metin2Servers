@@ -6,8 +6,8 @@ export var eventsConst = [
     name: 'Max LVL rush!!!',
     description:
       'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate nulla provident officia mollitia, esse quod ex ducimus.',
-    startDate: '2024-02-25',
-    endDate: '2024-03-01',
+    startDate: '23.10.2024',
+    endDate: '30.11.2024',
   },
   {
     server: 'ThoreServer',
@@ -16,8 +16,8 @@ export var eventsConst = [
     name: 'Max LVL rush!!!',
     description:
       'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate nulla provident officia mollitia, esse quod ex ducimus.',
-    startDate: '2024-02-25',
-    endDate: '2024-03-01',
+    startDate: '23.10.2024',
+    endDate: '30.11.2024',
   },
   {
     server: 'ThoreServer',
@@ -26,8 +26,8 @@ export var eventsConst = [
     name: 'Max LVL rush!!!',
     description:
       'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate nulla provident officia mollitia, esse quod ex ducimus.',
-    startDate: '2024-02-25',
-    endDate: '2024-03-01',
+    startDate: '23.10.2024',
+    endDate: '30.11.2024',
   },
   {
     server: 'ThoreServer',
@@ -36,8 +36,8 @@ export var eventsConst = [
     name: 'Max LVL rush!!!',
     description:
       'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate nulla provident officia mollitia, esse quod ex ducimus.',
-    startDate: '2024-02-25',
-    endDate: '2024-03-01',
+    startDate: '23.10.2024',
+    endDate: '30.11.2024',
   },
   {
     server: 'ThoreServer',
@@ -46,8 +46,8 @@ export var eventsConst = [
     name: 'Max LVL rush!!!',
     description:
       'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate nulla provident officia mollitia, esse quod ex ducimus.',
-    startDate: '2024-02-25',
-    endDate: '2024-03-01',
+    startDate: '23.10.2024',
+    endDate: '30.11.2024',
   },
   {
     server: 'ThoreServer',
@@ -56,8 +56,8 @@ export var eventsConst = [
     name: 'Max LVL rush!!!',
     description:
       'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate nulla provident officia mollitia, esse quod ex ducimus.',
-    startDate: '2024-02-25',
-    endDate: '2024-03-01',
+    startDate: '23.10.2024',
+    endDate: '30.11.2024',
   },
 ];
 

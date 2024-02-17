@@ -28,6 +28,7 @@ import {
           [
             style({
               position: 'absolute',
+              top: 0,
             }),
           ],
           { optional: true }
@@ -80,6 +81,6 @@ export class EventsComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    this.carouselanimation();
+    // this.carouselanimation();
   }
 }

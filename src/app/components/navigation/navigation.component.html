@@ -6,10 +6,6 @@
   <a routerLink="" class="action home" *ngIf="currentRoute != '/'">
     <mat-icon class="icon">home</mat-icon>
   </a>
-  <div class="action-container" *ngIf="currentRoute === '/'">
-    <a class="action" routerLink="login">Login</a>
-    <a class="action" routerLink="signup">Sign up</a>
-  </div>
 </div>
 <div class="back-top-container">
   <button class="action back-top" id="back-top" (click)="goTop()">
