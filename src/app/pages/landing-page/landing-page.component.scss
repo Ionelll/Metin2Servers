@@ -1,30 +1,72 @@
 .container {
   display: flex;
-  padding-top: 2rem;
+
   flex-direction: column;
 }
 .actions {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5vw;
+  margin-top: 0rem;
   width: 100%;
   justify-content: center;
   gap: 5rem;
   margin-bottom: 5rem;
 }
-.button {
-  background: linear-gradient(to top, var(--action), transparent 30%);
+.call-action {
+  all: unset;
+  align-items: center;
+  padding: 0.5em 1em 0.5em 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  cursor: pointer;
+  background-image: linear-gradient(to right, transparent, #ffeda6);
   letter-spacing: 2px;
-  color: var(--action);
+  font-family: "Audiowide", sans-serif;
   font-size: 2em;
   font-weight: 600;
-  padding: 1rem 5rem;
+  color: black;
   box-shadow: none;
+  transition-duration: 0.3s;
   // border: 3px solid var(--action);
   &:hover {
-    background-color: var(--action);
+    background-image: linear-gradient(
+      to right,
+      rgba(211, 255, 254, 0.084),
+      #ffeda6
+    );
     color: var(--action-active);
   }
 }
-
+.signup {
+  background-image: linear-gradient(to right, #ffeda6, transparent);
+  text-align: end;
+  &:hover {
+    background-image: linear-gradient(
+      to left,
+      rgba(211, 255, 254, 0.084),
+      #ffeda6
+    );
+  }
+}
+.img-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.button-img {
+  transition-duration: 0.5s;
+  filter: sepia(100%);
+  position: absolute;
+  width: 70%;
+  top: -12rem;
+  left: 5rem;
+}
+.signup-img {
+  right: 5rem;
+  left: 0;
+  width: 48%;
+}
 img {
   width: 70%;
   object-fit: contain;
