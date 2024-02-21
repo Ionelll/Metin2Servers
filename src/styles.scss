@@ -21,7 +21,7 @@ html {
   --button-text: #86ffc7;
   --danger: red;
   --success: green;
-  --action: #ffd279;
+  --action: #ffc757;
   --action-active: #e4e2d5;
   --action-background: #be6a1b32;
   --action-background-active: #ece1ad44;
@@ -122,6 +122,17 @@ input::placeholder {
 @media screen and (max-width: 800) {
   html {
     overflow-y: auto;
+  }
+}
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0);
   }
 }
 @keyframes fade2 {

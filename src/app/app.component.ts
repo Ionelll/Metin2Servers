@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, RouterOutlet } from '@angular/router';
+import { SnackbarComponent } from './components/snackbar/snackbar.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import {
   animate,
@@ -15,7 +16,7 @@ import { ChildrenOutletContexts } from '@angular/router';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, NavigationComponent],
+  imports: [CommonModule, RouterOutlet, NavigationComponent, SnackbarComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
   animations: [

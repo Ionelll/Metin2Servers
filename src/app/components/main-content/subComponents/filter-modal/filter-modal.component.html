@@ -1,6 +1,9 @@
 <div class="container" id="filter-menu" *ngIf="modalStatus">
   <div class="content">
-    <p class="title">Filters</p>
+    <div class="header">
+      <p class="title">Filters</p>
+      <button class="exit" (click)="cancel()">X</button>
+    </div>
     <button
       class="filter-button"
       *ngIf="orderToggle === 'Ascending'"

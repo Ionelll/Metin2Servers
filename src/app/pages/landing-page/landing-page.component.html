@@ -1,39 +1,40 @@
 <div class="container" id="container">
-  <img src="../../../assets/background1.jpg" alt="" />
-  <div class="actions">
-    <a
-      routerLink="login"
-      class="call-action"
-      (mouseover)="changeOverlay(true, 'login')"
-      (mouseleave)="changeOverlay(false, 'login')"
-    >
-      <div class="img-container">
-        <img
-          src="../../../assets/character11.png"
-          id="login-img"
-          class="button-img"
-          alt="LOGIN"
-        />
-      </div>
-      LOGIN</a
-    >
-    <a
-      routerLink="signup"
-      class="call-action signup"
-      (mouseover)="changeOverlay(true, 'signup')"
-      (mouseleave)="changeOverlay(false, 'signup')"
-      >SIGNUP
-      <div class="img-container">
-        <img
-          src="../../../assets/character2.png"
-          id="signup-img"
-          class="button-img signup-img"
-          alt="LOGIN"
-        />
-      </div>
-    </a>
+  <div class="header">
+    <img src="../../../assets/background1.jpg" class="banner" alt="" />
+    <div class="actions">
+      <a
+        routerLink="login"
+        class="call-action"
+        (mouseover)="changeOverlay(true, 'login')"
+        (mouseleave)="changeOverlay(false, 'login')"
+      >
+        <div class="img-container">
+          <img
+            src="../../../assets/character11.png"
+            id="login-img"
+            class="button-img"
+            alt="login"
+          />
+        </div>
+        LOGIN</a
+      >
+      <a
+        routerLink="signup"
+        class="call-action signup"
+        (mouseover)="changeOverlay(true, 'signup')"
+        (mouseleave)="changeOverlay(false, 'signup')"
+        >SIGNUP
+        <div class="img-container">
+          <img
+            src="../../../assets/character22.png"
+            id="signup-img"
+            class="button-img signup-img"
+            alt="LOGIN"
+          />
+        </div>
+      </a>
+    </div>
   </div>
-
   <app-events></app-events>
   <app-main-content></app-main-content>
 </div>

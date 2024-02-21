@@ -8,7 +8,17 @@
   z-index: 1000;
   backdrop-filter: blur(2px) grayscale(100%);
 }
-
+.header {
+  display: flex;
+  justify-content: space-between;
+  grid-column: 1/5;
+}
+.exit {
+  all: unset;
+  color: var(--action-active);
+  background-color: transparent;
+  font-size: larger;
+}
 .content {
   margin: auto;
   width: 45rem;

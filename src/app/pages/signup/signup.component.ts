@@ -5,7 +5,7 @@ import {
   Validators,
   ReactiveFormsModule,
 } from '@angular/forms';
-import { SignupService } from '../../services/signup.service';
+import { AuthenticationService } from '../../services/authentication.service';
 
 @Component({
   selector: 'app-signup',
@@ -15,7 +15,7 @@ import { SignupService } from '../../services/signup.service';
   styleUrl: './signup.component.scss',
 })
 export class SignupComponent {
-  constructor(private signupService: SignupService) {}
+  constructor(private authService: AuthenticationService) {}
   password: string = '';
   public registerForm = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
@@ -28,7 +28,7 @@ export class SignupComponent {
 
   registerUser() {
     if (this.registerForm.valid) {
-      this.signupService.registerUser(this.registerForm.getRawValue());
+      this.authService.registerUser(this.registerForm.getRawValue());
     }
   }
 }

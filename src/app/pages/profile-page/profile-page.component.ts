@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../../services/user.service';
+import { AuthenticationService } from '../../services/authentication.service';
 import { UserModel } from '../../models/user.model';
 
 @Component({
@@ -10,12 +10,8 @@ import { UserModel } from '../../models/user.model';
   styleUrl: './profile-page.component.scss',
 })
 export class ProfilePageComponent implements OnInit {
-  constructor(private userService: UserService) {}
+  constructor(private authService: AuthenticationService) {}
   public user: UserModel;
   public edit: boolean;
-  ngOnInit(): void {
-    this.userService.getUser().subscribe((res) => {
-      this.user = res;
-    });
-  }
+  ngOnInit(): void {}
 }
