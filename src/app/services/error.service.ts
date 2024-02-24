@@ -5,7 +5,6 @@ import { Subject } from 'rxjs';
 export class ErrorService {
   private emitError = new Subject<any>();
   setError(value: string) {
-    console.log(value);
     this.emitError.next(value);
   }
   getError() {

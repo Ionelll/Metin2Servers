@@ -4,7 +4,7 @@ export var ServersConstant = [
     rating: 12,
     languages: ['Ro'],
     category: 'OldSchool',
-    focus: 'pvp',
+    focus: ['pvp'],
     banner: '../../../../../assets/login-background.jpg',
     playerBase: 32155,
     description:
@@ -15,7 +15,7 @@ export var ServersConstant = [
     rating: 3,
     languages: ['Ger'],
     category: 'OldSchool',
-    focus: 'pvp',
+    focus: ['pvp'],
     banner: '../../../../../assets/background1.jpg',
     description:
       'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo aspernatur, eligendi adipisci accusamus ipsam unde consectetur nesciunt laboriosam ut pariatur quo asperiores rem iure, error sunt tempora hic odit alias earum commodi. Laborum molestias corporis doloribus corrupti minus quos ut recusandae quod est tempora repudiandae iure esse consectetur odit vel iste ipsum quasi, aspernatur debitis rerum explicabo ratione hic delectus magnam! Necessitatibus vero beatae ab nobis fugiat nihil autem porro atque incidunt explicabo blanditiis aperiam aut accusamus repellendus, iusto placeat qui vitae amet. Exercitationem doloremque ex natus nisi perferendis a modi tempore voluptate quisquam facere, minima facilis? Magni, recusandae natus!',
@@ -25,7 +25,7 @@ export var ServersConstant = [
     rating: 2,
     category: 'NewSchool',
     languages: ['Ro'],
-    focus: 'pve',
+    focus: ['pve'],
     banner: '../../../../../assets/login-background.jpg',
   },
   {
@@ -33,7 +33,7 @@ export var ServersConstant = [
     rating: 4,
     category: 'NewSchool',
     languages: ['Ro'],
-    focus: 'pve',
+    focus: ['pve'],
     banner: '../../../../../assets/login-background.jpg',
   },
   {
@@ -41,7 +41,7 @@ export var ServersConstant = [
     rating: 3,
     category: 'NewSchool',
     languages: ['Ro'],
-    focus: 'pve',
+    focus: ['pve'],
     banner: '../../../../../assets/login-background.jpg',
   },
   {
@@ -49,7 +49,7 @@ export var ServersConstant = [
     rating: 4,
     category: 'NewSchool',
     languages: ['Ro'],
-    focus: 'pve',
+    focus: ['pve'],
     banner: '../../../../../assets/login-background.jpg',
   },
   {
@@ -57,7 +57,7 @@ export var ServersConstant = [
     rating: 2,
     category: 'NewSchool',
     languages: ['Ro'],
-    focus: 'pve',
+    focus: ['pve'],
     banner: '../../../../../assets/login-background.jpg',
   },
   {
@@ -65,7 +65,7 @@ export var ServersConstant = [
     rating: 5,
     category: 'NewSchool',
     languages: ['Ro'],
-    focus: 'pve',
+    focus: ['pve'],
     banner: '../../../../../assets/login-background.jpg',
   },
   {
@@ -73,7 +73,7 @@ export var ServersConstant = [
     rating: 4,
     category: 'NewSchool',
     languages: ['Ro'],
-    focus: 'pve',
+    focus: ['pve'],
     banner: '../../../../../assets/login-background.jpg',
   },
   {
@@ -81,7 +81,7 @@ export var ServersConstant = [
     rating: 4,
     category: 'NewSchool',
     languages: ['Ro'],
-    focus: 'pve',
+    focus: ['pve'],
     banner: '../../../../../assets/login-background.jpg',
   },
   {
@@ -89,7 +89,7 @@ export var ServersConstant = [
     rating: 2,
     category: 'NewSchool',
     languages: ['Ro'],
-    focus: 'pve',
+    focus: ['pve'],
     banner: '../../../../../assets/login-background.jpg',
   },
   {
@@ -97,7 +97,7 @@ export var ServersConstant = [
     rating: 2,
     category: 'NewSchool',
     languages: ['Ro'],
-    focus: 'pve',
+    focus: ['pve'],
     banner: '../../../../../assets/login-background.jpg',
   },
   {
@@ -105,7 +105,7 @@ export var ServersConstant = [
     rating: 2,
     category: 'NewSchool',
     languages: ['Ro'],
-    focus: 'pve',
+    focus: ['pve'],
     banner: '../../../../../assets/login-background.jpg',
   },
   {
@@ -113,7 +113,7 @@ export var ServersConstant = [
     rating: 2,
     category: 'NewSchool',
     languages: ['Ro'],
-    focus: 'pve',
+    focus: ['pve'],
     banner: '../../../../../assets/login-background.jpg',
   },
   {
@@ -121,7 +121,7 @@ export var ServersConstant = [
     rating: 1,
     category: 'NewSchool',
     languages: ['Ro'],
-    focus: 'pve',
+    focus: ['pve'],
     banner: '../../../../../assets/login-background.jpg',
   },
   {
@@ -129,7 +129,7 @@ export var ServersConstant = [
     rating: 0,
     category: 'NewSchool',
     languages: ['Ro', 'Ger'],
-    focus: 'pve',
+    focus: ['pve'],
     banner: '../../../../../assets/login-background.jpg',
   },
   {
@@ -137,7 +137,7 @@ export var ServersConstant = [
     rating: 0,
     category: 'NewSchool',
     languages: ['Ro'],
-    focus: 'pve',
+    focus: ['pve'],
     banner: '../../../../../assets/login-background.jpg',
   },
   {
@@ -145,7 +145,7 @@ export var ServersConstant = [
     rating: 0,
     category: 'NewSchool',
     languages: ['Ro'],
-    focus: 'pve',
+    focus: ['pve'],
     banner: '../../../../../assets/login-background.jpg',
   },
   {
@@ -153,7 +153,7 @@ export var ServersConstant = [
     rating: 0,
     category: 'NewSchool',
     languages: ['Ro'],
-    focus: 'pve',
+    focus: ['pve'],
     banner: '../../../../../assets/login-background.jpg',
   },
 ];

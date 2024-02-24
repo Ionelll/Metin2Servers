@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, RouterOutlet } from '@angular/router';
 import { SnackbarComponent } from './components/snackbar/snackbar.component';
@@ -12,6 +12,7 @@ import {
   group,
 } from '@angular/animations';
 import { ChildrenOutletContexts } from '@angular/router';
+import { AuthenticationService } from './services/authentication.service';
 
 @Component({
   selector: 'app-root',
@@ -47,12 +48,13 @@ import { ChildrenOutletContexts } from '@angular/router';
     ]),
   ],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'Metin2ServerList';
   loading: boolean;
   constructor(
     private contexts: ChildrenOutletContexts,
-    private router: Router
+    private router: Router,
+    private authService: AuthenticationService
   ) {
     this.loading = true;
   }
@@ -61,5 +63,10 @@ export class AppComponent {
     return this.contexts.getContext('primary')?.route?.snapshot?.data?.[
       'animation'
     ];
+  }
+
+  ngOnInit(): void {
+    const token = localStorage.getItem('token');
+    if (token && token.length > 0) this.authService.checkToken();
   }
 }

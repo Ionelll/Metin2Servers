@@ -9,7 +9,7 @@ export interface ServerModel {
   releaseDate?: Date;
   playerBase?: number;
   languages?: string[];
-  focus?: string;
+  focus?: string[];
   comments?: {
     username: string;
     userPhoto: string;

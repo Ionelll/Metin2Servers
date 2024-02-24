@@ -1,6 +1,6 @@
 .container {
   display: flex;
-  gap: 15rem;
+  gap: 10rem;
   flex-direction: column;
 }
 .header {
@@ -11,6 +11,7 @@
   object-fit: cover;
   overflow: hidden;
   align-self: center;
+  padding-top: 2rem;
   width: 70%;
 }
 .actions {
@@ -26,12 +27,15 @@
 .call-action {
   all: unset;
   align-items: center;
-  padding: 0.5em 1em 0.5em 0;
-
+  padding: 0.5em 0 0.5em 0;
   display: grid;
   grid-template-columns: 1fr 1fr;
   cursor: pointer;
-  background-image: linear-gradient(to right, transparent, #ffeda6);
+  background-image: linear-gradient(
+    to right,
+    transparent,
+    rgba(211, 255, 254, 0.564)
+  );
   letter-spacing: 2px;
   font-family: "Audiowide", sans-serif;
   font-size: 2em;
@@ -39,24 +43,27 @@
   color: black;
   box-shadow: none;
   transition-duration: 0.3s;
-  // border: 3px solid var(--action);
+
   &:hover {
     background-image: linear-gradient(
       to right,
-      rgba(211, 255, 254, 0.084),
-      #ffeda6
+      transparent,
+      rgb(211, 255, 254)
     );
-    color: var(--action-active);
   }
 }
 .signup {
-  background-image: linear-gradient(to right, #ffeda6, transparent);
+  background-image: linear-gradient(
+    to right,
+    rgba(211, 255, 254, 0.564),
+    transparent
+  );
   text-align: end;
   &:hover {
     background-image: linear-gradient(
-      to left,
-      rgba(211, 255, 254, 0.084),
-      #ffeda6
+      to right,
+      rgb(211, 255, 254),
+      transparent
     );
   }
 }
@@ -67,18 +74,27 @@
 }
 .button-img {
   transition-duration: 0.5s;
-  filter: sepia(100%);
+  filter: grayscale(100%);
   position: absolute;
   width: 70%;
-  top: -11rem;
-  left: 5rem;
-}
-.signup-img {
-  right: 5rem;
+  top: -13rem;
 }
 
+@media screen and (max-width: 1200px) {
+  .button-img {
+    top: -5rem;
+  }
+}
 @media screen and (max-width: 1100px) {
-  img {
+  .banner {
     width: 100%;
+  }
+  .container {
+    gap: 10rem;
+  }
+}
+@media screen and (max-width: 700px) {
+  .actions {
+    display: none;
   }
 }

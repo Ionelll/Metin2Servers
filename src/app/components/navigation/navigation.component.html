@@ -1,5 +1,11 @@
 <div class="container">
-  <a routerLink="login" class="action profile" *ngIf="currentRoute === '/'">
+  <a
+    routerLink="profile"
+    class="action profile"
+    *ngIf="
+      (currentRoute === '/' && user) || (media < 700 && currentRoute === '/')
+    "
+  >
     Profile
     <mat-icon class="icon">keyboard_arrow_down</mat-icon>
   </a>

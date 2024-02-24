@@ -37,7 +37,7 @@ export class ServerService {
         (item) =>
           (!language || item.languages?.includes(language)) &&
           (!category || item.category === category) &&
-          (!focus || item.focus === focus)
+          (!focus || item.focus.includes(focus))
       );
     }
     const sortedServers = this.sortBy(servers, sortBy);

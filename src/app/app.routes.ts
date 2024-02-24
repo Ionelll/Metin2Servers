@@ -3,6 +3,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { ProfilePageComponent } from './pages/profile-page/profile-page.component';
+import { AuthGuard } from './services/auth.guard';
 
 export const routes: Routes = [
   {
@@ -23,6 +24,7 @@ export const routes: Routes = [
   {
     path: 'profile',
     component: ProfilePageComponent,
+    canActivate: [AuthGuard],
     data: { animation: 'ProfilePage' },
   },
 

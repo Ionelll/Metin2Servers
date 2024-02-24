@@ -3,21 +3,12 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   padding: 1rem;
-  border-radius: 5px;
   gap: 3rem;
   align-items: center;
   position: relative;
   height: 18rem;
   overflow: hidden;
-}
-.container::after {
-  content: "";
-  position: absolute;
-  z-index: 100;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
+  justify-content: center;
 }
 
 .img-container {
@@ -33,7 +24,6 @@
 }
 
 .content {
-  height: 100%;
   display: flex;
   flex-direction: column;
   margin: auto;
@@ -51,4 +41,13 @@
   text-align: start;
   position: relative;
   white-space: wrap;
+  max-width: 80%;
+}
+@media screen and (max-width: 1000px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    gap: 1rem;
+  }
 }
