@@ -8,6 +8,7 @@ export class AuthenticationService {
   constructor(private http: HttpClient, private router: Router) {}
 
   private loggedin = new BehaviorSubject<boolean>(false);
+  private user_id = new BehaviorSubject<string>(undefined);
 
   login(userInput: { email: string | null; password: string | null }) {
     if (userInput.email && userInput.password)
@@ -19,6 +20,7 @@ export class AuthenticationService {
         .subscribe((res) => {
           localStorage.setItem('token', res.token);
           this.loggedin.next(true);
+          this.user_id.next(res.user_id);
           this.router.navigateByUrl('');
         });
   }
@@ -42,10 +44,8 @@ export class AuthenticationService {
         'https://metins-be.onrender.com/api/verify-session'
       )
       .subscribe((res) => {
-        if (res && res.message === 'Session is valid') this.loggedin.next(true);
-        else {
-          this.logout();
-        }
+        if (res && res.message === 'Sesion is valid') this.loggedin.next(true);
+        else this.logout();
       });
   }
   setLoggedin(value: boolean) {
@@ -55,13 +55,14 @@ export class AuthenticationService {
     return this.loggedin.asObservable();
   }
   returnLoggedin() {
-    return this.loggedin.value;
+    if (localStorage.getItem('token')) return true;
+    else return false;
   }
   logout() {
+    localStorage.removeItem('token');
+    this.loggedin.next(false);
     this.http
       .post('https://metins-be.onrender.com/api/logout', 'hello')
       .subscribe();
-    localStorage.removeItem('token');
-    this.loggedin.next(false);
   }
 }

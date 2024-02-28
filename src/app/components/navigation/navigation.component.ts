@@ -21,10 +21,8 @@ export class NavigationComponent implements OnInit, OnDestroy {
     private router: Router,
     private authService: AuthenticationService
   ) {
-    this.router.events.forEach((event) => {
-      if (event instanceof NavigationEnd) {
-        this.currentRoute = event.url;
-      }
+    this.router.events.subscribe((res) => {
+      if (res instanceof NavigationEnd) this.currentRoute = res.url;
     });
   }
   goTop() {

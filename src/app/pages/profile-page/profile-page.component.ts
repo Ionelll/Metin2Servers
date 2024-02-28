@@ -12,6 +12,9 @@ import { UserModel } from '../../models/user.model';
 export class ProfilePageComponent implements OnInit {
   constructor(private authService: AuthenticationService) {}
   public user: UserModel;
-  public edit: boolean;
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.authService.getUser().subscribe((res: UserModel) => {
+      this.user = res;
+    });
+  }
 }
