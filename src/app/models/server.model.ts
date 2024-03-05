@@ -1,7 +1,9 @@
 export interface ServerModel {
+  _id?: string;
   banner?: string;
   name: string;
-  description?: string;
+  description1?: string;
+  description2?: string;
   website?: string;
   maxLevel?: string;
   rating?: number;
@@ -10,9 +12,5 @@ export interface ServerModel {
   playerBase?: number;
   languages?: string[];
   focus?: string[];
-  comments?: {
-    username: string;
-    userPhoto: string;
-    comment: string;
-  };
+  isPremium?: boolean;
 }

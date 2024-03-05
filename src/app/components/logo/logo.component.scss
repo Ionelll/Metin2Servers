@@ -1,0 +1,45 @@
+.logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  grid-column: 1/4;
+  grid-row: 1;
+  align-items: center;
+
+  cursor: pointer;
+  div {
+    display: flex;
+  }
+}
+
+.m,
+.number,
+.etin {
+  font-family: "Metin", sans-serif;
+  font-size: calc(16px + 2vw);
+  color: var(--logo);
+  margin: 0;
+  // -webkit-text-stroke: 2px black;
+}
+// .servers {
+//   font-family: "Poppins", sans-serif;
+// }
+.etin {
+  font-size: calc(12px + 1vw);
+  margin-bottom: 4px;
+  margin-top: auto;
+}
+
+.servers {
+  font-family: "Permanent Marker", cursive;
+  font-size: calc(16px + 0.7vw);
+  margin: 0;
+  color: var(--logo);
+  margin-top: -7px;
+  margin-left: -10px;
+  color: logo;
+}
+.number {
+  color: red;
+  margin-left: 5px;
+}

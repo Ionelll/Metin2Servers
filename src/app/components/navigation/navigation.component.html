@@ -1,13 +1,4 @@
 <div class="container">
-  <a
-    routerLink="profile"
-    class="action profile"
-    *ngIf="
-      (currentRoute === '/' && user) || (media < 700 && currentRoute === '/')
-    "
-  >
-    Profile
-  </a>
   <a routerLink="" class="action home" *ngIf="currentRoute != '/'">
     <mat-icon class="icon">home</mat-icon>
   </a>

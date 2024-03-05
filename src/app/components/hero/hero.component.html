@@ -1,0 +1,30 @@
+<div class="hero" [@slide]="active">
+  <div class="text-container">
+    <p class="text" *ngIf="active === 0">
+      Enjoy epic battles <br />
+      Join top communities
+    </p>
+
+    <div class="text" *ngIf="active === 2">
+      Conquer the Metin
+
+      <div class="number">2</div>
+      &nbsp; realm!
+    </div>
+    <p class="text" *ngIf="active === 1">
+      Grow Your Server <br />
+      Attract more players
+    </p>
+  </div>
+  <div class="actions">
+    <a routerLink="login" class="call-action" *ngIf="!user"> LOGIN</a>
+    <a routerLink="signup" class="call-action signup" *ngIf="!user">SIGNUP </a>
+    <a
+      routerLink="profile"
+      class="call-action signup"
+      *ngIf="currentRoute === '/' && user"
+    >
+      Account
+    </a>
+  </div>
+</div>

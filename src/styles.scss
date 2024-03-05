@@ -6,13 +6,15 @@ body {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  background-color: #000000;
+  background-color: #1e0002;
   user-select: none;
   scroll-behavior: smooth;
   font-family: "Poppins", sans-serif;
 }
 html {
   overflow-y: scroll;
+  scrollbar-color: #ffaaaf #760005;
+  scrollbar-width: thin;
 }
 
 :root {
@@ -22,9 +24,12 @@ html {
   --button-text: #86ffc7;
   --danger: red;
   --success: green;
-  --action: #ffc757;
-  --action-active: #e4e2d5;
-  --action-background: #be6a1b32;
+  --logo: #ffc757;
+  --logo-active: #ffd788;
+  --action: #af0008;
+  --text: #b7d7f1;
+  --action-active: #ff000d;
+  --header-background: #565656;
   --action-background-active: #ece1ad44;
   --gold-gradient: #ff8611;
 }
@@ -35,7 +40,7 @@ html {
   letter-spacing: 1px;
   font-size: 1.1em;
   font-weight: 200;
-  color: var(--action-active);
+
   outline: none;
   border: none;
   padding: 0.2em 0.5em;
@@ -54,7 +59,7 @@ input::placeholder {
   }
 }
 .label {
-  color: var(--action-active);
+  color: white;
   text-align: center;
   font-size: 14px;
   font-weight: 200;
@@ -82,7 +87,7 @@ input::placeholder {
   background-color: var(--primary);
 }
 .title {
-  color: var(--action-active);
+  color: var(--logo);
   text-align: start;
   font-size: calc(16px + 0.3vw);
   white-space: nowrap;
@@ -108,7 +113,7 @@ input::placeholder {
 }
 .action {
   all: unset;
-  color: var(--action);
+  color: var(--logo);
   font-size: 16px;
   font-family: "Metin", sans-serif;
   font-weight: 600;
@@ -117,7 +122,7 @@ input::placeholder {
   cursor: pointer;
   text-wrap: nowrap;
   &:hover {
-    color: var(--action-active);
+    color: var(--logo-active);
   }
 }
 @media screen and (max-width: 800) {

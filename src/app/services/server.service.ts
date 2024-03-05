@@ -5,18 +5,24 @@ import { ServerModel } from '../models/server.model';
 
 @Injectable({ providedIn: 'root' })
 export class ServerService {
-  public Servers = new BehaviorSubject<ServerModel[]>(ServersConstant);
+  private Servers = new BehaviorSubject<ServerModel[]>(ServersConstant);
   private filteredServers = new Subject<ServerModel[]>();
+  private premiumServers = new BehaviorSubject<ServerModel[]>([]);
   getServers() {
     return this.Servers.asObservable();
   }
   getFilteredServers() {
     return this.filteredServers.asObservable();
   }
+
   reloadServers() {
     this.filteredServers.next(this.Servers.value);
   }
+  setServers() {}
 
+  getPremiumServers() {
+    return this.premiumServers.asObservable();
+  }
   sortBy(servers: ServerModel[], key: string) {
     if (servers.length <= 0) return servers;
     else if (typeof servers[0][key] == 'string') {

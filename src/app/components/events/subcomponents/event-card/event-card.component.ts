@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { EventsModel } from '../../../../models/events.model';
 import { CommonModule } from '@angular/common';
+import { ServerModel } from '../../../../models/server.model';
 
 @Component({
   selector: 'app-event-card',
@@ -10,7 +11,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './event-card.component.scss',
 })
 export class EventCardComponent implements OnInit {
-  @Input() event: EventsModel;
+  @Input() server: ServerModel;
 
   ngOnInit(): void {}
 }

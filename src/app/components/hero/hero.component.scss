@@ -1,0 +1,86 @@
+.hero {
+  display: grid;
+  grid-template-columns: 0.5fr 1fr 1fr 0.1fr;
+  background-image: url("../../../assets/pixelcut-export.jpg");
+  background-position: left bottom;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-size: cover;
+  padding: 2rem;
+  row-gap: 4rem;
+  align-items: end;
+  position: relative;
+  min-height: 25rem;
+  overflow: hidden;
+}
+
+.text-container {
+  grid-column: 2/4;
+  grid-row: 2;
+  position: relative;
+  overflow: hidden;
+}
+.text {
+  color: var(--logo);
+  font-family: "Permanent Marker", sans-serif;
+  font-size: calc(12px + 3vw);
+  font-weight: 400;
+  text-align: center;
+  margin: 0;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.logo {
+  color: var(--logo);
+}
+.number {
+  color: red;
+}
+.banner {
+  position: relative;
+  width: 100%;
+  object-fit: cover;
+  filter: brightness(95%);
+}
+
+.actions {
+  display: flex;
+  gap: 2rem;
+  grid-column: 2/4;
+  grid-row: 3;
+  width: 100%;
+  justify-content: end;
+}
+.call-action {
+  all: unset;
+  padding: 0.1em 2em;
+  border-radius: 5px;
+  cursor: pointer;
+  background: var(--action);
+  letter-spacing: 2px;
+  font-family: "Audiowide", sans-serif;
+  font-size: 2em;
+  font-weight: 600;
+  color: black;
+  box-shadow: none;
+  transition-duration: 0.5s;
+  background: radial-gradient(var(--action), transparent);
+  &:hover {
+    background-color: var(--action-active);
+  }
+}
+
+.button-img-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.button-img {
+  transition-duration: 0.5s;
+  filter: grayscale(100%);
+  position: absolute;
+  width: 70%;
+  top: -13rem;
+}

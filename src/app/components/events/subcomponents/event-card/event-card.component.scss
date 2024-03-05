@@ -1,26 +1,15 @@
 .container {
+  all: unset;
+  cursor: pointer;
   align-items: center;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  padding: 1rem;
-  gap: 3rem;
+  grid-template-rows: 1fr;
   align-items: center;
   position: relative;
-  height: 18rem;
+
   overflow: hidden;
   justify-content: center;
-}
-
-.img-container {
-  position: relative;
-  z-index: 1;
-  width: 100%;
-  align-items: center;
-  img {
-    object-fit: contain;
-    max-width: 100%;
-    border-radius: 8px;
-  }
 }
 
 .content {
@@ -28,21 +17,7 @@
   flex-direction: column;
   margin: auto;
 }
-.title {
-  position: relative;
-  z-index: 3;
-}
-.name {
-  color: var(--action);
-  font-size: 24px;
-}
-.label {
-  z-index: 3;
-  text-align: start;
-  position: relative;
-  white-space: wrap;
-  max-width: 80%;
-}
+
 @media screen and (max-width: 1000px) {
   .container {
     display: flex;

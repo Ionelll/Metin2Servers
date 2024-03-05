@@ -7,6 +7,7 @@ export var ServersConstant = [
     focus: ['pvp'],
     banner: '../../../../../assets/login-background.jpg',
     playerBase: 32155,
+    isPremium: true,
     description:
       'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo aspernatur, eligendi adipisci accusamus ipsam unde consectetur nesciunt laboriosam ut pariatur quo asperiores rem iure, error sunt tempora hic odit alias earum commodi. Laborum molestias corporis doloribus corrupti minus quos ut recusandae quod est tempora repudiandae iure esse consectetur odit vel iste ipsum quasi, aspernatur debitis rerum explicabo ratione hic delectus magnam! Necessitatibus vero beatae ab nobis fugiat nihil autem porro atque incidunt explicabo blanditiis aperiam aut accusamus repellendus, iusto placeat qui vitae amet. Exercitationem doloremque ex natus nisi perferendis a modi tempore voluptate quisquam facere, minima facilis? Magni, recusandae natus!',
   },
@@ -16,7 +17,8 @@ export var ServersConstant = [
     languages: ['Ger'],
     category: 'OldSchool',
     focus: ['pvp'],
-    banner: '../../../../../assets/background1.jpg',
+    banner:
+      'https://metins-images.s3.amazonaws.com/media/server_images/Banner1434246577468x190.gif',
     description:
       'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo aspernatur, eligendi adipisci accusamus ipsam unde consectetur nesciunt laboriosam ut pariatur quo asperiores rem iure, error sunt tempora hic odit alias earum commodi. Laborum molestias corporis doloribus corrupti minus quos ut recusandae quod est tempora repudiandae iure esse consectetur odit vel iste ipsum quasi, aspernatur debitis rerum explicabo ratione hic delectus magnam! Necessitatibus vero beatae ab nobis fugiat nihil autem porro atque incidunt explicabo blanditiis aperiam aut accusamus repellendus, iusto placeat qui vitae amet. Exercitationem doloremque ex natus nisi perferendis a modi tempore voluptate quisquam facere, minima facilis? Magni, recusandae natus!',
   },
@@ -26,11 +28,14 @@ export var ServersConstant = [
     category: 'NewSchool',
     languages: ['Ro'],
     focus: ['pve'],
-    banner: '../../../../../assets/login-background.jpg',
+    banner:
+      'https://metins-images.s3.amazonaws.com/media/server_images/Banner1434246577468x190.gif',
+    isPremium: true,
   },
   {
     name: 'Ashiro2',
     rating: 4,
+    isPremium: true,
     category: 'NewSchool',
     languages: ['Ro'],
     focus: ['pve'],
@@ -39,6 +44,7 @@ export var ServersConstant = [
   {
     name: 'Loranda2 - Hype Server - Start Soon',
     rating: 3,
+    isPremium: true,
     category: 'NewSchool',
     languages: ['Ro'],
     focus: ['pve'],
@@ -47,6 +53,7 @@ export var ServersConstant = [
   {
     name: 'Azyrah',
     rating: 4,
+    isPremium: true,
     category: 'NewSchool',
     languages: ['Ro'],
     focus: ['pve'],
@@ -55,6 +62,7 @@ export var ServersConstant = [
   {
     name: 'Age of Magis',
     rating: 2,
+    isPremium: true,
     category: 'NewSchool',
     languages: ['Ro'],
     focus: ['pve'],

@@ -65,4 +65,8 @@ export class AuthenticationService {
       .post('https://metins-be.onrender.com/api/logout', 'hello')
       .subscribe();
   }
+
+  // getUser(){
+  //   this.http.get()
+  // }
 }

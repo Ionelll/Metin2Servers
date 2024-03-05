@@ -12,29 +12,17 @@ import { AuthenticationService } from '../../services/authentication.service';
   templateUrl: './navigation.component.html',
   styleUrl: './navigation.component.scss',
 })
-export class NavigationComponent implements OnInit, OnDestroy {
+export class NavigationComponent {
   public user: boolean;
   private userSub = new Subscription();
   public media = window.innerWidth;
   currentRoute: string = '';
-  constructor(
-    private router: Router,
-    private authService: AuthenticationService
-  ) {
+  constructor(private router: Router) {
     this.router.events.subscribe((res) => {
       if (res instanceof NavigationEnd) this.currentRoute = res.url;
     });
   }
   goTop() {
     window.scrollTo(0, 0);
-  }
-
-  ngOnInit(): void {
-    this.userSub = this.authService.checkLoggedin().subscribe((res) => {
-      this.user = res;
-    });
-  }
-  ngOnDestroy(): void {
-    this.userSub.unsubscribe();
   }
 }

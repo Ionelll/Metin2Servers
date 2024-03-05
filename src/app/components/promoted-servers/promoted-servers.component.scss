@@ -1,0 +1,7 @@
+.grid {
+  background-color: black;
+  padding: 3rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-top: 3px solid var(--logo);
+}

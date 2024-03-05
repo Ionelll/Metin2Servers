@@ -1,8 +1,7 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
-import { EventsModel } from '../../../models/events.model';
 import { CommonModule } from '@angular/common';
 import { EventCardComponent } from '../subcomponents/event-card/event-card.component';
-import { EventsService } from '../events.service';
+import { ServerService } from '../../../services/server.service';
 import { MatIconModule } from '@angular/material/icon';
 import {
   animate,
@@ -13,6 +12,7 @@ import {
   transition,
   trigger,
 } from '@angular/animations';
+import { ServerModel } from '../../../models/server.model';
 
 @Component({
   selector: 'app-events',
@@ -22,11 +22,13 @@ import {
   styleUrl: './events.component.scss',
   animations: [
     trigger('carousel-animation', [
-      transition('* <=> *', [
+      transition(':enter,:leave', [
         query(
-          ':leave',
+          '.server',
           [
             style({
+              height: '100%',
+              width: '100%',
               position: 'absolute',
               top: 0,
             }),
@@ -34,7 +36,7 @@ import {
           { optional: true }
         ),
 
-        query(':enter', [style({ opacity: 0 })], { optional: true }),
+        query(':enter', [style({ opacity: 0 })]),
         group([
           query(':enter', [animate('0.5s', style({ opacity: 1 }))], {
             optional: true,
@@ -48,39 +50,35 @@ import {
   ],
 })
 export class EventsComponent implements OnInit, AfterViewInit {
-  constructor(private eventsService: EventsService) {}
-  public eventsList: EventsModel[];
+  constructor(private serversService: ServerService) {}
+  public serversList: ServerModel[];
   public focusedEvent: number = 0;
   public animation: string;
   public x = 0;
   private timer: any;
 
   ngOnInit(): void {
-    this.eventsService.getEvents().subscribe((res) => {
-      this.eventsList = res;
+    this.serversService.getPremiumServers().subscribe((res) => {
+      this.serversList = res;
     });
   }
   getAnimation(index: number) {
     return index === this.focusedEvent;
   }
   carouselanimation() {
-    if (this.x < this.eventsList.length - 1) {
+    if (this.x < this.serversList.length - 1) {
       this.x++;
     } else {
       this.x = 0;
     }
     this.timer = setTimeout(() => {
       this.carouselanimation();
-    }, 20000);
-  }
-  resetTimer() {
-    clearTimeout(this.timer);
-    this.timer = setTimeout(() => {
-      this.carouselanimation();
-    }, 20000);
+    }, 5000);
   }
 
   ngAfterViewInit(): void {
-    // this.carouselanimation();
+    setTimeout(() => {
+      this.carouselanimation();
+    }, 5000);
   }
 }
