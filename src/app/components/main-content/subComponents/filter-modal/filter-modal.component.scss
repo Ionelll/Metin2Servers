@@ -15,9 +15,11 @@
 }
 .exit {
   all: unset;
-  color: var(--action-active);
+  color: var(--logo);
   background-color: transparent;
-  font-size: larger;
+  font-size: 30px;
+  font-weight: 800;
+  font-family: "Permanent Marker", cursive;
 }
 .content {
   margin: auto;
@@ -32,8 +34,6 @@
 }
 
 .title {
-  font-family: "Metin", sans-serif;
-  font-size: 26px;
   grid-column-start: 1;
   grid-column-end: 5;
 }
@@ -76,9 +76,12 @@
 }
 .filter-button {
   all: unset;
-  color: var(--action-active);
+  color: var(--logo);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  transform: scale(1.2);
+  transform: scale(1.4);
 }
 .filters-container {
   align-items: center;

@@ -8,14 +8,15 @@
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: right top;
 }
 .content {
-  width: 40%;
-  margin: calc(7rem + 4vw) 1rem 1rem 12vw;
+  width: 40vw;
+  margin: auto;
   height: fit-content;
   display: flex;
   flex-direction: column;
-  background-color: var(--primary);
+  background-color: rgba(0, 0, 0, 0.699);
   border-radius: 15px;
   padding: 1rem 3rem;
 }
@@ -47,8 +48,9 @@
 }
 .footer {
   display: flex;
-  justify-content: space-between;
+  justify-content: end;
   align-items: center;
+  gap: 2rem;
 }
 
 @media screen and (max-width: 900px) {

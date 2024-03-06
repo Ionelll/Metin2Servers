@@ -25,8 +25,10 @@ export class LandingPageComponent {
   scrollTrack() {
     if (window.scrollY > 1000) {
       document.getElementById('back-top').classList.remove('back-top');
+      document.getElementById('back-top').classList.add('back-top-active');
     } else {
       document.getElementById('back-top').classList.add('back-top');
+      document.getElementById('back-top').classList.remove('back-top-active');
     }
   }
 }

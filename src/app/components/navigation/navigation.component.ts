@@ -1,9 +1,7 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { NavigationEnd, Router, RouterLink } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 import { NgIf } from '@angular/common';
-import { Subscription } from 'rxjs';
-import { AuthenticationService } from '../../services/authentication.service';
 
 @Component({
   selector: 'app-navigation',
@@ -14,7 +12,6 @@ import { AuthenticationService } from '../../services/authentication.service';
 })
 export class NavigationComponent {
   public user: boolean;
-  private userSub = new Subscription();
   public media = window.innerWidth;
   currentRoute: string = '';
   constructor(private router: Router) {

@@ -13,13 +13,11 @@ body {
 }
 html {
   overflow-y: scroll;
-  scrollbar-color: #ffaaaf #760005;
-  scrollbar-width: thin;
 }
 
 :root {
   --primary: #00000083;
-  --input: rgba(0, 0, 0, 0.566);
+  --input: rgb(0, 0, 0);
   --button: #558e59fa;
   --button-text: #86ffc7;
   --danger: red;
@@ -40,7 +38,7 @@ html {
   letter-spacing: 1px;
   font-size: 1.1em;
   font-weight: 200;
-
+  color: white;
   outline: none;
   border: none;
   padding: 0.2em 0.5em;
@@ -52,7 +50,7 @@ input::placeholder {
   font-style: italic;
 }
 .select {
-  border: 1px solid var(--action-active);
+  border: 1px solid white;
   border-radius: 5px;
   &:focus {
     border-color: white;
@@ -74,22 +72,26 @@ input::placeholder {
   padding: 0.7rem 2rem;
   color: var(--button-text);
   background-color: var(--button);
-  font-family: "Metin", sans-serif;
+  font-family: "Audiowide", sans-serif;
+  font-size: 16px;
   border-radius: 15px;
-  text-decoration: dashed;
-  box-shadow: -1px -1px 20px 0px rgba(255, 255, 255, 0.481);
+  text-align: center;
   transition-duration: 0.3s;
+  &:hover {
+    background-color: #6db472fa;
+  }
 }
 
 .button:disabled {
-  color: gray;
+  color: black;
   box-shadow: none;
-  background-color: var(--primary);
+  background-color: gray;
 }
 .title {
   color: var(--logo);
   text-align: start;
-  font-size: calc(16px + 0.3vw);
+  font-family: "Permanent Marker", sans-serif;
+  font-size: calc(16px + 1vw);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -114,13 +116,14 @@ input::placeholder {
 .action {
   all: unset;
   color: var(--logo);
-  font-size: 16px;
-  font-family: "Metin", sans-serif;
+  font-size: calc(16px + 0.3vw);
+  font-family: "Audiowide", sans-serif;
   font-weight: 600;
   transition-duration: 0.5s;
   text-align: center;
   cursor: pointer;
   text-wrap: nowrap;
+
   &:hover {
     color: var(--logo-active);
   }

@@ -3,8 +3,7 @@
   top: 0;
   z-index: 1000;
   width: 100%;
-  display: grid;
-  grid-template-columns: 0.2fr 0.4fr 1fr 0.4fr 0.2fr;
+
   height: 4rem;
   z-index: 100;
 }
@@ -14,11 +13,6 @@
   justify-content: end;
   z-index: 100;
   background-color: transparent;
-}
-.action {
-  padding: 0.7rem 2rem;
-  grid-column: 4;
-  margin: auto;
 }
 
 .back-top-container {
@@ -32,13 +26,24 @@
   }
 }
 .home {
-  transform: scale(2);
+  transform: scale(3);
+  position: absolute;
+  padding: 0.2rem 0.7rem;
+  top: 2rem;
+  left: 10%;
+  background-color: var(--primary);
+  border-radius: 0 0 10px 10px;
 }
 .back-top {
   display: none;
   padding: 0;
 }
-
+.back-top-active {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0.5rem 1rem;
+}
 @media screen and (max-width: 1100px) {
   .back-top-container {
     background-color: var(--primary);

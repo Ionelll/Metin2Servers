@@ -1,12 +1,22 @@
 .container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  all: unset;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background-color: var(--primary);
 }
 .img-container {
   position: relative;
+
   display: flex;
   img {
     width: 100%;
     object-fit: contain;
   }
+}
+.title {
+  font-size: larger;
+  text-align: center;
+  margin: 0;
+  width: 100%;
 }

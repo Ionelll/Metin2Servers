@@ -1,5 +1,28 @@
 <div class="grid">
-  <div *ngFor="let server of servers">
+  <div class="title">Top Servers</div>
+  <img
+    src="../../../assets/border.webp"
+    alt=""
+    class="border border-top-left"
+  />
+  <img
+    src="../../../assets/border.webp"
+    alt=""
+    class="border border-top-right"
+  />
+
+  <div *ngFor="let server of servers" class="server">
     <app-promoted-card [server]="server"></app-promoted-card>
   </div>
+
+  <img
+    src="../../../assets/border.webp"
+    alt=""
+    class="border border-bottom-left"
+  />
+  <img
+    src="../../../assets/border.webp"
+    alt=""
+    class="border border-bottom-right"
+  />
 </div>

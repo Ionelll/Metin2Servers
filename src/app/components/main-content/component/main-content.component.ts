@@ -1,12 +1,9 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { ServerCardComponent } from '../subComponents/server-card/server-card.component';
-import { NgFor } from '@angular/common';
 import { CommonModule } from '@angular/common';
 import { ServerService } from '../../../services/server.service';
-import { MatIconModule } from '@angular/material/icon';
 import { ServerModel } from '../../../models/server.model';
-import { ServersConstant } from '../../../models/servers.constant';
 import { FilterService } from '../services/filter.service';
 import { FilterModalComponent } from '../subComponents/filter-modal/filter-modal.component';
 import { FormsModule } from '@angular/forms';
@@ -18,7 +15,6 @@ import { FormsModule } from '@angular/forms';
     RouterOutlet,
     ServerCardComponent,
     CommonModule,
-    MatIconModule,
     FilterModalComponent,
     FormsModule,
   ],
