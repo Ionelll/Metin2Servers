@@ -2,10 +2,13 @@ export var ServersConstant = [
   {
     name: 'Thor Legends Reborn',
     rating: 12,
-    languages: ['Ro'],
+    languages: [
+      'https://twemoji.maxcdn.com/2/svg/1f1e9-1f1ea.svg',
+      'https://twemoji.maxcdn.com/2/svg/1f1f9-1f1e8.svg',
+    ],
     category: 'OldSchool',
     focus: ['pvp'],
-    banner: '../../../../../assets/login-background.jpg',
+    banner: '../../../../../assets/banner-thor.gif',
     playerBase: 32155,
     isPremium: true,
     description:
@@ -14,11 +17,13 @@ export var ServersConstant = [
   {
     name: 'Zenit - Beyond Limits',
     rating: 3,
-    languages: ['Ger'],
+    languages: [
+      'https://twemoji.maxcdn.com/2/svg/1f1e7-1f1ea.svg',
+      'https://twemoji.maxcdn.com/2/svg/1f1e7-1f1ea.svg',
+    ],
     category: 'OldSchool',
     focus: ['pvp'],
-    banner:
-      'https://metins-images.s3.amazonaws.com/media/server_images/Banner1434246577468x190.gif',
+    banner: '../../../../../assets/banner-zenit.gif',
     description:
       'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo aspernatur, eligendi adipisci accusamus ipsam unde consectetur nesciunt laboriosam ut pariatur quo asperiores rem iure, error sunt tempora hic odit alias earum commodi. Laborum molestias corporis doloribus corrupti minus quos ut recusandae quod est tempora repudiandae iure esse consectetur odit vel iste ipsum quasi, aspernatur debitis rerum explicabo ratione hic delectus magnam! Necessitatibus vero beatae ab nobis fugiat nihil autem porro atque incidunt explicabo blanditiis aperiam aut accusamus repellendus, iusto placeat qui vitae amet. Exercitationem doloremque ex natus nisi perferendis a modi tempore voluptate quisquam facere, minima facilis? Magni, recusandae natus!',
   },
@@ -26,45 +31,60 @@ export var ServersConstant = [
     name: 'Shiva.International',
     rating: 2,
     category: 'NewSchool',
-    languages: ['Ro'],
+    languages: ['../../../../../assets/international.png'],
     focus: ['pve'],
-    banner:
-      'https://metins-images.s3.amazonaws.com/media/server_images/Banner1434246577468x190.gif',
+    banner: '../../../../../assets/banner-shiva.gif',
     isPremium: true,
+    website: 'https://shiva.international/',
   },
   {
-    name: 'Ashiro2',
+    name: 'Osiris2 - Power unleashed',
     rating: 4,
     isPremium: true,
     category: 'NewSchool',
-    languages: ['Ro'],
+    languages: [
+      'https://twemoji.maxcdn.com/2/svg/1f1e6-1f1f1.svg',
+      'https://twemoji.maxcdn.com/2/svg/1f1e6-1f1f7.svg',
+      'https://twemoji.maxcdn.com/2/svg/1f1e6-1f1fa.svg',
+      'https://twemoji.maxcdn.com/2/svg/1f1e7-1f1e6.svg',
+      'https://twemoji.maxcdn.com/2/svg/1f1e7-1f1ea.svg',
+    ],
     focus: ['pve'],
-    banner: '../../../../../assets/login-background.jpg',
+    banner: '../../../../../assets/banner-osiris.gif',
   },
   {
     name: 'Loranda2 - Hype Server - Start Soon',
     rating: 3,
     isPremium: true,
     category: 'NewSchool',
-    languages: ['Ro'],
+    languages: [
+      'https://twemoji.maxcdn.com/2/svg/1f1e7-1f1ea.svg',
+      'https://twemoji.maxcdn.com/2/svg/1f1e7-1f1ea.svg',
+    ],
     focus: ['pve'],
-    banner: '../../../../../assets/login-background.jpg',
+    banner: '../../../../../assets/banner-loranda.png',
   },
   {
     name: 'Azyrah',
     rating: 4,
-    isPremium: true,
+
     category: 'NewSchool',
-    languages: ['Ro'],
+    languages: [
+      'https://twemoji.maxcdn.com/2/svg/1f1e7-1f1ea.svg',
+      'https://twemoji.maxcdn.com/2/svg/1f1e7-1f1ea.svg',
+    ],
     focus: ['pve'],
     banner: '../../../../../assets/login-background.jpg',
   },
   {
     name: 'Age of Magis',
     rating: 2,
-    isPremium: true,
+
     category: 'NewSchool',
-    languages: ['Ro'],
+    languages: [
+      'https://twemoji.maxcdn.com/2/svg/1f1e7-1f1ea.svg',
+      'https://twemoji.maxcdn.com/2/svg/1f1e7-1f1ea.svg',
+    ],
     focus: ['pve'],
     banner: '../../../../../assets/login-background.jpg',
   },

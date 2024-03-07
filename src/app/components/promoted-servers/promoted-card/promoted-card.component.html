@@ -1,10 +1,27 @@
 <a class="container" href="{{ server.website }}" target="_blank">
-  <p class="title">{{ server.name }}</p>
-  <div class="img-container">
-    <img [src]="server.banner" alt="logo" />
+  <img [src]="server.banner" alt="logo" class="logo" />
+  <div class="languages">
+    @for( item of server.languages; track server._id){
+
+    <img class="language" src="{{ item }}" alt="" />
+    }
   </div>
-  <div class="details">
-    <p class="label">{{ server.languages }}</p>
-    <p class="label">{{ server.description1 }}</p>
+
+  <div class="rating">
+    <mat-icon [ngClass]="{ star: true, 'star-active': server.rating >= 5 }"
+      >star_rate</mat-icon
+    >
+    <mat-icon [ngClass]="{ star: true, 'star-active': server.rating >= 4 }"
+      >star_rate</mat-icon
+    >
+    <mat-icon [ngClass]="{ star: true, 'star-active': server.rating >= 3 }"
+      >star_rate</mat-icon
+    >
+    <mat-icon [ngClass]="{ star: true, 'star-active': server.rating >= 2 }"
+      >star_rate</mat-icon
+    >
+    <mat-icon [ngClass]="{ star: true, 'star-active': server.rating >= 1 }"
+      >star_rate</mat-icon
+    >
   </div>
 </a>

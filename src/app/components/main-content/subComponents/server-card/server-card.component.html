@@ -29,7 +29,12 @@
         <p class="text">{{ item.category }}</p>
 
         <label class="label">Languages</label>
-        <p class="text">{{ item.languages }}</p>
+        <div class="languages">
+          @for( item of item.languages; track item){
+
+          <img class="language" src="{{ item }}" alt="" />
+          }
+        </div>
 
         <label class="label">Focus</label>
         <p class="text">{{ item.focus }}</p>

@@ -95,7 +95,7 @@
 .text {
   color: white;
   font-weight: 300;
-
+  font-family: "Poppins", sans-serif;
   text-align: start;
   margin: 0;
 }
@@ -125,7 +125,7 @@
   height: 2.5rem;
   bottom: -3.5rem;
   left: 0;
-  background-color: black;
+  background-color: rgb(10, 10, 10);
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -158,6 +158,17 @@ hr {
   display: flex;
   justify-content: start;
   align-items: center;
+}
+.languages {
+  display: flex;
+
+  align-items: start;
+  // background-color: var(--primary);
+}
+.language {
+  margin: 0;
+  height: 1.5rem;
+  object-fit: cover;
 }
 
 @media screen and (max-width: 1000px) {
