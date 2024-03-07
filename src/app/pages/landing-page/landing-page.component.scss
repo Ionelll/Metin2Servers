@@ -3,3 +3,8 @@
   gap: 7rem;
   flex-direction: column;
 }
+@media screen and (max-width: 800px) {
+  .logo {
+    display: none;
+  }
+}

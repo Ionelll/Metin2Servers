@@ -40,13 +40,16 @@
         <p class="text">{{ item.focus }}</p>
 
         <label class="label">Player base</label>
-        <p class="text">{{ item.playerBase }}</p>
+        <span class="text"
+          >{{ item.playerBase }}
+          <div *ngIf="media">&nbsp;players</div>
+        </span>
       </div>
     </div>
   </div>
   <div class="actions" *ngIf="hover" @slide>
     <div class="rate">
-      <label class="label">Your Rating</label>
+      <label class="label show">Your Rating</label>
       <mat-icon
         [ngClass]="{
           star: true,

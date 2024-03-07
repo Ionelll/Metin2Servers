@@ -70,9 +70,14 @@
 }
 @media screen and (max-width: 600px) {
   .card-grid {
-    padding: 1rem;
+    padding: 0;
     display: flex;
     flex-direction: column;
     gap: 5rem;
+    margin: 0.5em;
   }
+  // .filters-container {
+  //   margin-left: 0;
+  //   margin-right: 0;
+  // }
 }

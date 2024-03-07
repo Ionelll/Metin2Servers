@@ -12,17 +12,19 @@ import {
   transition,
   trigger,
 } from '@angular/animations';
+import { LogoComponent } from '../logo/logo.component';
+import { MatIcon } from '@angular/material/icon';
 
 @Component({
   selector: 'app-hero',
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, RouterLink, LogoComponent, MatIcon],
   templateUrl: './hero.component.html',
   styleUrl: './hero.component.scss',
   animations: [
     trigger('slide', [
       transition('* <=> *', [
-        query(':leave', [style({ position: 'absolute', display: 'none' })], {
+        query(':leave', [style({ display: 'none' })], {
           optional: true,
         }),
 
@@ -30,7 +32,7 @@ import {
           ':enter',
           [
             style({ transform: 'translateX(100%)' }),
-            animate('0.3s ease', style({ transform: 'translateX(0)' })),
+            animate('0.5s ease', style({ transform: 'translateX(0)' })),
           ],
           { optional: true }
         ),

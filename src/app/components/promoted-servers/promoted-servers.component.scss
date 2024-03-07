@@ -10,6 +10,7 @@
   background-position: top;
   background-size: cover;
   background-size: 100%;
+
   align-items: center;
   margin: auto;
   position: relative;
@@ -64,3 +65,8 @@
 // .server-container::-webkit-scrollbar {
 //   display: none;
 // }
+@media screen and (max-width: 800px) {
+  .grid {
+    padding: 1em 0.5em;
+  }
+}

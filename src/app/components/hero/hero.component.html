@@ -1,4 +1,5 @@
 <div class="hero" [@slide]="active">
+  <app-logo class="logo"></app-logo>
   <div class="text-container">
     <p class="text" *ngIf="active === 0">
       Enjoy epic battles <br />
@@ -17,14 +18,31 @@
     </p>
   </div>
   <div class="actions">
-    <a routerLink="login" class="call-action" *ngIf="!user"> LOGIN</a>
-    <a routerLink="signup" class="call-action signup" *ngIf="!user">SIGNUP </a>
+    <a
+      routerLink="login"
+      class="call-action"
+      *ngIf="currentRoute === '/' && !user && media > 700"
+    >
+      LOGIN</a
+    >
+    <a
+      routerLink="signup"
+      class="call-action signup"
+      *ngIf="currentRoute === '/' && !user && media > 700"
+      >SIGNUP
+    </a>
     <a
       routerLink="profile"
       class="call-action signup"
-      *ngIf="currentRoute === '/' && user"
+      *ngIf="currentRoute === '/' && user && media > 700"
     >
       Account
     </a>
+    <a
+      routerLink="profile"
+      class="call-action"
+      *ngIf="currentRoute === '/' && media < 700"
+      ><mat-icon class="icon">menu</mat-icon></a
+    >
   </div>
 </div>
