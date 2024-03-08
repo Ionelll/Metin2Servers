@@ -16,7 +16,10 @@ export class NavigationComponent {
   currentRoute: string = '';
   constructor(private router: Router) {
     this.router.events.subscribe((res) => {
-      if (res instanceof NavigationEnd) this.currentRoute = res.url;
+      if (res instanceof NavigationEnd) {
+        this.currentRoute = res.url;
+        console.log(res.url);
+      }
     });
   }
   goTop() {

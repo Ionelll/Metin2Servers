@@ -32,14 +32,14 @@
       >SIGNUP
     </a>
     <a
-      routerLink="profile"
-      class="call-action signup"
+      routerLink="profile/security"
+      class="call-action"
       *ngIf="currentRoute === '/' && user && media > 700"
     >
       Account
     </a>
     <a
-      routerLink="profile"
+      routerLink="profile/security"
       class="call-action"
       *ngIf="currentRoute === '/' && media < 700"
       ><mat-icon class="icon">menu</mat-icon></a

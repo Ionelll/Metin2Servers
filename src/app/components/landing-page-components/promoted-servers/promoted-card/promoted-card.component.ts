@@ -1,8 +1,7 @@
 import { Component, Input } from '@angular/core';
-import { ServerModel } from '../../../models/server.model';
+import { ServerModel } from '../../../../models/server.model';
 import { MatIconModule } from '@angular/material/icon';
 import { CommonModule } from '@angular/common';
-import { CountryFlags } from '../../../models/country-flags';
 
 @Component({
   selector: 'app-promoted-card',

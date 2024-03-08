@@ -2,7 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Subscription } from 'rxjs';
 import { RouterLink } from '@angular/router';
-import { AuthenticationService } from '../../services/authentication.service';
+import { AuthenticationService } from '../../../services/authentication.service';
 import { Router, NavigationEnd } from '@angular/router';
 import {
   animate,
@@ -12,7 +12,7 @@ import {
   transition,
   trigger,
 } from '@angular/animations';
-import { LogoComponent } from '../logo/logo.component';
+import { LogoComponent } from '../../logo/logo.component';
 import { MatIcon } from '@angular/material/icon';
 
 @Component({

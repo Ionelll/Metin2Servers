@@ -3,7 +3,7 @@ import { FilterService } from '../../services/filter.service';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
-import { ServerService } from '../../../../services/server.service';
+import { ServerService } from '../../../../../services/server.service';
 
 @Component({
   selector: 'app-filter-modal',

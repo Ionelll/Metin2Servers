@@ -1,0 +1,26 @@
+.container {
+  background-color: black;
+  border-radius: 15px;
+
+  gap: 1rem;
+  display: grid;
+  grid-template-columns: 0.3fr 1fr 0.3fr;
+  align-items: center;
+  padding: 0.5rem 2rem 2rem 2rem;
+}
+.title {
+  grid-row: 1;
+  grid-column: 1/4;
+}
+
+.label {
+  grid-column: 1;
+}
+
+.input {
+  outline: 1px solid rgba(255, 255, 255, 0.581);
+  border-radius: 5px;
+}
+.input:disabled {
+  outline: none;
+}

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PromotedCardComponent } from './promoted-card/promoted-card.component';
-import { ServerModel } from '../../models/server.model';
-import { ServerService } from '../../services/server.service';
+import { ServerModel } from '../../../models/server.model';
+import { ServerService } from '../../../services/server.service';
 import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-promoted-servers',

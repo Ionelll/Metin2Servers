@@ -1,0 +1,16 @@
+<div class="container">
+  <app-logo routerLink="/"></app-logo>
+  <div class="actions">
+    <a routerLink="security" class="action" routerLinkActive="active"
+      >Security</a
+    >
+    <a routerLink="server" class="action" routerLinkActive="active"
+      >My Server</a
+    >
+    <a routerLink="events" class="action" routerLinkActive="active"
+      >Share Event</a
+    >
+    <a routerLink="tickets" class="action" routerLinkActive="active">Tickets</a>
+  </div>
+  <button class="action" (click)="logout()">Logout</button>
+</div>

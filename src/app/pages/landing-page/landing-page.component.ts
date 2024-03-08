@@ -1,17 +1,16 @@
 import { Component } from '@angular/core';
-import { MainContentComponent } from '../../components/main-content/component/main-content.component';
 import { LogoComponent } from '../../components/logo/logo.component';
-import { HeroComponent } from '../../components/hero/hero.component';
-import { PromotedServersComponent } from '../../components/promoted-servers/promoted-servers.component';
-
+import { HeroComponent } from '../../components/landing-page-components/hero/hero.component';
+import { PromotedServersComponent } from '../../components/landing-page-components/promoted-servers/promoted-servers.component';
+import { MainContentComponent } from '../../components/landing-page-components/main-content/component/main-content.component';
 @Component({
   selector: 'app-landing-page',
   standalone: true,
   imports: [
     MainContentComponent,
+    PromotedServersComponent,
     HeroComponent,
     LogoComponent,
-    PromotedServersComponent,
   ],
   templateUrl: './landing-page.component.html',
   styleUrl: './landing-page.component.scss',

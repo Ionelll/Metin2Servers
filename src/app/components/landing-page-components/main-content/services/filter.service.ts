@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { ServerService } from '../../../services/server.service';
 
 @Injectable({ providedIn: 'root' })
 export class FilterService {
