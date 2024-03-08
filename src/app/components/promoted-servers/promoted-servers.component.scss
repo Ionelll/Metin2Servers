@@ -1,10 +1,10 @@
 .grid {
   background-color: rgb(0, 0, 0);
-  padding: 3rem;
+  padding: 5rem;
 
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-  row-gap: 2rem;
+  row-gap: 7rem;
   column-gap: 3rem;
   background-image: url("../../../assets/peakpx.jpg");
   background-position: top;
@@ -67,6 +67,6 @@
 // }
 @media screen and (max-width: 800px) {
   .grid {
-    padding: 1em 0.5em;
+    padding: 5rem 0.5em;
   }
 }

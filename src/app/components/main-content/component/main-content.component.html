@@ -1,21 +1,22 @@
 <app-filter-modal></app-filter-modal>
-<div class="filters-container">
-  <div class="actions">
-    <button class="action" (click)="openModal()">FILTERS</button>
-    <button class="action" (click)="reloadServers()">Reset</button>
+<div class="container">
+  <div class="filters-container">
+    <div class="actions">
+      <button class="action" (click)="openModal()">FILTERS</button>
+      <button class="action" (click)="reloadServers()">Reset</button>
+    </div>
+    <input
+      type="text"
+      class="input search"
+      placeholder="Search..."
+      [(ngModel)]="searchValue"
+      (input)="searchServer($event)"
+    />
   </div>
-  <input
-    type="text"
-    class="input search"
-    placeholder="Search..."
-    [(ngModel)]="searchValue"
-    (input)="searchServer($event)"
-  />
-</div>
-
-<div class="card-grid">
-  <p class="no-servers" *ngIf="noServers">! No servers found !</p>
-  <div *ngFor="let item of servers">
-    <app-server-card [item]="item"></app-server-card>
+  <div class="card-grid">
+    <p class="no-servers" *ngIf="noServers">! No servers found !</p>
+    <div *ngFor="let item of servers">
+      <app-server-card [item]="item"></app-server-card>
+    </div>
   </div>
 </div>

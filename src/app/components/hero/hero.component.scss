@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: 0.5fr 1fr 1fr 0.1fr;
   background-image: url("../../../assets/pixelcut-export.jpg");
-  background-position: left top;
+  background-position: 5% bottom;
   background-repeat: no-repeat;
   background-size: 100%;
   background-size: cover;
@@ -10,7 +10,7 @@
   row-gap: 4rem;
   align-items: end;
   position: relative;
-  min-height: 25rem;
+  height: 25rem;
   overflow: hidden;
 }
 

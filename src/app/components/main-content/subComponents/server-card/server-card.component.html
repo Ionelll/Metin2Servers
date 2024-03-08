@@ -25,10 +25,10 @@
 
       <hr />
       <div class="details">
-        <label class="label">School type</label>
+        <label class="label"> type:</label>
         <p class="text">{{ item.category }}</p>
 
-        <label class="label">Languages</label>
+        <label class="label">languages:</label>
         <div class="languages">
           @for( item of item.languages; track item){
 
@@ -36,14 +36,11 @@
           }
         </div>
 
-        <label class="label">Focus</label>
+        <label class="label">focus:</label>
         <p class="text">{{ item.focus }}</p>
 
-        <label class="label">Player base</label>
-        <span class="text"
-          >{{ item.playerBase }}
-          <div *ngIf="media">&nbsp;players</div>
-        </span>
+        <label class="label">players:</label>
+        <p class="text">{{ item.playerBase }}</p>
       </div>
     </div>
   </div>
