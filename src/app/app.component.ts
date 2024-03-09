@@ -67,6 +67,8 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     const token = localStorage.getItem('token');
-    if (token && token.length > 0) this.authService.checkToken();
+    if (token) {
+      this.authService.checkToken();
+    }
   }
 }

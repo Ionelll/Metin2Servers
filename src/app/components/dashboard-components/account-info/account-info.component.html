@@ -1,28 +1,34 @@
 <div class="container">
   <p class="title">Account info</p>
   <label for="email" class="label">email :</label>
-  <input class="input" type="text" [disabled]="!edit_email" value="user" />
-  <button class="action" (click)="edit_email = !edit_email" *ngIf="!edit_email">
+  <input class="input" id="email" type="text" readonly [(ngModel)]="email" />
+  <!-- <button class="action" (click)="edit_email = !edit_email" *ngIf="!edit_email">
     <mat-icon>edit</mat-icon>
   </button>
   <button class="action" (click)="edit_email = !edit_email" *ngIf="edit_email">
     <mat-icon>save</mat-icon>
-  </button>
-  <label for="password" class="label" *ngIf="!edit_password">password :</label>
+  </button> -->
+  <label for="password" class="label">password :</label>
   <input
     class="input"
+    id="password"
     type="password"
-    disabled
-    value="12353351"
-    *ngIf="!edit_password"
+    [disabled]="!edit_password"
+    [(ngModel)]="password"
   />
 
-  <p class="label" *ngIf="edit_password">Old Password</p>
-  <input type="email" class="input" *ngIf="edit_password" />
-  <p class="label" *ngIf="edit_password">New Password</p>
-  <input type="password" class="input" *ngIf="edit_password" />
-
-  <button class="action" (click)="edit_password = !edit_password">
+  <button
+    class="action"
+    *ngIf="!edit_password"
+    (click)="editPassword(); edit_password = !edit_password"
+  >
     <mat-icon>edit</mat-icon>
+  </button>
+  <button
+    class="action"
+    *ngIf="edit_password"
+    (click)="savePassword(); edit_password = !edit_password"
+  >
+    <mat-icon>save</mat-icon>
   </button>
 </div>
