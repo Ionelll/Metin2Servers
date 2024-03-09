@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Subject } from 'rxjs';
 import { UserModel } from '../models/user.model';
 
 @Injectable({ providedIn: 'root' })
@@ -9,7 +9,7 @@ export class AuthenticationService {
   constructor(private http: HttpClient, private router: Router) {}
 
   private loggedin = new BehaviorSubject<boolean>(false);
-  private user = new BehaviorSubject<UserModel>(undefined);
+  private user = new Subject<UserModel>();
 
   login(userInput: { email: string | null; password: string | null }) {
     if (userInput.email && userInput.password)

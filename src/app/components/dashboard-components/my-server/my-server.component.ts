@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { PaymentService } from '../../../services/payment.service';
 
 @Component({
   selector: 'app-my-server',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
   templateUrl: './my-server.component.html',
   styleUrl: './my-server.component.scss',
 })
-export class MyServerComponent {}
+export class MyServerComponent {
+  constructor(private paymentService: PaymentService) {}
+
+  redirectPayment() {
+    this.paymentService.redirectToPayment();
+  }
+}
