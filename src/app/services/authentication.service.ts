@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { BehaviorSubject, Subject } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 import { UserModel } from '../models/user.model';
 
 @Injectable({ providedIn: 'root' })
@@ -9,7 +9,8 @@ export class AuthenticationService {
   constructor(private http: HttpClient, private router: Router) {}
 
   private loggedin = new BehaviorSubject<boolean>(false);
-  private user = new Subject<UserModel>();
+  private user = new BehaviorSubject<UserModel>(undefined);
+  private paymentInfo = new BehaviorSubject(undefined);
 
   login(userInput: { email: string | null; password: string | null }) {
     if (userInput.email && userInput.password)
@@ -21,7 +22,8 @@ export class AuthenticationService {
         .subscribe((res) => {
           localStorage.setItem('token', res.token);
           this.loggedin.next(true);
-
+          this.setUser();
+          this.setPaymentInfo();
           this.router.navigateByUrl('');
         });
   }
@@ -39,6 +41,18 @@ export class AuthenticationService {
         });
     }
   }
+  setPaymentInfo() {
+    this.http
+      .get(
+        'https://metins-be.onrender.com/api/stripe/promote-subscription-info'
+      )
+      .subscribe((res) => {
+        this.paymentInfo.next(res);
+      });
+  }
+  getPaymentInfo() {
+    return this.paymentInfo.asObservable();
+  }
   checkToken() {
     this.http
       .get<{ message: string }>(
@@ -48,6 +62,7 @@ export class AuthenticationService {
         if (res && res.message === 'Sesion is valid') {
           this.loggedin.next(true);
           this.setUser();
+          this.setPaymentInfo();
         } else this.logout();
       });
   }
@@ -73,10 +88,11 @@ export class AuthenticationService {
     else return false;
   }
   logout() {
-    localStorage.removeItem('token');
     this.loggedin.next(false);
     this.http
-      .post('https://metins-be.onrender.com/api/logout', 'hello')
+      .post('https://metins-be.onrender.com/api/logout', null)
       .subscribe();
+
+    localStorage.removeItem('token');
   }
 }

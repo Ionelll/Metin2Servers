@@ -2,10 +2,13 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Subject } from 'rxjs';
 import { ServersConstant } from '../models/servers.constant';
 import { ServerModel } from '../models/server.model';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({ providedIn: 'root' })
 export class ServerService {
-  private Servers = new BehaviorSubject<ServerModel[]>(ServersConstant);
+  constructor(private http: HttpClient) {}
+
+  private Servers = new BehaviorSubject<ServerModel[]>([]);
   private filteredServers = new Subject<ServerModel[]>();
   private premiumServers = new BehaviorSubject<ServerModel[]>([]);
   getServers() {
@@ -14,12 +17,28 @@ export class ServerService {
   getFilteredServers() {
     return this.filteredServers.asObservable();
   }
-
   reloadServers() {
     this.filteredServers.next(this.Servers.value);
   }
-  setServers() {}
+  setServers() {
+    this.http
+      .get<{ count: 1; data: ServerModel[] }>(
+        'https://metins-be.onrender.com/api/server/servers'
+      )
+      .subscribe((res) => {
+        this.Servers.next(res.data);
+      });
+  }
 
+  setPremiumServers() {
+    this.http
+      .get<{ count: 1; data: ServerModel[] }>(
+        'https://metins-be.onrender.com/api/server/servers?is_premium=True'
+      )
+      .subscribe((res) => {
+        this.premiumServers.next(res.data);
+      });
+  }
   getPremiumServers() {
     return this.premiumServers.asObservable();
   }
@@ -48,7 +67,6 @@ export class ServerService {
     }
     const sortedServers = this.sortBy(servers, sortBy);
     if (order === 'Ascending') sortedServers.reverse();
-    console.log(sortedServers);
     this.filteredServers.next(sortedServers);
   }
 
@@ -59,5 +77,11 @@ export class ServerService {
     });
     const sortedServers = this.sortBy(filteredServers, 'rating');
     this.filteredServers.next(sortedServers.reverse());
+  }
+
+  saveServer(server: FormData) {
+    this.http
+      .post('https://metins-be.onrender.com/api/server', server)
+      .subscribe();
   }
 }

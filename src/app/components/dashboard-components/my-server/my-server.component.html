@@ -1,1 +1,79 @@
-<button (click)="redirectPayment()" class="action">Promote your Server</button>
+<button (click)="redirectPayment()" class="action" *ngIf="!paymentInfo?.active">
+  Promote your Server
+</button>
+
+<form class="form-container" [formGroup]="server">
+  <div class="img-container" (click)="fileinput.click()">
+    <img src="{{ activeImage }}" alt="" class="logo" *ngIf="activeImage" />
+    <div *ngIf="!activeImage" class="action">Upload Logo</div>
+
+    <input
+      type="file"
+      #fileinput
+      hidden
+      (change)="onFileChange($event); logoChanged = true"
+    />
+  </div>
+  <p class="label">name:</p>
+  <input type="text" class="input" formControlName="name" />
+  <p class="label">website:</p>
+  <input type="text" class="input" formControlName="website" />
+  <p class="label">max level:</p>
+  <input type="text" class="input" formControlName="maxLevel" />
+  <p class="label">category:</p>
+  <select class="input" formControlName="category">
+    <option value="Old School">Old School</option>
+    <option value="New School">New School</option>
+    <option value="Mixed">Mixed</option>
+  </select>
+  <p class="label">focus:</p>
+  <select class="input" formControlName="focus">
+    <option value="Old School">PVE</option>
+    <option value="New School">PVP</option>
+    <option value="Mixed">PVE, PVP</option>
+  </select>
+  <p class="label">release date:</p>
+  <input class="input" type="date" formControlName="releaseDate" />
+  <p class="label">player base:</p>
+  <input type="text" class="input" formControlName="playerBase" />
+  <p class="label lang">languages:</p>
+  <div class="lang-container">
+    <div class="international-container">
+      <input
+        type="checkbox"
+        (change)="changeInternational()"
+        [(ngModel)]="international"
+        [ngModelOptions]="{ standalone: true }"
+      />
+      <p class="label">International</p>
+    </div>
+    <div formArrayName="languages" class="languages">
+      <div
+        class="select-container"
+        *ngFor="
+          let language of server.controls.languages.controls;
+          index as i;
+          let l = last
+        "
+      >
+        <select class="input" formControlName="{{ i }}">
+          <option *ngFor="let flag of countryFlags" [value]="flag.flag">
+            {{ flag.country }}
+          </option>
+        </select>
+        <button class="action add minus" *ngIf="!l" (click)="removeLanguage(i)">
+          <mat-icon>delete-outline</mat-icon>
+        </button>
+        <button
+          class="action add"
+          (click)="addLanguage()"
+          [disabled]="disableLanguages"
+          *ngIf="l"
+        >
+          <mat-icon>add</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+</form>
+<button class="button" (click)="saveServer()">Save</button>

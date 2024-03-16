@@ -16,13 +16,8 @@ export class PromotedServersComponent implements OnInit {
   constructor(private serversService: ServerService) {}
 
   ngOnInit(): void {
-    this.serversService.getServers().subscribe((res) => {
+    this.serversService.getPremiumServers().subscribe((res) => {
       this.servers = res;
-      this.filterPromotedServers();
     });
-  }
-
-  filterPromotedServers() {
-    this.servers = this.servers.filter((item) => item.isPremium === true);
   }
 }

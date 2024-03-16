@@ -2,8 +2,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  grid-column: 1/4;
-  grid-row: 1;
+
   align-items: center;
   cursor: pointer;
   div {
@@ -12,33 +11,27 @@
 }
 
 .m,
-.number,
-.etin {
+.number {
   font-family: "Metin", sans-serif;
-  font-size: calc(16px + 2vw);
+  font-size: calc(24px + 2vw);
   color: var(--logo);
-  margin: 0;
+  margin: auto;
   // -webkit-text-stroke: 2px black;
 }
 // .servers {
 //   font-family: "Poppins", sans-serif;
 // }
-.etin {
-  font-size: calc(16px + 1vw);
-  margin-bottom: 4px;
-  margin-top: auto;
-}
 
 .servers {
   font-family: "Permanent Marker", cursive;
-  font-size: calc(16px + 0.7vw);
+  font-size: calc(16px + 0.4vw);
   margin: 0;
+
   color: var(--logo);
-  margin-top: -7px;
+  margin-top: -10px;
   margin-left: -10px;
-  color: logo;
 }
 .number {
   color: red;
-  margin-left: 5px;
+  // margin-left: -10px;
 }

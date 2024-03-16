@@ -13,6 +13,7 @@ import {
 } from '@angular/animations';
 import { ChildrenOutletContexts } from '@angular/router';
 import { AuthenticationService } from './services/authentication.service';
+import { ServerService } from './services/server.service';
 
 @Component({
   selector: 'app-root',
@@ -54,7 +55,8 @@ export class AppComponent implements OnInit {
   constructor(
     private contexts: ChildrenOutletContexts,
     private router: Router,
-    private authService: AuthenticationService
+    private authService: AuthenticationService,
+    private serverService: ServerService
   ) {
     this.loading = true;
   }
@@ -70,5 +72,7 @@ export class AppComponent implements OnInit {
     if (token) {
       this.authService.checkToken();
     }
+    this.serverService.setServers();
+    this.serverService.setPremiumServers();
   }
 }

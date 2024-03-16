@@ -2,7 +2,7 @@
   <img [src]="server.banner" alt="logo" class="logo" />
   <div class="details">
     <div class="languages">
-      @for( item of server.languages; track server._id){
+      @for( item of server.languages; track server.server_id){
 
       <img class="language" src="{{ item }}" alt="" />
       }

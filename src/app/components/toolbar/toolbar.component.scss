@@ -1,0 +1,20 @@
+.container {
+  background-color: #000000;
+
+  width: 100%;
+  display: grid;
+  grid-template-columns: 0.5fr auto 0.5fr;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.actions {
+  display: flex;
+  gap: 1rem;
+  position: relative;
+  grid-column: 3;
+  justify-content: center;
+}
+.logo {
+  grid-column: 1;
+}

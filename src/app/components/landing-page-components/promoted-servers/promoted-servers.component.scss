@@ -1,9 +1,9 @@
 .grid {
   background-color: rgb(0, 0, 0);
   padding: 5rem;
-
+  justify-content: center;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 0.5fr));
   row-gap: 7rem;
   column-gap: 3rem;
   background-image: url("../../../../assets/peakpx.jpg");

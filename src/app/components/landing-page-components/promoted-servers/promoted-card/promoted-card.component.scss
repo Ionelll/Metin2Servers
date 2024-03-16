@@ -56,16 +56,11 @@
   animation: fade 0.2s ease;
 }
 
-.img-container {
-  position: relative;
-
-  border-radius: 10px;
-}
 .logo {
   object-fit: contain;
 
   width: 100%;
-
+  max-height: 15rem;
   border-radius: 10px 10px 0 0;
 }
 .details {

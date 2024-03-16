@@ -7,7 +7,7 @@ export var ServersConstant = [
       'https://twemoji.maxcdn.com/2/svg/1f1f9-1f1e8.svg',
     ],
     category: 'OldSchool',
-    focus: ['pvp'],
+    focus: 'pvp',
     banner: '../../../../../assets/banner-thor.gif',
     playerBase: 32155,
     isPremium: true,
@@ -22,7 +22,7 @@ export var ServersConstant = [
       'https://twemoji.maxcdn.com/2/svg/1f1e7-1f1ea.svg',
     ],
     category: 'OldSchool',
-    focus: ['pvp'],
+    focus: 'pvp',
     banner: '../../../../../assets/banner-zenit.gif',
     description:
       'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo aspernatur, eligendi adipisci accusamus ipsam unde consectetur nesciunt laboriosam ut pariatur quo asperiores rem iure, error sunt tempora hic odit alias earum commodi. Laborum molestias corporis doloribus corrupti minus quos ut recusandae quod est tempora repudiandae iure esse consectetur odit vel iste ipsum quasi, aspernatur debitis rerum explicabo ratione hic delectus magnam! Necessitatibus vero beatae ab nobis fugiat nihil autem porro atque incidunt explicabo blanditiis aperiam aut accusamus repellendus, iusto placeat qui vitae amet. Exercitationem doloremque ex natus nisi perferendis a modi tempore voluptate quisquam facere, minima facilis? Magni, recusandae natus!',
@@ -32,7 +32,7 @@ export var ServersConstant = [
     rating: 2,
     category: 'NewSchool',
     languages: ['../../../../../assets/international.png'],
-    focus: ['pve'],
+    focus: 'pve',
     banner: '../../../../../assets/banner-shiva.gif',
     isPremium: true,
     website: 'https://shiva.international/',
@@ -49,7 +49,7 @@ export var ServersConstant = [
       'https://twemoji.maxcdn.com/2/svg/1f1e7-1f1e6.svg',
       'https://twemoji.maxcdn.com/2/svg/1f1e7-1f1ea.svg',
     ],
-    focus: ['pve'],
+    focus: 'pve',
     banner: '../../../../../assets/banner-osiris.gif',
   },
   {
@@ -61,7 +61,7 @@ export var ServersConstant = [
       'https://twemoji.maxcdn.com/2/svg/1f1e7-1f1ea.svg',
       'https://twemoji.maxcdn.com/2/svg/1f1e7-1f1ea.svg',
     ],
-    focus: ['pve'],
+    focus: 'pve',
     banner: '../../../../../assets/banner-loranda.png',
   },
   {
@@ -73,7 +73,7 @@ export var ServersConstant = [
       'https://twemoji.maxcdn.com/2/svg/1f1e7-1f1ea.svg',
       'https://twemoji.maxcdn.com/2/svg/1f1e7-1f1ea.svg',
     ],
-    focus: ['pve'],
+    focus: 'pve',
     banner: '../../../../../assets/login-background.jpg',
   },
   {
@@ -85,7 +85,7 @@ export var ServersConstant = [
       'https://twemoji.maxcdn.com/2/svg/1f1e7-1f1ea.svg',
       'https://twemoji.maxcdn.com/2/svg/1f1e7-1f1ea.svg',
     ],
-    focus: ['pve'],
+    focus: 'pve',
     banner: '../../../../../assets/login-background.jpg',
   },
   {
@@ -93,7 +93,7 @@ export var ServersConstant = [
     rating: 5,
     category: 'NewSchool',
     languages: ['Ro'],
-    focus: ['pve'],
+    focus: 'pve',
     banner: '../../../../../assets/login-background.jpg',
   },
   {
@@ -101,7 +101,7 @@ export var ServersConstant = [
     rating: 4,
     category: 'NewSchool',
     languages: ['Ro'],
-    focus: ['pve'],
+    focus: 'pve',
     banner: '../../../../../assets/login-background.jpg',
   },
   {
@@ -109,7 +109,7 @@ export var ServersConstant = [
     rating: 4,
     category: 'NewSchool',
     languages: ['Ro'],
-    focus: ['pve'],
+    focus: 'pve',
     banner: '../../../../../assets/login-background.jpg',
   },
   {
@@ -117,7 +117,7 @@ export var ServersConstant = [
     rating: 2,
     category: 'NewSchool',
     languages: ['Ro'],
-    focus: ['pve'],
+    focus: 'pve',
     banner: '../../../../../assets/login-background.jpg',
   },
   {
@@ -125,7 +125,7 @@ export var ServersConstant = [
     rating: 2,
     category: 'NewSchool',
     languages: ['Ro'],
-    focus: ['pve'],
+    focus: 'pve',
     banner: '../../../../../assets/login-background.jpg',
   },
   {
@@ -133,7 +133,7 @@ export var ServersConstant = [
     rating: 2,
     category: 'NewSchool',
     languages: ['Ro'],
-    focus: ['pve'],
+    focus: 'pve',
     banner: '../../../../../assets/login-background.jpg',
   },
   {
@@ -141,7 +141,7 @@ export var ServersConstant = [
     rating: 2,
     category: 'NewSchool',
     languages: ['Ro'],
-    focus: ['pve'],
+    focus: 'pve',
     banner: '../../../../../assets/login-background.jpg',
   },
   {
@@ -149,7 +149,7 @@ export var ServersConstant = [
     rating: 1,
     category: 'NewSchool',
     languages: ['Ro'],
-    focus: ['pve'],
+    focus: 'pve',
     banner: '../../../../../assets/login-background.jpg',
   },
   {
@@ -157,7 +157,7 @@ export var ServersConstant = [
     rating: 0,
     category: 'NewSchool',
     languages: ['Ro', 'Ger'],
-    focus: ['pve'],
+    focus: 'pve',
     banner: '../../../../../assets/login-background.jpg',
   },
   {
@@ -165,7 +165,7 @@ export var ServersConstant = [
     rating: 0,
     category: 'NewSchool',
     languages: ['Ro'],
-    focus: ['pve'],
+    focus: 'pve',
     banner: '../../../../../assets/login-background.jpg',
   },
   {
@@ -173,7 +173,7 @@ export var ServersConstant = [
     rating: 0,
     category: 'NewSchool',
     languages: ['Ro'],
-    focus: ['pve'],
+    focus: 'pve',
     banner: '../../../../../assets/login-background.jpg',
   },
   {
@@ -181,7 +181,7 @@ export var ServersConstant = [
     rating: 0,
     category: 'NewSchool',
     languages: ['Ro'],
-    focus: ['pve'],
+    focus: 'pve',
     banner: '../../../../../assets/login-background.jpg',
   },
 ];

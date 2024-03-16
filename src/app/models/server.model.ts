@@ -1,16 +1,16 @@
 export interface ServerModel {
-  _id?: string;
+  server_id?: string;
+  user?: string;
   banner?: string;
   name: string;
-  description1?: string;
-  description2?: string;
   website?: string;
-  maxLevel?: string;
+  max_level?: string;
+  no_votes?: string;
   rating?: number;
   category?: string;
   releaseDate?: Date;
-  playerBase?: number;
-  languages?: string[];
-  focus?: string[];
-  isPremium?: boolean;
+  player_base?: number;
+  languages?: string;
+  focus?: string;
+  is_premium?: boolean;
 }

@@ -40,19 +40,7 @@ import { MatIcon } from '@angular/material/icon';
     ]),
   ],
 })
-export class HeroComponent implements OnInit, OnDestroy {
-  public currentRoute: string = '';
-  public media = window.innerWidth;
-  constructor(
-    private router: Router,
-    private authService: AuthenticationService
-  ) {
-    this.router.events.subscribe((res) => {
-      if (res instanceof NavigationEnd) this.currentRoute = res.url;
-    });
-  }
-  public userSub = new Subscription();
-  public user: boolean = false;
+export class HeroComponent implements OnInit {
   public active = 0;
 
   changeTimer() {
@@ -64,14 +52,8 @@ export class HeroComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.userSub = this.authService.checkLoggedin().subscribe((res) => {
-      this.user = res;
-    });
     setTimeout(() => {
       this.changeTimer();
     }, 5000);
-  }
-  ngOnDestroy(): void {
-    this.userSub.unsubscribe();
   }
 }
