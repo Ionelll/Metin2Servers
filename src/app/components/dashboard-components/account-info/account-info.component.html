@@ -15,7 +15,7 @@
   <label for="old" class="label" *ngIf="edit_password">Old password</label>
   <input
     type="text"
-    class="input"
+    class="input old"
     id="old"
     [(ngModel)]="oldPassword"
     *ngIf="edit_password"
@@ -23,7 +23,7 @@
   <label for="new" class="label" *ngIf="edit_password">New password</label>
   <input
     type="password"
-    class="input"
+    class="input old"
     id="new"
     [(ngModel)]="newPassword"
     *ngIf="edit_password"
@@ -35,11 +35,20 @@
   >
     <mat-icon>edit</mat-icon>
   </button>
-  <button
-    class="action"
-    *ngIf="edit_password"
-    (click)="savePassword(); edit_password = !edit_password"
-  >
-    <mat-icon>save</mat-icon>
-  </button>
+  <div class="change-actions">
+    <button
+      class="action"
+      *ngIf="edit_password"
+      (click)="savePassword(); edit_password = !edit_password"
+    >
+      <mat-icon>save</mat-icon>
+    </button>
+    <button
+      class="action"
+      *ngIf="edit_password"
+      (click)="edit_password = !edit_password"
+    >
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
 </div>

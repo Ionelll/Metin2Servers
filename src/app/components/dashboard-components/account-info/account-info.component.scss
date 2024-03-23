@@ -20,6 +20,13 @@
 .input {
   font-weight: 400;
 }
+.change-actions {
+  display: flex;
+  gap: 1rem;
+}
+.old {
+  border-bottom: 1px solid white;
+}
 .input:disabled {
   outline: none;
 }

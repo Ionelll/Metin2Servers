@@ -30,10 +30,7 @@ import { MatIcon } from '@angular/material/icon';
 
         query(
           ':enter',
-          [
-            style({ transform: 'translateX(100%)' }),
-            animate('0.5s ease', style({ transform: 'translateX(0)' })),
-          ],
+          [style({ opacity: 0 }), animate('1s ease', style({ opacity: 1 }))],
           { optional: true }
         ),
       ]),

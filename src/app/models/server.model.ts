@@ -10,7 +10,7 @@ export interface ServerModel {
   category?: string;
   releaseDate?: Date;
   player_base?: number;
-  languages?: string;
+  languages?: string[];
   focus?: string;
   is_premium?: boolean;
 }

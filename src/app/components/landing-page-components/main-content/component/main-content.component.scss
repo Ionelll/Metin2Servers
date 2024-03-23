@@ -1,6 +1,6 @@
 .container {
-  background-image: url("../../../../../assets/wallpaper-chinese-red-black.webp");
-  background-position: left bottom;
+  background-color: var(--primary);
+
   display: flex;
   flex-direction: column;
   gap: 5rem;
@@ -9,7 +9,7 @@
 }
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(20rem, 0.5fr));
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 0.3fr));
   row-gap: 7rem;
   column-gap: 2rem;
   padding: 3rem 3rem;

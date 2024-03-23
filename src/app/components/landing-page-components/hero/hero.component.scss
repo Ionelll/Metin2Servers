@@ -1,7 +1,5 @@
 .hero {
   display: flex;
-  justify-content: end;
-  align-items: start;
 
   // background-image: url("../../../../assets/banner.mp4");
   // background-position: 5% bottom;
@@ -9,23 +7,23 @@
   // background-size: 100%;
   // background-size: cover;
   padding: 2rem;
-  row-gap: 4rem;
-  align-items: end;
+
   position: relative;
-  height: 20rem;
+  height: 25rem;
   overflow: hidden;
 }
 
 .video {
-  object-fit: cover;
+  object-fit: contain;
   position: absolute;
-  bottom: -2rem;
+  bottom: 0;
   left: 0;
   min-width: 100%;
 }
 
 .text-container {
   position: relative;
+  margin: 2rem 15% auto auto;
 }
 
 .text {
@@ -46,10 +44,10 @@
 .number {
   color: red;
 }
-@media screen and (max-width: 1100) {
-  .video {
-  }
-}
+// @media screen and (max-width: 1100) {
+//   .video {
+//   }
+// }
 @media screen and (max-width: 800px) {
   .hero {
     display: flex;

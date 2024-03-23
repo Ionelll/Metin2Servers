@@ -6,7 +6,7 @@ body {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  background-color: #1e0002;
+  background-image: url("./assets/wallpaper-chinese-red-black.webp");
   user-select: none;
   scroll-behavior: smooth;
   font-family: "Poppins", sans-serif;
@@ -16,7 +16,7 @@ html {
 }
 
 :root {
-  --primary: rgba(0, 0, 0, 0.699);
+  --primary: rgba(0, 0, 0, 0.57);
   --input: rgb(0, 0, 0);
   --button: #558e59fa;
   --button-text: #86ffc7;

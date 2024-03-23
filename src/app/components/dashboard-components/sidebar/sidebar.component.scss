@@ -4,8 +4,8 @@
   position: fixed;
   left: 0;
   height: 100%;
-  background-color: black;
-  background-image: url("../../../../assets/wallpaper-chinese-red-black-upscaled.jpg");
+  background-color: var(--primary);
+
   padding: 3rem 2rem;
 }
 .actions {

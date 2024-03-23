@@ -22,7 +22,7 @@ export class ServerService {
   }
   setServers() {
     this.http
-      .get<{ count: 1; data: ServerModel[] }>(
+      .get<{ count: number; data: ServerModel[] }>(
         'https://metins-be.onrender.com/api/server/servers'
       )
       .subscribe((res) => {

@@ -166,7 +166,7 @@ hr {
 
 .languages {
   display: flex;
-
+  column-gap: 0.5rem;
   align-items: start;
   // background-color: var(--primary);
 }

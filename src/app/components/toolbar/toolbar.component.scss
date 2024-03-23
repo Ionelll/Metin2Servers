@@ -1,12 +1,13 @@
 .container {
-  background-color: #000000;
-
+  background-color: rgba(0, 0, 0, 0.91);
+  padding: 0.5rem 0;
   width: 100%;
   display: grid;
   grid-template-columns: 0.5fr auto 0.5fr;
   justify-content: center;
   align-items: center;
   margin-bottom: 2rem;
+  margin-top: -1rem;
 }
 .actions {
   display: flex;
@@ -16,5 +17,5 @@
   justify-content: center;
 }
 .logo {
-  grid-column: 1;
+  transform: scale(0.9);
 }
