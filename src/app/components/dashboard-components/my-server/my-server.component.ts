@@ -75,7 +75,7 @@ export class MyServerComponent implements OnInit {
     if (this.international) {
       this.server.controls.languages.clear();
       this.server.controls.languages.push(
-        new FormControl('../../../../assets/pngegg.png')
+        new FormControl('../../../../assets/international.png')
       );
       this.disableLanguages = true;
     } else {
