@@ -4,13 +4,21 @@
   column-gap: 1rem;
   row-gap: 1em;
   align-items: center;
+  padding: 2rem 0;
 }
 .img-container {
   grid-column: 2;
   height: 7rem;
+  display: flex;
+  text-align: center;
+  align-items: center;
   img {
     height: 7rem;
   }
+}
+.button {
+  grid-column: 2;
+  margin: 1rem 0 auto auto;
 }
 .label {
   grid-column: 1;

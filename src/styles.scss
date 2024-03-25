@@ -6,7 +6,7 @@ body {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  background-image: url("./assets/wallpaper-chinese-red-black.webp");
+  background-image: url("./assets/wallpaper-chinese-red-black-upscaled.jpg");
   user-select: none;
   scroll-behavior: smooth;
   font-family: "Poppins", sans-serif;
@@ -17,7 +17,7 @@ html {
 
 :root {
   --primary: rgba(0, 0, 0, 0.57);
-  --input: rgb(0, 0, 0);
+  --input: rgb(102, 102, 102);
   --button: #558e59fa;
   --button-text: #86ffc7;
   --danger: red;
@@ -42,12 +42,14 @@ html {
   outline: none;
   border: none;
   padding: 0.2em 0.5em;
+  border-radius: 8px;
 }
 input::placeholder {
   font-size: 12px;
   letter-spacing: 0;
   font-weight: 400;
   font-style: italic;
+  color: var(--logo);
 }
 
 .select {

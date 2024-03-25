@@ -5,7 +5,9 @@
 <form class="form-container" [formGroup]="server">
   <div class="img-container" (click)="fileinput.click()">
     <img src="{{ activeImage }}" alt="" class="logo" *ngIf="activeImage" />
-    <div *ngIf="!activeImage" class="action">Upload Logo</div>
+    <div *ngIf="!activeImage" class="action">
+      Upload Logo ( jpg, jpeg, gif, png )
+    </div>
 
     <input
       type="file"
@@ -75,5 +77,5 @@
       </div>
     </div>
   </div>
+  <button class="button" (click)="saveServer()">Save</button>
 </form>
-<button class="button" (click)="saveServer()">Save</button>

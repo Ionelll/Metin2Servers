@@ -53,6 +53,7 @@ export class AuthenticationService {
   getPaymentInfo() {
     return this.paymentInfo.asObservable();
   }
+
   checkToken() {
     this.http
       .get<{ message: string }>(

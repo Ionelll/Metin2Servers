@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { PaymentService } from '../../../services/payment.service';
 import { AuthenticationService } from '../../../services/authentication.service';
 import { CommonModule } from '@angular/common';
@@ -14,6 +14,7 @@ import { CountryFlags } from '../../../models/country-flags';
 import { ErrorService } from '../../../services/error.service';
 import { MatIconModule } from '@angular/material/icon';
 import { ServerService } from '../../../services/server.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-my-server',
@@ -22,13 +23,15 @@ import { ServerService } from '../../../services/server.service';
   templateUrl: './my-server.component.html',
   styleUrl: './my-server.component.scss',
 })
-export class MyServerComponent implements OnInit {
+export class MyServerComponent implements OnInit, OnDestroy {
   constructor(
     private paymentService: PaymentService,
     private authService: AuthenticationService,
     private errorService: ErrorService,
     private serverService: ServerService
   ) {}
+  private userSub = new Subscription();
+  private promotedSub = new Subscription();
   countryFlags = CountryFlags;
   paymentInfo: any;
   logoChanged = false;
@@ -54,8 +57,25 @@ export class MyServerComponent implements OnInit {
     this.paymentService.redirectToPayment();
   }
   ngOnInit(): void {
-    this.authService.getPaymentInfo().subscribe((res) => {
+    this.promotedSub = this.authService.getPaymentInfo().subscribe((res) => {
       this.paymentInfo = res;
+    });
+    this.userSub = this.authService.getUser().subscribe((res) => {
+      if (res) {
+        this.activeImage = res.servers[0].banner;
+        this.server.patchValue(res.servers[0]);
+        if (
+          res.servers[0].languages.includes(
+            '../../../../assets/international.png'
+          )
+        )
+          this.international = true;
+      }
+      for (let i = 1; i < res.servers[0].languages.length; i++) {
+        this.server.controls.languages.push(
+          new FormControl(res.servers[0].languages[i])
+        );
+      }
     });
   }
 
@@ -111,5 +131,9 @@ export class MyServerComponent implements OnInit {
   }
   removeLanguage(i) {
     this.server.controls.languages.removeAt(i);
+  }
+  ngOnDestroy(): void {
+    this.userSub.unsubscribe();
+    this.promotedSub.unsubscribe();
   }
 }
