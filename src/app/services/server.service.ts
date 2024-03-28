@@ -31,13 +31,16 @@ export class ServerService {
   }
 
   setPremiumServers() {
-    this.http
-      .get<{ count: 1; data: ServerModel[] }>(
-        'https://metins-be.onrender.com/api/server/servers?is_premium=True'
-      )
-      .subscribe((res) => {
-        this.premiumServers.next(res.data);
-      });
+    const sortedServers = this.filterBy(
+      undefined,
+      undefined,
+      undefined,
+      undefined,
+      'Ascending',
+      true
+    );
+
+    this.premiumServers.next(sortedServers);
   }
   getPremiumServers() {
     return this.premiumServers.asObservable();
@@ -54,20 +57,23 @@ export class ServerService {
     language: string,
     category: string,
     focus: string,
-    order: string
+    order: string,
+    is_premium: boolean
   ) {
     let servers = [...this.Servers.value];
-    if (language || category || focus) {
+    if (language || category || focus || is_premium) {
       servers = servers.filter(
         (item) =>
           (!language || item.languages?.includes(language)) &&
           (!category || item.category === category) &&
-          (!focus || item.focus.includes(focus))
+          (!focus || item.focus.includes(focus)) &&
+          (!is_premium || item.is_premium === true)
       );
     }
     const sortedServers = this.sortBy(servers, sortBy);
     if (order === 'Ascending') sortedServers.reverse();
     this.filteredServers.next(sortedServers);
+    return sortedServers;
   }
 
   filterByName(value: string) {
@@ -82,6 +88,20 @@ export class ServerService {
   saveServer(server: FormData) {
     this.http
       .post('https://metins-be.onrender.com/api/server', server)
+      .subscribe();
+  }
+
+  patchServer(server: FormData, serverId: string) {
+    this.http
+      .patch(`https://metins-be.onrender.com/api/server/${serverId}`, server)
+      .subscribe();
+  }
+  setRating(value: number, server_id: string) {
+    this.http
+      .patch(
+        `https://metins-be.onrender.com/api/update_server_rating/${server_id}`,
+        { value: value }
+      )
       .subscribe();
   }
 }

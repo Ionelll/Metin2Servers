@@ -53,6 +53,7 @@
     <div class="rate">
       <label class="label show">Your Rating</label>
       <mat-icon
+        (click)="setRating(1)"
         [ngClass]="{
           star: true,
           'star-action': true,
@@ -64,6 +65,7 @@
       >
 
       <mat-icon
+        (click)="setRating(2)"
         [ngClass]="{
           star: true,
           'star-active': rate >= 2,
@@ -74,6 +76,7 @@
         >star_rate</mat-icon
       >
       <mat-icon
+        (click)="setRating(3)"
         [ngClass]="{
           star: true,
           'star-action': true,
@@ -84,6 +87,7 @@
         >star_rate</mat-icon
       >
       <mat-icon
+        (click)="setRating(4)"
         [ngClass]="{
           star: true,
           'star-action': true,
@@ -94,6 +98,7 @@
         >star_rate</mat-icon
       >
       <mat-icon
+        (click)="setRating(5)"
         [ngClass]="{
           star: true,
           'star-action': true,

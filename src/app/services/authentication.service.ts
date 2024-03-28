@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 import { UserModel } from '../models/user.model';
+import { PaymentInfo } from '../models/payment-info.model';
 
 @Injectable({ providedIn: 'root' })
 export class AuthenticationService {
@@ -10,7 +11,7 @@ export class AuthenticationService {
 
   private loggedin = new BehaviorSubject<boolean>(false);
   private user = new BehaviorSubject<UserModel>(undefined);
-  private paymentInfo = new BehaviorSubject(undefined);
+  private paymentInfo = new BehaviorSubject<PaymentInfo>(undefined);
 
   login(userInput: { email: string | null; password: string | null }) {
     if (userInput.email && userInput.password)
@@ -43,7 +44,7 @@ export class AuthenticationService {
   }
   setPaymentInfo() {
     this.http
-      .get(
+      .get<PaymentInfo>(
         'https://metins-be.onrender.com/api/stripe/promote-subscription-info'
       )
       .subscribe((res) => {
@@ -67,6 +68,7 @@ export class AuthenticationService {
         } else this.logout();
       });
   }
+
   setUser() {
     this.http
       .get<UserModel>('https://metins-be.onrender.com/api/user')

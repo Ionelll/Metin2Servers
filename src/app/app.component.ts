@@ -69,10 +69,13 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     const token = localStorage.getItem('token');
+    this.serverService.setServers();
+    this.serverService.getServers().subscribe((res) => {
+      if (res) this.serverService.setPremiumServers();
+    });
+
     if (token) {
       this.authService.checkToken();
     }
-    this.serverService.setServers();
-    this.serverService.setPremiumServers();
   }
 }

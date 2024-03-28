@@ -15,6 +15,7 @@ import { ErrorService } from '../../../services/error.service';
 import { MatIconModule } from '@angular/material/icon';
 import { ServerService } from '../../../services/server.service';
 import { Subscription } from 'rxjs';
+import { PaymentInfo } from '../../../models/payment-info.model';
 
 @Component({
   selector: 'app-my-server',
@@ -32,23 +33,25 @@ export class MyServerComponent implements OnInit, OnDestroy {
   ) {}
   private userSub = new Subscription();
   private promotedSub = new Subscription();
+  private is_premiumSub = new Subscription();
+
   countryFlags = CountryFlags;
-  paymentInfo: any;
+  paymentInfo: PaymentInfo;
   logoChanged = false;
   activeImage: string;
   imageFile: File;
   international = false;
   disableLanguages = false;
+  is_premium = false;
+  serverId: string;
+
   server = new FormGroup({
     name: new FormControl('', Validators.required),
     website: new FormControl('', Validators.required),
-    maxLevel: new FormControl('', Validators.required),
+    max_level: new FormControl('', Validators.required),
     category: new FormControl('', Validators.required),
-    releaseDate: new FormControl(
-      new Date().toISOString().split('T')[0],
-      Validators.required
-    ),
-    playerBase: new FormControl('', Validators.required),
+    release_date: new FormControl(''),
+    player_base: new FormControl(),
     languages: new FormArray([new FormControl('')]),
     focus: new FormControl(''),
   });
@@ -57,11 +60,9 @@ export class MyServerComponent implements OnInit, OnDestroy {
     this.paymentService.redirectToPayment();
   }
   ngOnInit(): void {
-    this.promotedSub = this.authService.getPaymentInfo().subscribe((res) => {
-      this.paymentInfo = res;
-    });
     this.userSub = this.authService.getUser().subscribe((res) => {
-      if (res) {
+      if (res && res.servers) {
+        this.serverId = res.servers[0].server_id;
         this.activeImage = res.servers[0].banner;
         this.server.patchValue(res.servers[0]);
         if (
@@ -70,11 +71,17 @@ export class MyServerComponent implements OnInit, OnDestroy {
           )
         )
           this.international = true;
+        for (let i = 1; i < res.servers[0].languages.length; i++) {
+          this.server.controls.languages.push(
+            new FormControl(res.servers[0].languages[i])
+          );
+        }
       }
-      for (let i = 1; i < res.servers[0].languages.length; i++) {
-        this.server.controls.languages.push(
-          new FormControl(res.servers[0].languages[i])
-        );
+    });
+    this.is_premiumSub = this.authService.getPaymentInfo().subscribe((res) => {
+      if (res) {
+        this.is_premium = res.active;
+        this.paymentInfo = res;
       }
     });
   }
@@ -106,20 +113,23 @@ export class MyServerComponent implements OnInit, OnDestroy {
   }
   saveServer() {
     let addServer = new FormData();
+
     console.log(JSON.stringify(['asd']));
     addServer.append('name', this.server.controls.name.value);
     addServer.append('website', this.server.controls.website.value);
-    addServer.append('max_level', this.server.controls.maxLevel.value);
+    addServer.append('max_level', this.server.controls.max_level.value);
     addServer.append('category', this.server.controls.category.value);
-    addServer.append('release_date', this.server.controls.releaseDate.value);
-    addServer.append('player_base', this.server.controls.playerBase.value);
+    addServer.append('release_date', this.server.controls.release_date.value);
+    addServer.append('player_base', this.server.controls.player_base.value);
     addServer.append('focus', this.server.controls.focus.value);
     addServer.append(
       'languages',
       JSON.stringify(this.server.controls.languages.value)
     );
     if (this.logoChanged) addServer.append('banner', this.imageFile);
-    this.serverService.saveServer(addServer);
+    console.log(this.serverId);
+    if (this.serverId) this.serverService.patchServer(addServer, this.serverId);
+    else this.serverService.saveServer(addServer);
   }
   addLanguage() {
     if (this.server.controls.languages.length < 5)
@@ -135,5 +145,6 @@ export class MyServerComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.userSub.unsubscribe();
     this.promotedSub.unsubscribe();
+    this.is_premiumSub.unsubscribe();
   }
 }

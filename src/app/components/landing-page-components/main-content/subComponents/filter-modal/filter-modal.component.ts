@@ -42,7 +42,8 @@ export class FilterModalComponent implements AfterViewInit {
       this.languageValue,
       this.categoryValue,
       this.focusValue,
-      this.orderToggle
+      this.orderToggle,
+      undefined
     );
     this.filterService.setModalStatus(false);
   }

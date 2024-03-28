@@ -4,6 +4,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { style, transition, trigger, animate } from '@angular/animations';
+import { ServerService } from '../../../../../services/server.service';
 @Component({
   selector: 'app-server-card',
   standalone: true,
@@ -32,7 +33,7 @@ export class ServerCardComponent implements AfterViewInit {
   public rate = 0;
   public hover: boolean;
   public media: boolean;
-  constructor() {
+  constructor(private serverService: ServerService) {
     if (window.innerWidth < 1000) this.media = true;
     else this.media = false;
 
@@ -58,5 +59,9 @@ export class ServerCardComponent implements AfterViewInit {
         .getElementById('hover')
         .classList.remove('.hover-container::after');
     }
+  }
+
+  setRating(value: number) {
+    this.serverService.setRating(value, this.item.server_id);
   }
 }

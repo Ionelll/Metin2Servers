@@ -1,24 +1,48 @@
+.container {
+  display: flex;
+  gap: 3rem;
+}
 .form-container {
   display: grid;
-  grid-template-columns: 0.1fr 1fr;
+  grid-template-columns: 0.1fr 1fr 1fr;
   column-gap: 1rem;
   row-gap: 1em;
   align-items: center;
-  padding: 2rem 0;
+  padding: 2rem 1rem;
+  background-color: var(--primary);
 }
 .img-container {
   grid-column: 2;
   height: 7rem;
   display: flex;
+
   text-align: center;
   align-items: center;
   img {
     height: 7rem;
+    border-radius: 5px;
   }
 }
-.button {
+.save {
   grid-column: 2;
-  margin: 1rem 0 auto auto;
+  margin: 2rem 2rem auto auto;
+}
+.subscription {
+  margin: auto;
+  background-image: url("../../../../assets/peakpx.jpg");
+  background-position: center;
+  background-size: cover;
+  background-size: 170%;
+  background-repeat: no-repeat;
+  color: rgb(0, 0, 0);
+  font-size: 1.2em;
+  font-family: "Open Sans", sans-serif;
+  animation-duration: 0.5s;
+  font-weight: 900;
+  &:hover {
+    background-position: 60%;
+    animation-duration: 0.5s;
+  }
 }
 .label {
   grid-column: 1;
@@ -28,10 +52,11 @@
   background-color: rgb(220, 220, 220);
   color: black;
   font-weight: 400;
+  grid-column: 2/4;
 }
 .lang-container {
   display: flex;
-
+  grid-column: 2/4;
   flex-direction: column;
 }
 .languages {

@@ -8,7 +8,7 @@ export interface ServerModel {
   no_votes?: string;
   rating?: number;
   category?: string;
-  release_date?: Date;
+  release_date?: string;
   player_base?: number;
   languages?: string[];
   focus?: string;
