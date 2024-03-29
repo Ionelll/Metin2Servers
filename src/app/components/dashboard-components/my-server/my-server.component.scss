@@ -64,8 +64,7 @@
   grid-column: 2/4;
 }
 .input::placeholder {
-  color: gray;
-  display: none;
+  color: transparent;
 }
 .lang-container {
   display: flex;
@@ -104,7 +103,7 @@
     margin: auto;
   }
   .input::placeholder {
-    display: block;
+    color: gray;
   }
 }
 @media screen and (max-width: 800px) {
