@@ -30,7 +30,9 @@ export class MyServerComponent implements OnInit, OnDestroy {
     private authService: AuthenticationService,
     private errorService: ErrorService,
     private serverService: ServerService
-  ) {}
+  ) {
+    this.media = window.innerWidth;
+  }
   private userSub = new Subscription();
   private promotedSub = new Subscription();
   private is_premiumSub = new Subscription();
@@ -45,6 +47,7 @@ export class MyServerComponent implements OnInit, OnDestroy {
   is_premium = false;
   serverId: string;
   dateType = 'text';
+  media: number;
 
   server = new FormGroup({
     name: new FormControl('', Validators.required),
