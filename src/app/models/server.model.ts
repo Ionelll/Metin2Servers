@@ -13,4 +13,5 @@ export interface ServerModel {
   languages?: string[];
   focus?: string;
   is_premium?: boolean;
+  user_rating?: number;
 }

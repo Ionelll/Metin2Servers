@@ -19,7 +19,7 @@ export class SnackbarComponent implements OnInit {
       this.snackbar.open(res, 'Close', {
         horizontalPosition: 'center',
         verticalPosition: 'top',
-        duration: 3000,
+        duration: 7000,
       });
     });
   }

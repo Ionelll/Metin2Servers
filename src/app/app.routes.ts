@@ -8,6 +8,7 @@ import { AccountInfoComponent } from './components/dashboard-components/account-
 import { MyServerComponent } from './components/dashboard-components/my-server/my-server.component';
 import { ShareEventComponent } from './components/dashboard-components/share-event/share-event.component';
 import { TicketsComponent } from './components/dashboard-components/tickets/tickets.component';
+import { ResetPasswordComponent } from './pages/reset-password/reset-password.component';
 
 export const routes: Routes = [
   {
@@ -29,7 +30,6 @@ export const routes: Routes = [
     path: 'profile',
     component: ProfilePageComponent,
     canActivate: [AuthGuard],
-
     children: [
       {
         path: 'security',
@@ -53,6 +53,11 @@ export const routes: Routes = [
       },
     ],
     data: { animation: 'ProfilePage' },
+  },
+  {
+    path: 'reset-password/:uid/:auth',
+    component: ResetPasswordComponent,
+    data: { animation: 'ResetPage' },
   },
 
   { path: '**', redirectTo: '' },

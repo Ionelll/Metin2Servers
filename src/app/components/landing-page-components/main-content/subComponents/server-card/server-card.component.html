@@ -7,19 +7,24 @@
       <div class="rating-container">
         <p class="label no-votes">From: {{ item.no_votes }} votes</p>
         <div class="rating">
-          <mat-icon [ngClass]="{ star: true, 'star-active': item.rating >= 5 }"
+          <mat-icon
+            [ngClass]="{ star: true, 'star-active': item.user_rating >= 5 }"
             >star_rate</mat-icon
           >
-          <mat-icon [ngClass]="{ star: true, 'star-active': item.rating >= 4 }"
+          <mat-icon
+            [ngClass]="{ star: true, 'star-active': item.user_rating >= 4 }"
             >star_rate</mat-icon
           >
-          <mat-icon [ngClass]="{ star: true, 'star-active': item.rating >= 3 }"
+          <mat-icon
+            [ngClass]="{ star: true, 'star-active': item.user_rating >= 3 }"
             >star_rate</mat-icon
           >
-          <mat-icon [ngClass]="{ star: true, 'star-active': item.rating >= 2 }"
+          <mat-icon
+            [ngClass]="{ star: true, 'star-active': item.user_rating >= 2 }"
             >star_rate</mat-icon
           >
-          <mat-icon [ngClass]="{ star: true, 'star-active': item.rating >= 1 }"
+          <mat-icon
+            [ngClass]="{ star: true, 'star-active': item.user_rating >= 1 }"
             >star_rate</mat-icon
           >
         </div>
@@ -40,7 +45,8 @@
           <img class="language" src="{{ language }}" alt="" />
           }
         </div>
-
+        <label class="label">max level:</label>
+        <p class="text">{{ item.max_level }}</p>
         <label class="label">focus:</label>
         <p class="text">{{ item.focus }}</p>
 
@@ -57,7 +63,7 @@
         [ngClass]="{
           star: true,
           'star-action': true,
-          'star-active': rate >= 1
+          'star-active': rate >= 1 || item.user_rating >= 1
         }"
         (mouseover)="rate = 1"
         (mouseleave)="rate = 0"
@@ -68,7 +74,7 @@
         (click)="setRating(2)"
         [ngClass]="{
           star: true,
-          'star-active': rate >= 2,
+          'star-active': rate >= 2 || item.user_rating >= 2,
           'star-action': true
         }"
         (mouseover)="rate = 2"
@@ -80,7 +86,7 @@
         [ngClass]="{
           star: true,
           'star-action': true,
-          'star-active': rate >= 3
+          'star-active': rate >= 3 || item.user_rating >= 3
         }"
         (mouseover)="rate = 3"
         (mouseleave)="rate = 0"
@@ -91,7 +97,7 @@
         [ngClass]="{
           star: true,
           'star-action': true,
-          'star-active': rate >= 4
+          'star-active': rate >= 4 || item.user_rating >= 4
         }"
         (mouseover)="rate = 4"
         (mouseleave)="rate = 0"
@@ -102,7 +108,7 @@
         [ngClass]="{
           star: true,
           'star-action': true,
-          'star-active': rate >= 5
+          'star-active': rate >= 5 || item.user_rating >= 5
         }"
         (mouseover)="rate = 5"
         (mouseleave)="rate = 0"

@@ -1,54 +1,58 @@
 <div class="container">
-  <p class="title">Account info</p>
-  <label for="email" class="label">email :</label>
-  <input class="input" id="email" type="text" readonly [(ngModel)]="email" />
+  <div class="content">
+    <p class="title">Account info</p>
+    <label for="email" class="label">email :</label>
+    <input class="input" id="email" type="text" readonly [(ngModel)]="email" />
 
-  <label for="password" class="label" *ngIf="!edit_password">password :</label>
-  <input
-    *ngIf="!edit_password"
-    class="input"
-    id="password"
-    type="password"
-    readonly
-    value="           "
-  />
-  <label for="old" class="label" *ngIf="edit_password">Old password</label>
-  <input
-    type="text"
-    class="input old"
-    id="old"
-    [(ngModel)]="oldPassword"
-    *ngIf="edit_password"
-  />
-  <label for="new" class="label" *ngIf="edit_password">New password</label>
-  <input
-    type="password"
-    class="input old"
-    id="new"
-    [(ngModel)]="newPassword"
-    *ngIf="edit_password"
-  />
-  <button
-    class="action"
-    *ngIf="!edit_password"
-    (click)="edit_password = !edit_password"
-  >
-    <mat-icon>edit</mat-icon>
-  </button>
-  <div class="change-actions">
-    <button
-      class="action"
-      *ngIf="edit_password"
-      (click)="savePassword(); edit_password = !edit_password"
+    <label for="password" class="label" *ngIf="!edit_password"
+      >password :</label
     >
-      <mat-icon>save</mat-icon>
-    </button>
+    <input
+      *ngIf="!edit_password"
+      class="input"
+      id="password"
+      type="password"
+      readonly
+      value="           "
+    />
+    <label for="old" class="label" *ngIf="edit_password">Old password</label>
+    <input
+      type="text"
+      class="input old"
+      id="old"
+      [(ngModel)]="oldPassword"
+      *ngIf="edit_password"
+    />
+    <label for="new" class="label" *ngIf="edit_password">New password</label>
+    <input
+      type="password"
+      class="input old"
+      id="new"
+      [(ngModel)]="newPassword"
+      *ngIf="edit_password"
+    />
     <button
       class="action"
-      *ngIf="edit_password"
+      *ngIf="!edit_password"
       (click)="edit_password = !edit_password"
     >
-      <mat-icon>close</mat-icon>
+      <mat-icon>edit</mat-icon>
     </button>
+    <div class="change-actions">
+      <button
+        class="action"
+        *ngIf="edit_password"
+        (click)="savePassword(); edit_password = !edit_password"
+      >
+        <mat-icon>save</mat-icon>
+      </button>
+      <button
+        class="action"
+        *ngIf="edit_password"
+        (click)="edit_password = !edit_password"
+      >
+        <mat-icon>close</mat-icon>
+      </button>
+    </div>
   </div>
 </div>

@@ -5,6 +5,8 @@ import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { style, transition, trigger, animate } from '@angular/animations';
 import { ServerService } from '../../../../../services/server.service';
+import { AuthenticationService } from '../../../../../services/authentication.service';
+
 @Component({
   selector: 'app-server-card',
   standalone: true,
@@ -30,10 +32,15 @@ import { ServerService } from '../../../../../services/server.service';
 })
 export class ServerCardComponent implements AfterViewInit {
   @Input() item: ServerModel;
+  @Input() rating: number;
   public rate = 0;
   public hover: boolean;
   public media: boolean;
-  constructor(private serverService: ServerService) {
+
+  constructor(
+    private serverService: ServerService,
+    private authService: AuthenticationService
+  ) {
     if (window.innerWidth < 1000) this.media = true;
     else this.media = false;
 
@@ -63,5 +70,6 @@ export class ServerCardComponent implements AfterViewInit {
 
   setRating(value: number) {
     this.serverService.setRating(value, this.item.server_id);
+    this.item.user_rating = value;
   }
 }

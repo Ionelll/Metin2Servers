@@ -98,4 +98,22 @@ export class AuthenticationService {
 
     localStorage.removeItem('token');
   }
+  resetPassword(userEmail: { email: string }) {
+    this.http
+      .post(' https://metins-be.onrender.com/api/forgot-password', userEmail)
+      .subscribe();
+  }
+  forgotPassword(uid: string, auth: string, password: string) {
+    uid = uid.replace('uid', '');
+    this.http
+      .post(
+        `https://metins-be.onrender.com/api/reset-password/${uid}/${auth}/`,
+        {
+          new_password: password,
+        }
+      )
+      .subscribe((res) => {
+        if (res) this.router.navigateByUrl('login');
+      });
+  }
 }

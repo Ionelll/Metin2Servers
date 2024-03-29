@@ -20,6 +20,9 @@
     </form>
     <div class="footer">
       <a routerLink="/signup" class="button">Signup</a>
+      <button class="action" (click)="resetPassword()">
+        Forgot my password
+      </button>
       <button (click)="login()" class="button" [disabled]="!loginInput.valid">
         Login
       </button>

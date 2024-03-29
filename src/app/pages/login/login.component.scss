@@ -48,11 +48,14 @@
 }
 .footer {
   display: flex;
-  justify-content: end;
+  justify-content: space-between;
   align-items: center;
   gap: 2rem;
 }
-
+.action {
+  font-size: 12px;
+  font-weight: 200;
+}
 @media screen and (max-width: 900px) {
   .container {
     background-position: 75% 50%;

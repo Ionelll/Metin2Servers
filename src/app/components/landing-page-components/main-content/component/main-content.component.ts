@@ -7,6 +7,8 @@ import { ServerModel } from '../../../../models/server.model';
 import { FilterService } from '../services/filter.service';
 import { FilterModalComponent } from '../subComponents/filter-modal/filter-modal.component';
 import { FormsModule } from '@angular/forms';
+import { UserModel } from '../../../../models/user.model';
+import { AuthenticationService } from '../../../../services/authentication.service';
 
 @Component({
   selector: 'app-main-content',
@@ -24,12 +26,14 @@ import { FormsModule } from '@angular/forms';
 export class MainContentComponent implements OnInit {
   constructor(
     private serverService: ServerService,
-    private filterService: FilterService
+    private filterService: FilterService,
+    private authService: AuthenticationService
   ) {}
   public servers: ServerModel[];
   toggleOrder = 'Ascending';
   searchValue: string;
   noServers = false;
+  userRatings: UserModel['ratings'];
 
   ngOnInit(): void {
     this.serverService.getServers().subscribe((res) => {
@@ -42,6 +46,20 @@ export class MainContentComponent implements OnInit {
       if (this.servers.length <= 0) this.noServers = true;
       else this.noServers = false;
     });
+    this.authService.getUser().subscribe((res) => {
+      if (res) {
+        this.userRatings = res.ratings;
+        this.setUserRating();
+      }
+    });
+  }
+  setUserRating() {
+    if (this.userRatings)
+      this.userRatings.forEach((item) => {
+        const x = this.servers.map((e) => e.name).indexOf(item.server);
+        console.log(x);
+        this.servers[x].user_rating = item.value;
+      });
   }
 
   openModal() {
