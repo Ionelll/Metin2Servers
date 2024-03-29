@@ -44,6 +44,7 @@ export class MyServerComponent implements OnInit, OnDestroy {
   disableLanguages = false;
   is_premium = false;
   serverId: string;
+  dateType = 'text';
 
   server = new FormGroup({
     name: new FormControl('', Validators.required),

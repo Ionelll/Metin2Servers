@@ -29,27 +29,67 @@
       >
     </div>
     <p class="label">name:</p>
-    <input type="text" class="input" formControlName="name" />
+    <input
+      type="text"
+      class="input"
+      placeholder="name"
+      formControlName="name"
+    />
     <p class="label">website:</p>
-    <input type="text" class="input" formControlName="website" />
+    <input
+      type="text"
+      class="input"
+      placeholder="website"
+      formControlName="website"
+    />
     <p class="label">max level:</p>
-    <input type="text" class="input" formControlName="max_level" />
+    <input
+      type="text"
+      class="input"
+      placeholder="max level"
+      formControlName="max_level"
+    />
     <p class="label">category:</p>
     <select class="input" formControlName="category">
+      <option
+        [defaultSelected]="true"
+        disabled
+        *ngIf="server.controls.category.untouched"
+      >
+        category:
+      </option>
       <option value="Old School">Old School</option>
       <option value="New School">New School</option>
       <option value="Mixed">Mixed</option>
     </select>
     <p class="label">focus:</p>
     <select class="input" formControlName="focus">
+      <option
+        [defaultSelected]="true"
+        *ngIf="server.controls.category.untouched"
+        disabled
+      >
+        focus:
+      </option>
       <option value="PVE">PVE</option>
       <option value="PVP">PVP</option>
       <option value="PVE & PVP">PVE, PVP</option>
     </select>
     <p class="label">release date:</p>
-    <input class="input" type="date" formControlName="release_date" />
+    <input
+      class="input"
+      [type]="dateType"
+      placeholder="release date"
+      formControlName="release_date"
+      (focus)="dateType = 'date'"
+    />
     <p class="label">player base:</p>
-    <input type="number" class="input" formControlName="player_base" />
+    <input
+      type="number"
+      class="input"
+      placeholder="player base"
+      formControlName="player_base"
+    />
     <p class="label lang">languages:</p>
     <div class="lang-container">
       <div class="international-container">
@@ -59,7 +99,7 @@
           [(ngModel)]="international"
           [ngModelOptions]="{ standalone: true }"
         />
-        <p class="label">International</p>
+        <p class="label international">International</p>
       </div>
       <div formArrayName="languages" class="languages">
         <div

@@ -57,8 +57,8 @@ export class MainContentComponent implements OnInit {
     if (this.userRatings)
       this.userRatings.forEach((item) => {
         const x = this.servers.map((e) => e.name).indexOf(item.server);
-        console.log(x);
-        this.servers[x].user_rating = item.value;
+
+        if (x >= 0) this.servers[x].user_rating = item.value;
       });
   }
 

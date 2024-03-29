@@ -20,3 +20,23 @@
 .active {
   color: var(--logo-active);
 }
+.burger {
+  position: fixed;
+  top: 0;
+  transform: scale(1.5);
+  color: var(--logo-active);
+  padding: 1rem;
+  left: 0;
+  z-index: 1000;
+}
+@media screen and (max-width: 1000px) {
+  .container {
+    width: 100%;
+    padding: 2rem 0;
+  }
+  .link {
+    width: 100%;
+    font-size: 2em;
+    text-align: center;
+  }
+}
