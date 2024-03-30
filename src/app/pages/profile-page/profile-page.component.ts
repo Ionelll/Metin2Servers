@@ -21,7 +21,7 @@ import { ChildrenOutletContexts } from '@angular/router';
   styleUrl: './profile-page.component.scss',
   animations: [
     trigger('fade', [
-      transition('*<=>*', [
+      transition('void => *', [
         query(
           ':enter,:leave',
           [

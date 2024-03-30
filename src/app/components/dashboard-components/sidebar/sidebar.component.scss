@@ -4,7 +4,7 @@
   position: fixed;
   left: 0;
   height: 100%;
-  background-color: var(--primary);
+  background-color: black;
   z-index: 1000;
   padding: 3rem 2rem;
 }
@@ -20,23 +20,34 @@
 .active {
   color: var(--logo-active);
 }
-.burger {
-  position: fixed;
-  top: 0;
-  transform: scale(1.5);
-  color: var(--logo-active);
-  padding: 1rem;
-  left: 0;
-  z-index: 1000;
-}
+
 @media screen and (max-width: 1000px) {
   .container {
     width: 100%;
-    padding: 2rem 0;
+    padding: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
   }
   .link {
     width: 100%;
     font-size: 2em;
     text-align: center;
+  }
+  .burger-container {
+    position: fixed;
+    top: 0;
+    display: grid;
+    grid-template-columns: 0.5fr auto 0.2fr;
+    grid-template-rows: 5rem;
+    align-items: center;
+    background-color: black;
+
+    width: 100%;
+    z-index: 1000;
+  }
+  .burger {
+    grid-column: 3;
   }
 }

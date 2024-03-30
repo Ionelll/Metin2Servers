@@ -1,5 +1,5 @@
 <div class="container" *ngIf="media > 1000 || showSidebar">
-  <app-logo routerLink="/"></app-logo>
+  <app-logo routerLink="/" *ngIf="media > 1000"></app-logo>
   <div class="actions">
     <a
       routerLink="security"
@@ -32,17 +32,20 @@
   </div>
   <button class="action link" (click)="logout()">Logout</button>
 </div>
-<button
-  class="action burger"
-  (click)="showSidebar = !showSidebar"
-  *ngIf="media < 1000 && !showSidebar"
->
-  <mat-icon>menu</mat-icon>
-</button>
-<button
-  class="action burger"
-  *ngIf="showSidebar && media < 1000"
-  (click)="showSidebar = !showSidebar"
->
-  X
-</button>
+<div class="burger-container">
+  <app-logo routerLink="/" *ngIf="media < 1000"></app-logo>
+  <button
+    class="action burger"
+    (click)="showSidebar = !showSidebar"
+    *ngIf="media < 1000 && !showSidebar"
+  >
+    <mat-icon>menu</mat-icon>
+  </button>
+  <button
+    class="action burger"
+    *ngIf="showSidebar && media < 1000"
+    (click)="showSidebar = !showSidebar"
+  >
+    X
+  </button>
+</div>

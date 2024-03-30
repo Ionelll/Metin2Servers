@@ -2,7 +2,7 @@
   display: flex;
   gap: 3rem;
   margin: auto;
-
+  padding: 3rem 0;
   position: absolute;
 
   width: 100%;
@@ -111,6 +111,7 @@
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    align-items: center;
   }
   .label {
     display: none;
@@ -124,5 +125,8 @@
   .languages {
     display: flex;
     flex-direction: column;
+  }
+  .input {
+    width: 100%;
   }
 }
