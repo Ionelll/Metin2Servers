@@ -18,7 +18,6 @@ export class NavigationComponent {
     this.router.events.subscribe((res) => {
       if (res instanceof NavigationEnd) {
         this.currentRoute = res.url;
-        console.log(res.url);
       }
     });
   }

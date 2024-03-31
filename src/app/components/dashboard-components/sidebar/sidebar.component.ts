@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { LogoComponent } from '../../logo/logo.component';
 import { AuthenticationService } from '../../../services/authentication.service';
 import { RouterLink, RouterLinkActive, Router } from '@angular/router';
@@ -18,14 +18,21 @@ import { MatIconModule } from '@angular/material/icon';
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.scss',
 })
-export class SidebarComponent {
+export class SidebarComponent implements OnInit {
   media: number;
   showSidebar: boolean;
+  userHasServer: boolean;
   constructor(
     private authService: AuthenticationService,
     private router: Router
   ) {
     this.media = window.innerWidth;
+  }
+  ngOnInit(): void {
+    this.authService.getUser().subscribe((res) => {
+      if (res.servers[0].server_id) this.userHasServer = true;
+      else this.userHasServer = false;
+    });
   }
 
   logout() {

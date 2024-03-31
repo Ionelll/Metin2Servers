@@ -11,14 +11,25 @@
     <a
       routerLink="server"
       class="action link"
+      *ngIf="userHasServer"
       routerLinkActive="active"
       (click)="showSidebar = !showSidebar"
       >My Server</a
     >
     <a
+      routerLink="server"
+      class="action link"
+      *ngIf="!userHasServer"
+      routerLinkActive="active"
+      (click)="showSidebar = !showSidebar"
+      >Add a server</a
+    >
+
+    <a
       routerLink="events"
       class="action link"
       routerLinkActive="active"
+      *ngIf="userHasServer"
       (click)="showSidebar = !showSidebar"
       >Share Event</a
     >

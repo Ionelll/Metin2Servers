@@ -13,7 +13,7 @@
         (change)="onFileChange($event); logoChanged = true"
       />
     </div>
-    <div class="promote-container">
+    <div class="promote-container" *ngIf="serverId">
       <button
         (click)="redirectPayment()"
         class="button subscription"

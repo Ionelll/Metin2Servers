@@ -65,7 +65,7 @@ export class MyServerComponent implements OnInit, OnDestroy {
   }
   ngOnInit(): void {
     this.userSub = this.authService.getUser().subscribe((res) => {
-      if (res && res.servers) {
+      if (res && res.servers[0]) {
         this.serverId = res.servers[0].server_id;
         this.activeImage = res.servers[0].banner;
         this.server.patchValue(res.servers[0]);

@@ -10,9 +10,9 @@
   border-radius: 15px;
   background-color: var(--primary);
   gap: 1rem;
-  margin: auto;
+  margin: auto 0;
   display: grid;
-  grid-template-columns: 0.3fr 1fr 0.3fr;
+  grid-template-columns: 0.3fr 1.5fr 0.3fr;
   padding: 0.5rem 2rem 2rem 2rem;
 }
 .title {

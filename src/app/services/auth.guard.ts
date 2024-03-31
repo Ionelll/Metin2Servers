@@ -5,7 +5,6 @@ export const AuthGuard = async () => {
   const router = inject(Router);
   const authService = inject(AuthenticationService);
   const isLoggedIn = authService.returnLoggedin();
-  console.log(isLoggedIn);
   if (isLoggedIn) {
     return true;
   } else {
