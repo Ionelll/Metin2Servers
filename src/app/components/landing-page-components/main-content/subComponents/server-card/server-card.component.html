@@ -8,23 +8,38 @@
         <p class="label no-votes">From: {{ item.no_votes }} votes</p>
         <div class="rating">
           <mat-icon
-            [ngClass]="{ star: true, 'star-active': item.user_rating >= 5 }"
+            [ngClass]="{
+              star: true,
+              'star-half': item.rating >= 4.4 && item.rating < 5,
+              'star-active': item.rating >= 5
+            }"
             >star_rate</mat-icon
           >
           <mat-icon
-            [ngClass]="{ star: true, 'star-active': item.user_rating >= 4 }"
+            [ngClass]="{
+              star: true,
+              'star-half': item.rating >= 3.4 && item.rating < 4,
+              'star-active': item.rating >= 4
+            }"
             >star_rate</mat-icon
           >
           <mat-icon
-            [ngClass]="{ star: true, 'star-active': item.user_rating >= 3 }"
+            [ngClass]="{
+              star: true,
+              'star-half': item.rating >= 2.4 && item.rating < 3,
+              'star-active': item.rating >= 3
+            }"
             >star_rate</mat-icon
           >
           <mat-icon
-            [ngClass]="{ star: true, 'star-active': item.user_rating >= 2 }"
+            [ngClass]="{
+              star: true,
+              'star-half': item.rating >= 1.4 && item.rating < 2,
+              'star-active': item.rating >= 2
+            }"
             >star_rate</mat-icon
           >
-          <mat-icon
-            [ngClass]="{ star: true, 'star-active': item.user_rating >= 1 }"
+          <mat-icon [ngClass]="{ star: true, 'star-active': item.rating >= 1 }"
             >star_rate</mat-icon
           >
         </div>

@@ -9,16 +9,36 @@
     </div>
 
     <div class="rating">
-      <mat-icon [ngClass]="{ star: true, 'star-active': server.rating >= 5 }"
+      <mat-icon
+        [ngClass]="{
+          star: true,
+          'star-half': server.rating >= 4.4 && server.rating < 5,
+          'star-active': server.rating >= 5
+        }"
         >star_rate</mat-icon
       >
-      <mat-icon [ngClass]="{ star: true, 'star-active': server.rating >= 4 }"
+      <mat-icon
+        [ngClass]="{
+          star: true,
+          'star-half': server.rating >= 3.4 && server.rating < 4,
+          'star-active': server.rating >= 4
+        }"
         >star_rate</mat-icon
       >
-      <mat-icon [ngClass]="{ star: true, 'star-active': server.rating >= 3 }"
+      <mat-icon
+        [ngClass]="{
+          star: true,
+          'star-half': server.rating >= 2.4 && server.rating < 3,
+          'star-active': server.rating >= 3
+        }"
         >star_rate</mat-icon
       >
-      <mat-icon [ngClass]="{ star: true, 'star-active': server.rating >= 2 }"
+      <mat-icon
+        [ngClass]="{
+          star: true,
+          'star-half': server.rating >= 1.4 && server.rating < 2,
+          'star-active': server.rating >= 2
+        }"
         >star_rate</mat-icon
       >
       <mat-icon [ngClass]="{ star: true, 'star-active': server.rating >= 1 }"

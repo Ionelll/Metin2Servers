@@ -119,6 +119,12 @@
   color: white;
   transform: scale(0.7);
 }
+.star-half {
+  background: linear-gradient(to left, var(--logo) 53%, white 47%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
 .star-active {
   color: var(--logo);
 }
