@@ -30,7 +30,7 @@ export class SidebarComponent implements OnInit {
   }
   ngOnInit(): void {
     this.authService.getUser().subscribe((res) => {
-      if (res.servers[0].server_id) this.userHasServer = true;
+      if (res && res.servers[0]?.server_id) this.userHasServer = true;
       else this.userHasServer = false;
     });
   }
