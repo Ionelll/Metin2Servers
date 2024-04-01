@@ -9,7 +9,7 @@
   // padding: 2rem;
 
   position: relative;
-  height: 18rem;
+  height: 16rem;
   overflow: hidden;
 }
 
@@ -17,8 +17,8 @@
   object-fit: cover;
   position: absolute;
   bottom: 0;
-  left: 0;
-  // height: 100%;
+  left: -2rem;
+
   height: 100%;
 }
 
@@ -65,5 +65,8 @@
   }
   .text-container {
     display: none;
+  }
+  .video {
+    left: -4rem;
   }
 }
