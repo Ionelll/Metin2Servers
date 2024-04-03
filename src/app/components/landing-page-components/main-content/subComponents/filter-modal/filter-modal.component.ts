@@ -1,9 +1,10 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
 import { FilterService } from '../../services/filter.service';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 import { ServerService } from '../../../../../services/server.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-filter-modal',
@@ -12,7 +13,7 @@ import { ServerService } from '../../../../../services/server.service';
   templateUrl: './filter-modal.component.html',
   styleUrl: './filter-modal.component.scss',
 })
-export class FilterModalComponent implements AfterViewInit {
+export class FilterModalComponent implements AfterViewInit, OnDestroy {
   modalStatus: boolean = false;
   orderToggle = 'Ascending';
   languageToggle: boolean;
@@ -22,6 +23,7 @@ export class FilterModalComponent implements AfterViewInit {
   categoryValue: string;
   languageValue: string;
   sortbyValue = 'rating';
+  statusSub = new Subscription();
 
   constructor(
     private filterService: FilterService,
@@ -29,7 +31,7 @@ export class FilterModalComponent implements AfterViewInit {
   ) {}
 
   ngAfterViewInit(): void {
-    this.filterService.getModalStatus().subscribe((res) => {
+    this.statusSub = this.filterService.getModalStatus().subscribe((res) => {
       this.modalStatus = res;
     });
   }
@@ -53,5 +55,8 @@ export class FilterModalComponent implements AfterViewInit {
 
   reloadServers() {
     this.serversService.reloadServers();
+  }
+  ngOnDestroy(): void {
+    this.statusSub.unsubscribe();
   }
 }

@@ -81,7 +81,7 @@ export class ServerService {
     const filteredServers = servers.filter((item) => {
       return item.name.toLocaleLowerCase().match(value.toLowerCase());
     });
-    const sortedServers = this.sortBy(filteredServers, 'rating');
+    const sortedServers = this.sortBy(filteredServers, 'no_votes');
     this.filteredServers.next(sortedServers.reverse());
   }
 

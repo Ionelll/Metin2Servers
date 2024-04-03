@@ -52,21 +52,10 @@
   font-size: calc(16px + 3vw);
   margin: 0;
 }
-// .server {
-//   grid-column: 2;
-// }
-// .server-container {
-//   grid-column: 2;
-//   display: grid;
-//   grid-template-columns: ;
-//   height: 100%;
-//   overflow-y: scroll;
-// }
-// .server-container::-webkit-scrollbar {
-//   display: none;
-// }
+
 @media screen and (max-width: 800px) {
   .grid {
-    padding: 3rem 0;
+    padding: 5rem 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   }
 }

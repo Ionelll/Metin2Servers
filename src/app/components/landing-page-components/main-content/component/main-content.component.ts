@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { ServerCardComponent } from '../subComponents/server-card/server-card.component';
 import { CommonModule } from '@angular/common';
@@ -9,6 +9,7 @@ import { FilterModalComponent } from '../subComponents/filter-modal/filter-modal
 import { FormsModule } from '@angular/forms';
 import { UserModel } from '../../../../models/user.model';
 import { AuthenticationService } from '../../../../services/authentication.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-main-content',
@@ -23,7 +24,7 @@ import { AuthenticationService } from '../../../../services/authentication.servi
   templateUrl: './main-content.component.html',
   styleUrl: './main-content.component.scss',
 })
-export class MainContentComponent implements OnInit {
+export class MainContentComponent implements OnInit, OnDestroy {
   constructor(
     private serverService: ServerService,
     private filterService: FilterService,
@@ -34,19 +35,24 @@ export class MainContentComponent implements OnInit {
   searchValue: string;
   noServers = false;
   userRatings: UserModel['ratings'];
+  serversSub = new Subscription();
+  filteredSub = new Subscription();
+  authSub = new Subscription();
 
   ngOnInit(): void {
-    this.serverService.getServers().subscribe((res) => {
+    this.serversSub = this.serverService.getServers().subscribe((res) => {
       if (res) this.servers = res;
       if (this.servers.length <= 0) this.noServers = true;
       else this.noServers = false;
     });
-    this.serverService.getFilteredServers().subscribe((res) => {
-      if (res) this.servers = res;
-      if (this.servers.length <= 0) this.noServers = true;
-      else this.noServers = false;
-    });
-    this.authService.getUser().subscribe((res) => {
+    this.filteredSub = this.serverService
+      .getFilteredServers()
+      .subscribe((res) => {
+        if (res) this.servers = res;
+        if (this.servers.length <= 0) this.noServers = true;
+        else this.noServers = false;
+      });
+    this.authSub = this.authService.getUser().subscribe((res) => {
       if (res) {
         this.userRatings = res.ratings;
         this.setUserRating();
@@ -76,5 +82,10 @@ export class MainContentComponent implements OnInit {
     )
       this.serverService.reloadServers();
     this.serverService.filterByName(this.searchValue);
+  }
+  ngOnDestroy(): void {
+    this.authSub.unsubscribe();
+    this.filteredSub.unsubscribe();
+    this.authSub.unsubscribe();
   }
 }

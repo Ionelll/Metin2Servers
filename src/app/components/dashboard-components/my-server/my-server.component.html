@@ -55,6 +55,7 @@
         [defaultSelected]="true"
         disabled
         *ngIf="server.controls.category.untouched && media < 1000"
+        hidden
       >
         category:
       </option>
@@ -66,7 +67,8 @@
     <select class="input" formControlName="focus">
       <option
         [defaultSelected]="true"
-        *ngIf="server.controls.category.untouched && media < 1000"
+        *ngIf="server.controls.focus.untouched && media < 1000"
+        hidden
         disabled
       >
         focus:
