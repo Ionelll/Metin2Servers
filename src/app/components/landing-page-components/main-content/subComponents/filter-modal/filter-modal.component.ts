@@ -5,6 +5,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 import { ServerService } from '../../../../../services/server.service';
 import { Subscription } from 'rxjs';
+import { CountryFlags } from '../../../../../models/country-flags';
 
 @Component({
   selector: 'app-filter-modal',
@@ -16,13 +17,11 @@ import { Subscription } from 'rxjs';
 export class FilterModalComponent implements AfterViewInit, OnDestroy {
   modalStatus: boolean = false;
   orderToggle = 'Ascending';
-  languageToggle: boolean;
-  categoryToggle: boolean;
-  focusToggle: boolean;
   focusValue: string;
   categoryValue: string;
   languageValue: string;
   sortbyValue = 'rating';
+  countryFlags = CountryFlags;
   statusSub = new Subscription();
 
   constructor(
@@ -36,9 +35,6 @@ export class FilterModalComponent implements AfterViewInit, OnDestroy {
     });
   }
   closeModal() {
-    this.languageValue = this.languageToggle ? this.languageValue : undefined;
-    this.categoryValue = this.categoryToggle ? this.categoryValue : undefined;
-    this.focusValue = this.focusToggle ? this.focusValue : undefined;
     this.serversService.filterBy(
       this.sortbyValue,
       this.languageValue,

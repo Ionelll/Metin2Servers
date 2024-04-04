@@ -5,7 +5,6 @@
     </div>
     <div class="footer">
       <div class="rating-container">
-        <p class="label no-votes">From: {{ item.no_votes }} votes</p>
         <div class="rating">
           <mat-icon
             [ngClass]="{
@@ -43,6 +42,7 @@
             >star_rate</mat-icon
           >
         </div>
+        <p class="label no-votes">From: {{ item.no_votes }} votes</p>
       </div>
       <p class="title">{{ item.name }}</p>
 
@@ -50,7 +50,7 @@
       <div class="details">
         <label class="label">start date:</label>
         <p class="text">{{ item.release_date }}</p>
-        <label class="label"> type:</label>
+        <label class="label"> category:</label>
         <p class="text">{{ item.category }}</p>
 
         <label class="label">languages:</label>

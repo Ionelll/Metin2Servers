@@ -4,75 +4,55 @@
       <p class="title">Filters</p>
       <button class="exit" (click)="cancel()">X</button>
     </div>
+    <p class="label">order:</p>
     <button
       class="filter-button"
       *ngIf="orderToggle === 'Ascending'"
       (click)="orderToggle = 'Descending'"
     >
-      <mat-icon>arrow_downward</mat-icon>
+      <mat-icon class="icon">arrow_downward</mat-icon>
     </button>
     <button
       class="filter-button"
       *ngIf="orderToggle === 'Descending'"
       (click)="orderToggle = 'Ascending'"
     >
-      <mat-icon>arrow_upward</mat-icon>
+      <mat-icon class="icon">arrow_upward</mat-icon>
     </button>
-    <label for="sortby" class="label label1">Sort by</label>
+    <label for="sortby" class="label label1">sort by:</label>
     <select
       id="sortby"
-      class="input select sortby"
+      class="input select"
       [(ngModel)]="sortbyValue"
       value="rating"
     >
       <option value="rating" selected>Rating</option>
       <option value="name">Name</option>
-      <option value="playerBase">Player Count</option>
-      <option value="releaseDate">Release Date</option>
+      <option value="player_base">Player Count</option>
+      <option value="release_date">Release Date</option>
     </select>
 
-    <input
-      type="checkbox"
-      class="checkbox checkbox1"
-      [(ngModel)]="languageToggle"
-    />
-    <label for="language" class="label">Language</label>
-    <select
-      [disabled]="!languageToggle"
-      class="input select language"
-      id="language"
-      [(ngModel)]="languageValue"
-    >
-      <option value="Ro">Romanian</option>
-      <option value="En">English</option>
-      <option value="Ger">German</option>
-      <option value="Tur">Turkish</option>
-      <option value="Hun">Hungaryan</option>
+    <label for="language" class="label">language:</label>
+    <select class="input select" id="language" [(ngModel)]="languageValue">
+      <option [value]="undefined">None</option>
+      <option *ngFor="let flag of countryFlags" [value]="flag.flag">
+        {{ flag.country }}
+      </option>
     </select>
-
-    <input type="checkbox" [(ngModel)]="categoryToggle" class="checkbox" />
-    <label for="type" class="label">Category</label>
-    <select
-      id="type"
-      [disabled]="!categoryToggle"
-      class="input select category"
-      [(ngModel)]="categoryValue"
-    >
-      <option value="OldSchool">Old School</option>
+    <label for="type" class="label">category:</label>
+    <select id="type" class="input select" [(ngModel)]="categoryValue">
+      <option [value]="undefined">None</option>
+      <option value="Old School">Old School</option>
       <option value="Mixed">Mixed</option>
-      <option value="NewSchool">New School</option>
+      <option value="New School">New School</option>
     </select>
 
-    <input type="checkbox" [(ngModel)]="focusToggle" class="checkbox" />
-    <label for="focus" class="label">Focus</label>
-    <select
-      id="focus"
-      [disabled]="!focusToggle"
-      class="input select focus"
-      [(ngModel)]="focusValue"
-    >
-      <option value="pvp">PVP</option>
-      <option value="pve">PVE</option>
+    <label for="focus" class="label">focus:</label>
+    <select id="focus" class="input select" [(ngModel)]="focusValue">
+      <option [value]="undefined">None</option>
+      <option value="PVP">PVP</option>
+      <option value="PVE">PVE</option>
+      <option value="PVE & PVP">PVE & PVP</option>
     </select>
     <button class="button" (click)="closeModal()">Apply</button>
   </div>

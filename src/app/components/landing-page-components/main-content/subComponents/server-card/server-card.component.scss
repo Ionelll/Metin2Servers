@@ -68,7 +68,7 @@
   img {
     object-fit: contain;
     width: 100%;
-    max-height: 15rem;
+    max-height: 12rem;
 
     align-self: center;
     border-radius: 15px 15px 0 0;
@@ -109,6 +109,7 @@
 }
 .rating {
   display: flex;
+  flex-direction: row-reverse;
   justify-content: flex-end;
 }
 .no-votes {
@@ -120,7 +121,7 @@
   transform: scale(0.7);
 }
 .star-half {
-  background: linear-gradient(to left, var(--logo) 53%, white 47%);
+  background: linear-gradient(to right, var(--logo) 53%, white 47%);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;

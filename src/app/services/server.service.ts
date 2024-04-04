@@ -62,14 +62,16 @@ export class ServerService {
   ) {
     let servers = [...this.Servers.value];
     if (language || category || focus || is_premium) {
-      servers = servers.filter(
-        (item) =>
+      servers = servers.filter((item) => {
+        return (
           (!language || item.languages?.includes(language)) &&
           (!category || item.category === category) &&
-          (!focus || item.focus.includes(focus)) &&
+          (!focus || item.focus === focus) &&
           (!is_premium || item.is_premium === true)
-      );
+        );
+      });
     }
+    console.log(servers);
     const sortedServers = this.sortBy(servers, sortBy);
     if (order === 'Ascending') sortedServers.reverse();
     this.filteredServers.next(sortedServers);
