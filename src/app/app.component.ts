@@ -24,7 +24,6 @@ import { ServerService } from './services/server.service';
   animations: [
     trigger('fade', [
       transition('*<=>*', [
-        // Set a default  style for enter and leave
         query(
           ':enter,:leave',
           [
