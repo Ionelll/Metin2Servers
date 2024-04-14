@@ -1,6 +1,6 @@
 .container {
   background-color: rgba(0, 0, 0, 0.91);
-  padding: 0.5rem 0;
+  padding: 0;
   width: 100%;
   display: grid;
   grid-template-columns: 0.5fr auto 0.5fr;
@@ -16,4 +16,10 @@
 }
 .logo {
   transform: scale(0.7);
+  margin: 0;
+}
+@media screen and (max-width: 800px) {
+  .logo {
+    transform: scale(1);
+  }
 }

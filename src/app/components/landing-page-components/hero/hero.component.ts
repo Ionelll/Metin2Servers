@@ -24,15 +24,19 @@ import { MatIcon } from '@angular/material/icon';
   animations: [
     trigger('slide', [
       transition('* <=> *', [
-        query(':leave', [style({ display: 'none' })], {
-          optional: true,
-        }),
-
-        query(
-          ':enter',
-          [style({ opacity: 0 }), animate('1s ease', style({ opacity: 1 }))],
-          { optional: true }
-        ),
+        group([
+          query(':leave', style({ display: 'none' }), {
+            optional: true,
+          }),
+          query(
+            ':enter',
+            [
+              style({ transform: 'scale(0)' }),
+              animate('1s ease', style({ transform: 'scale(1)' })),
+            ],
+            { optional: true }
+          ),
+        ]),
       ]),
     ]),
   ],
@@ -45,12 +49,12 @@ export class HeroComponent implements OnInit {
     else this.active = 0;
     setTimeout(() => {
       this.changeTimer();
-    }, 5000);
+    }, 10000);
   }
 
   ngOnInit(): void {
     setTimeout(() => {
       this.changeTimer();
-    }, 5000);
+    }, 10000);
   }
 }
