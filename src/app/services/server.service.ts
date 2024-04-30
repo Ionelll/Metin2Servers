@@ -23,7 +23,7 @@ export class ServerService {
   setServers() {
     this.http
       .get<{ count: number; data: ServerModel[] }>(
-        'https://metins-be.onrender.com/api/server/servers'
+        'https://metinsbe-production.up.railway.app/api/server/servers'
       )
       .subscribe((res) => {
         this.Servers.next(res.data);
@@ -89,19 +89,22 @@ export class ServerService {
 
   saveServer(server: FormData) {
     this.http
-      .post('https://metins-be.onrender.com/api/server', server)
+      .post('https://metinsbe-production.up.railway.app/api/server', server)
       .subscribe();
   }
 
   patchServer(server: FormData, serverId: string) {
     this.http
-      .patch(`https://metins-be.onrender.com/api/server/${serverId}`, server)
+      .patch(
+        `https://metinsbe-production.up.railway.app/api/server/${serverId}`,
+        server
+      )
       .subscribe();
   }
   setRating(value: number, server_id: string) {
     this.http
       .patch(
-        `https://metins-be.onrender.com/api/update_server_rating/${server_id}`,
+        `https://metinsbe-production.up.railway.app/api/update_server_rating/${server_id}`,
         { value: value }
       )
       .subscribe();

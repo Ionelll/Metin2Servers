@@ -17,7 +17,7 @@ export class AuthenticationService {
     if (userInput.email && userInput.password)
       this.http
         .post<{ token: string; user_id: string }>(
-          `https://metins-be.onrender.com/api/login`,
+          `https://metinsbe-production.up.railway.app/api/login`,
           userInput
         )
         .subscribe((res) => {
@@ -36,7 +36,10 @@ export class AuthenticationService {
     const { repeatPassword, ...credentials } = userInput;
     if (userInput.password === userInput.repeatPassword) {
       this.http
-        .post('https://metins-be.onrender.com/api/register', credentials)
+        .post(
+          'https://metinsbe-production.up.railway.app/api/register',
+          credentials
+        )
         .subscribe((res) => {
           if (res) this.router.navigateByUrl('/login');
         });
@@ -45,7 +48,7 @@ export class AuthenticationService {
   setPaymentInfo() {
     this.http
       .get<PaymentInfo>(
-        'https://metins-be.onrender.com/api/stripe/promote-subscription-info'
+        'https://metinsbe-production.up.railway.app/api/stripe/promote-subscription-info'
       )
       .subscribe((res) => {
         this.paymentInfo.next(res);
@@ -58,7 +61,7 @@ export class AuthenticationService {
   checkToken() {
     this.http
       .get<{ message: string }>(
-        'https://metins-be.onrender.com/api/verify-session'
+        'https://metinsbe-production.up.railway.app/api/verify-session'
       )
       .subscribe((res) => {
         if (res && res.message === 'Sesion is valid') {
@@ -71,7 +74,7 @@ export class AuthenticationService {
 
   setUser() {
     this.http
-      .get<UserModel>('https://metins-be.onrender.com/api/user')
+      .get<UserModel>('https://metinsbe-production.up.railway.app/api/user')
       .subscribe((res) => {
         this.user.next(res);
       });
@@ -93,21 +96,24 @@ export class AuthenticationService {
   logout() {
     this.loggedin.next(false);
     this.http
-      .post('https://metins-be.onrender.com/api/logout', null)
+      .post('https://metinsbe-production.up.railway.app/api/logout', null)
       .subscribe();
 
     localStorage.removeItem('token');
   }
   resetPassword(userEmail: { email: string }) {
     this.http
-      .post(' https://metins-be.onrender.com/api/forgot-password', userEmail)
+      .post(
+        ' https://metinsbe-production.up.railway.app/api/forgot-password',
+        userEmail
+      )
       .subscribe();
   }
   forgotPassword(uid: string, auth: string, password: string) {
     uid = uid.replace('uid', '');
     this.http
       .post(
-        `https://metins-be.onrender.com/api/reset-password/${uid}/${auth}/`,
+        `https://metinsbe-production.up.railway.app/api/reset-password/${uid}/${auth}/`,
         {
           new_password: password,
         }

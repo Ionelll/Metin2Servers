@@ -9,7 +9,7 @@ export class PaymentService {
   redirectToPayment() {
     this.http
       .post<{ checkout_url: string }>(
-        'https://metins-be.onrender.com/api/stripe/promote-subscription-checkout?success_url=https://metin2servers.pages.dev/profile/server?success=success&cancel_url=https://metin2servers.pages.dev/profile/server?success=cancel',
+        'https://metinsbe-production.up.railway.app/api/stripe/promote-subscription-checkout?success_url=https://metin2servers.pages.dev/profile/server?success=success&cancel_url=https://metin2servers.pages.dev/profile/server?success=cancel',
         null
       )
       .subscribe((res) => {

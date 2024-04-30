@@ -34,10 +34,10 @@ export class LoginComponent {
       this.authService.resetPassword({
         email: this.loginInput.controls.email.value,
       });
-      this.errorService.setError('An email has beent sent to your adress.');
+      this.errorService.setError(['An email has beent sent to your adress.']);
     } else
-      this.errorService.setError(
-        'Please enter your email in the email field below, then click "Forgot my password".'
-      );
+      this.errorService.setError([
+        'Please enter your email in the email field below, then click "Forgot my password".',
+      ]);
   }
 }

@@ -139,9 +139,9 @@ export class MyServerComponent implements OnInit, OnDestroy {
     if (this.server.controls.languages.length < 5)
       this.server.controls.languages.push(new FormControl(''));
     else
-      this.errorService.setError(
-        'Choose international if your server supports more than 5 languages'
-      );
+      this.errorService.setError([
+        'Choose international if your server supports more than 5 languages',
+      ]);
   }
   removeLanguage(i) {
     this.server.controls.languages.removeAt(i);

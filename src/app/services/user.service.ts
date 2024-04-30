@@ -8,10 +8,13 @@ export class UserService {
 
   changePassword(oldpass: string, newpass: string) {
     this.http
-      .post('https://metins-be.onrender.com/api/user/change-password', {
-        old_password: oldpass,
-        new_password: newpass,
-      })
+      .post(
+        'https://metinsbe-production.up.railway.app/api/user/change-password',
+        {
+          old_password: oldpass,
+          new_password: newpass,
+        }
+      )
       .subscribe();
   }
 }
