@@ -4,11 +4,12 @@ import { Subject } from 'rxjs';
 @Injectable({ providedIn: 'root' })
 export class ErrorService {
   private emitError = new Subject<any>();
-  setError(value: string[]) {
-    if (value.length > 1) {
+  setError(id: string, value: string[]) {
+    if (id === 'server') {
       let missingValues: string = '';
 
-      value.splice(value.length - 1, 0, 'and');
+      if (value.length > 1) value.splice(value.length - 1, 0, 'and');
+
       for (let i = 0; i < value.length; i++) {
         if (i == value.length - 2 || i == value.length - 3)
           missingValues = missingValues + value[i] + ' ';
@@ -16,7 +17,10 @@ export class ErrorService {
       }
 
       this.emitError.next(
-        `All fields are required! Please provide : ${missingValues}`
+        `All fields are required! Please provide : ${missingValues.replace(
+          /_/g,
+          ' '
+        )}`
       );
     } else this.emitError.next(value);
   }

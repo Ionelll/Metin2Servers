@@ -49,7 +49,7 @@ export class ServerCardComponent implements AfterViewInit {
     }
   }
   linkToWebsite(link: string) {
-    window.open(link, '_blanck');
+    window.open(link, '_blank');
   }
 
   mouseLeave() {
