@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Subject } from 'rxjs';
-import { ServersConstant } from '../models/servers.constant';
 import { ServerModel } from '../models/server.model';
 import { HttpClient } from '@angular/common/http';
+import { ErrorService } from './error.service';
 
 @Injectable({ providedIn: 'root' })
 export class ServerService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private errorService: ErrorService) {}
 
   private Servers = new BehaviorSubject<ServerModel[]>([]);
   private filteredServers = new Subject<ServerModel[]>();
@@ -99,7 +99,9 @@ export class ServerService {
         `https://metinsbe-production.up.railway.app/api/server/${serverId}`,
         server
       )
-      .subscribe();
+      .subscribe((res) => {
+        if (res) this.errorService.setError('', ['Changes has been saved !']);
+      });
   }
   setRating(value: number, server_id: string) {
     this.http
