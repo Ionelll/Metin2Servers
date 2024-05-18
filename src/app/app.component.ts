@@ -14,11 +14,18 @@ import {
 import { ChildrenOutletContexts } from '@angular/router';
 import { AuthenticationService } from './services/authentication.service';
 import { ServerService } from './services/server.service';
+import { ToolbarComponent } from './components/toolbar/toolbar.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, NavigationComponent, SnackbarComponent],
+  imports: [
+    CommonModule,
+    RouterOutlet,
+    NavigationComponent,
+    SnackbarComponent,
+    ToolbarComponent,
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
   animations: [

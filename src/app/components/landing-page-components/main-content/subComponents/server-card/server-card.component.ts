@@ -13,24 +13,24 @@ import { AuthenticationService } from '../../../../../services/authentication.se
   imports: [MatIconModule, CommonModule, RouterLink],
   templateUrl: './server-card.component.html',
   styleUrl: './server-card.component.scss',
-  animations: [
-    trigger('slide', [
-      transition(':enter', [
-        style({ transform: 'translateY(-100%)' }),
-        animate(
-          '0.3s 0.2s ease',
-          style({
-            transform: 'translateY(0)',
-          })
-        ),
-      ]),
-      transition(':leave', [
-        animate('0.3s ease', style({ transform: 'translateY(-100%)' })),
-      ]),
-    ]),
-  ],
+  // animations: [
+  //   trigger('slide', [
+  //     transition(':enter', [
+  //       style({ transform: 'translateY(-100%)' }),
+  //       animate(
+  //         '0.3s 0.2s ease',
+  //         style({
+  //           transform: 'translateY(0)',
+  //         })
+  //       ),
+  //     ]),
+  //     transition(':leave', [
+  //       animate('0.3s ease', style({ transform: 'translateY(-100%)' })),
+  //     ]),
+  //   ]),
+  // ],
 })
-export class ServerCardComponent implements AfterViewInit {
+export class ServerCardComponent {
   @Input() item: ServerModel;
   @Input() rating: number;
   public rate = 0;
@@ -55,17 +55,6 @@ export class ServerCardComponent implements AfterViewInit {
   mouseLeave() {
     if (this.media) this.hover = true;
     else this.hover = false;
-  }
-
-  ngAfterViewInit(): void {
-    if (this.media) {
-      document
-        .getElementById('hover')
-        .classList.add('.hover-container:hover::after');
-      document
-        .getElementById('hover')
-        .classList.remove('.hover-container::after');
-    }
   }
 
   setRating(value: number) {

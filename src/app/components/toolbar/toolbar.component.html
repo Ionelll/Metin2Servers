@@ -1,25 +1,57 @@
 <div class="container">
-  <app-logo class="logo"></app-logo>
-  <div class="actions">
+  <a routerLink="/" style="all: unset">
+    <app-logo class="logo"></app-logo>
+  </a>
+  <div class="actions-no-user" *ngIf="!user">
     <a
       routerLink="login"
-      class="action"
-      *ngIf="currentRoute === '/' && !user && media > 700"
+      routerLinkActive="active"
+      class="link"
+      *ngIf="!user && media > 700"
     >
-      LOGIN</a
+      Login</a
     >
     <a
       routerLink="signup"
-      class="action"
-      *ngIf="currentRoute === '/' && !user && media > 700"
-      >SIGNUP
+      routerLinkActive="active"
+      class="link"
+      *ngIf="!user && media > 700"
+      >Signup
     </a>
-    <a
-      routerLink="profile/security"
-      class="action"
-      *ngIf="currentRoute === '/' && (user || media < 700)"
-    >
+    <a routerLink="profile/security" class="link" *ngIf="user || media < 700">
       Account
     </a>
+  </div>
+  <div class="actions-logged" *ngIf="user && media > 700">
+    <a routerLink="profile/security" class="link" routerLinkActive="active"
+      >Account</a
+    >
+    <a
+      routerLink="profile/server"
+      class="link"
+      *ngIf="hasServer"
+      routerLinkActive="active"
+      >My Server</a
+    >
+    <a
+      routerLink="profile/server"
+      class="link"
+      *ngIf="!hasServer"
+      routerLinkActive="active"
+      >Add a server</a
+    >
+
+    <a
+      routerLink="profile/events"
+      class="link"
+      routerLinkActive="active"
+      *ngIf="hasServer"
+      >Share Event</a
+    >
+    <a routerLink="profile/tickets" class="link" routerLinkActive="active"
+      >Tickets</a
+    >
+
+    <button class="link" (click)="logout()">Logout</button>
   </div>
 </div>

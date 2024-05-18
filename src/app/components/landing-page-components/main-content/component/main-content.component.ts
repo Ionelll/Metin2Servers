@@ -83,6 +83,9 @@ export class MainContentComponent implements OnInit, OnDestroy {
       this.serverService.reloadServers();
     this.serverService.filterByName(this.searchValue);
   }
+  goTop() {
+    window.scrollTo(0, 0);
+  }
   ngOnDestroy(): void {
     this.authSub.unsubscribe();
     this.filteredSub.unsubscribe();

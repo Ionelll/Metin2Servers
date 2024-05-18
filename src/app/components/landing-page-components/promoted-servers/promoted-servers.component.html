@@ -1,9 +1,12 @@
-<div class="grid">
-  @defer (on viewport) {
-  <div *ngFor="let server of servers" class="server">
-    <app-promoted-card [server]="server"></app-promoted-card>
+<div class="container">
+  <div class="img-container">
+    <img src="../../../../assets/shaman.png" alt="shaman" class="shaman" />
   </div>
-  }@placeholder {
-  <img src="../../../../assets/load-icon.png" alt="" />
-  }
+  <div class="grid">
+    @for(server of servers;track server.server_id){
+
+    <app-promoted-card [server]="server"></app-promoted-card>
+
+    }
+  </div>
 </div>

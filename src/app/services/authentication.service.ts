@@ -95,6 +95,7 @@ export class AuthenticationService {
   }
   logout() {
     this.loggedin.next(false);
+    this.user.next(undefined);
     this.http
       .post('https://metinsbe-production.up.railway.app/api/logout', null)
       .subscribe();

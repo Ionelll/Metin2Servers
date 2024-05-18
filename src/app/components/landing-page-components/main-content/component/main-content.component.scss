@@ -1,35 +1,37 @@
 .container {
-  background-color: var(--primary);
+  // background-color: var(--primary);
 
   display: flex;
   flex-direction: column;
   gap: 5rem;
   padding-top: 2rem;
   margin: 0 3rem;
+  border-radius: 10px;
 }
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(20rem, 0.3fr));
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 0.2fr));
   row-gap: 7rem;
   column-gap: 2rem;
   padding: 3rem 3rem;
   justify-content: center;
   margin-bottom: 15rem;
-  margin: 0 2rem 0 2rem;
+  // margin: 0 2rem 0 2rem;
 }
 .actions {
   display: flex;
   justify-content: start;
+  background-color: rgba(0, 0, 0, 0.653);
+  border-radius: 7px;
 }
 .input {
-  background-color: var(--input);
   font-weight: 400;
   width: 40%;
 }
 .input::placeholder {
   font-family: "Poppins", sans-serif;
   font-size: 16px;
-  color: white;
+  color: rgb(204, 204, 204);
 }
 
 .filters-container {
@@ -40,7 +42,8 @@
 .action {
   display: flex;
   align-items: center;
-  font-family: "Permanent Marker", cursive;
+  // font-family: "Permanent Marker", cursive;
+  // font-weight: 200;
   padding: 0.7rem 2rem;
 }
 .no-servers {
@@ -50,8 +53,30 @@
   font-size: 18px;
   font-weight: 600;
 }
+.back-top-container {
+  position: fixed;
+  bottom: 2rem;
+  right: 0.5rem;
+  z-index: 1000;
+  background-color: var(--primary);
+  border-radius: 50%;
+}
+.back-top {
+  display: none;
+  padding: 0;
+  color: var(--action-active);
+}
+.back-top-active {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 1rem;
+}
+.icon-top {
+  transform: scale(1.5);
+}
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 889px) {
   .container {
     padding-top: 2rem;
     margin: 0;
@@ -75,16 +100,16 @@
   .card-grid {
     padding: 0;
     padding-top: 5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 10rem;
+    // display: flex;
+    // flex-direction: column;
+    gap: 3rem;
     margin: 0 0.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
   }
 }
 @media screen and (max-width: 1278px) {
   .card-grid {
     padding: 1rem;
-    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   }
 }
 // @media screen and (max-width: 600px) {

@@ -1,6 +1,5 @@
 <div class="container">
   <div class="content">
-    <p class="title login">Login</p>
     <form id="userCredentials" class="login-form" [formGroup]="loginInput">
       <input
         type="email"
@@ -19,9 +18,8 @@
       />
     </form>
     <div class="footer">
-      <a routerLink="/signup" class="button">Signup</a>
       <button class="action" (click)="resetPassword()">
-        Forgot my password
+        Forgot my password !
       </button>
       <button
         (click)="login()"

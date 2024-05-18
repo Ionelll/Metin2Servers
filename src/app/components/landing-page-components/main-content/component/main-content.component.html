@@ -3,7 +3,7 @@
   <div class="filters-container">
     <div class="actions">
       <button class="action" (click)="openModal()">FILTERS</button>
-      <button class="action" (click)="reloadServers()">Reset</button>
+      <button class="action" (click)="reloadServers()">RESET</button>
     </div>
     <input
       type="text"
@@ -18,5 +18,10 @@
     <div *ngFor="let item of servers">
       <app-server-card [item]="item"></app-server-card>
     </div>
+  </div>
+  <div class="back-top-container">
+    <button class="action back-top" id="back-top" (click)="goTop()">
+      <span class="material-icons icon-top">keyboard_double_arrow_up</span>
+    </button>
   </div>
 </div>

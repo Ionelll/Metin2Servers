@@ -4,16 +4,23 @@ import { CommonModule } from '@angular/common';
 import { AuthenticationService } from '../../services/authentication.service';
 import { Router, NavigationEnd } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
-import { RouterLink } from '@angular/router';
+import { RouterLink, RouterLinkActive } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-toolbar',
   standalone: true,
-  imports: [LogoComponent, CommonModule, MatIconModule, RouterLink],
+  imports: [
+    LogoComponent,
+    CommonModule,
+    MatIconModule,
+    RouterLink,
+    RouterLinkActive,
+  ],
   templateUrl: './toolbar.component.html',
   styleUrl: './toolbar.component.scss',
 })
-export class ToolbarComponent implements OnInit {
+export class ToolbarComponent implements OnInit, OnDestroy {
   constructor(
     private authService: AuthenticationService,
     private router: Router
@@ -23,14 +30,29 @@ export class ToolbarComponent implements OnInit {
     });
   }
 
-  public user: boolean = false;
-
+  private subs = new Subscription();
   public currentRoute: string = '';
   public media = window.innerWidth;
+  public user: boolean;
+  public hasServer: boolean;
 
   ngOnInit(): void {
-    this.authService.checkLoggedin().subscribe((res) => {
-      this.user = res;
-    });
+    this.subs.add(
+      this.authService.getUser().subscribe((res) => {
+        if (res) {
+          this.user = true;
+          if (res.servers[0]?.server_id) this.hasServer = true;
+        } else {
+          this.user = false;
+          this.hasServer = false;
+        }
+      })
+    );
+  }
+  logout() {
+    this.authService.logout();
+  }
+  ngOnDestroy(): void {
+    this.subs.unsubscribe();
   }
 }
