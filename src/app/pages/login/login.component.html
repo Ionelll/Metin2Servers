@@ -1,19 +1,21 @@
 <div class="container">
   <div class="content">
     <form id="userCredentials" class="login-form" [formGroup]="loginInput">
+      <!-- <label for="email" class="label">email:</label> -->
       <input
         type="email"
-        placeholder="Email*"
+        placeholder="email"
         id="email"
         class="input"
         formControlName="email"
       />
-
+      <!-- <label for="password" class="label">password:</label> -->
       <input
         type="password"
         class="input"
+        id="password"
         name="password"
-        placeholder="Password*"
+        placeholder="password"
         formControlName="password"
       />
     </form>

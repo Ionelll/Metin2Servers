@@ -34,11 +34,13 @@
 }
 
 .title {
+  color: var(--logo);
   grid-column-start: 1;
   grid-column-end: 4;
 }
 
 .label {
+  color: var(--logo);
   grid-column: 1;
   align-self: center;
 }

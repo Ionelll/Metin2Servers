@@ -15,13 +15,7 @@
   background-color: transparent;
 }
 
-.back-top-container {
-  position: fixed;
-  bottom: 2rem;
-  right: 0.5rem;
-  z-index: 1000;
-  // background-color: var(--primary);
-}
+
 .home {
   transform: scale(3);
   position: absolute;
@@ -31,21 +25,7 @@
   background-color: var(--primary);
   border-radius: 0 0 10px 10px;
 }
-.back-top {
-  display: none;
-  padding: 0;
-}
-.back-top-active {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  padding: 1rem;
-  border-radius: 50%;
-  border: 5px solid var(--logo);
-}
-.icon-top {
-  transform: scale(3.5);
-}
+
 
 @media screen and (max-width: 1100px) {
   .back-top-container {

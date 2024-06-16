@@ -1,52 +1,54 @@
 <div class="container" (mouseleave)="mouseLeave()" (mouseover)="hover = true">
-  <div class="img-container" (click)="linkToWebsite(item.website)">
+  <div class="rating-container" routerLink="/presentation/{{ item.server_id }}">
+    <div class="rating">
+      <mat-icon
+        [ngClass]="{
+          star: true,
+          'star-half': item.rating >= 4.4 && item.rating < 5,
+          'star-active': item.rating >= 5
+        }"
+        >star_rate</mat-icon
+      >
+      <mat-icon
+        [ngClass]="{
+          star: true,
+          'star-half': item.rating >= 3.4 && item.rating < 4,
+          'star-active': item.rating >= 4
+        }"
+        >star_rate</mat-icon
+      >
+      <mat-icon
+        [ngClass]="{
+          star: true,
+          'star-half': item.rating >= 2.4 && item.rating < 3,
+          'star-active': item.rating >= 3
+        }"
+        >star_rate</mat-icon
+      >
+      <mat-icon
+        [ngClass]="{
+          star: true,
+          'star-half': item.rating >= 1.4 && item.rating < 2,
+          'star-active': item.rating >= 2
+        }"
+        >star_rate</mat-icon
+      >
+      <mat-icon [ngClass]="{ star: true, 'star-active': item.rating >= 1 }"
+        >star_rate</mat-icon
+      >
+    </div>
+    <p class="label no-votes">From: {{ item.no_votes }} votes</p>
+  </div>
+  <div class="img-container" routerLink="/presentation/{{ item.server_id }}">
     <img class="banner" [src]="item.banner" alt="" />
   </div>
   <div class="footer">
-    <div class="rating-container" (click)="linkToWebsite(item.website)">
-      <div class="rating">
-        <mat-icon
-          [ngClass]="{
-            star: true,
-            'star-half': item.rating >= 4.4 && item.rating < 5,
-            'star-active': item.rating >= 5
-          }"
-          >star_rate</mat-icon
-        >
-        <mat-icon
-          [ngClass]="{
-            star: true,
-            'star-half': item.rating >= 3.4 && item.rating < 4,
-            'star-active': item.rating >= 4
-          }"
-          >star_rate</mat-icon
-        >
-        <mat-icon
-          [ngClass]="{
-            star: true,
-            'star-half': item.rating >= 2.4 && item.rating < 3,
-            'star-active': item.rating >= 3
-          }"
-          >star_rate</mat-icon
-        >
-        <mat-icon
-          [ngClass]="{
-            star: true,
-            'star-half': item.rating >= 1.4 && item.rating < 2,
-            'star-active': item.rating >= 2
-          }"
-          >star_rate</mat-icon
-        >
-        <mat-icon [ngClass]="{ star: true, 'star-active': item.rating >= 1 }"
-          >star_rate</mat-icon
-        >
-      </div>
-      <p class="label no-votes">From: {{ item.no_votes }} votes</p>
-    </div>
-    <p class="title" (click)="linkToWebsite(item.website)">{{ item.name }}</p>
+    <p class="title" routerLink="/presentation/{{ item.server_id }}">
+      {{ item.name }}
+    </p>
 
     <hr />
-    <div class="details" (click)="linkToWebsite(item.website)">
+    <div class="details" routerLink="/presentation/{{ item.server_id }}">
       <label class="label">start date:</label>
       <p class="text">{{ item.release_date }}</p>
       <label class="label"> category:</label>
@@ -63,73 +65,65 @@
       <p class="text">{{ item.max_level }}</p>
       <label class="label">focus:</label>
       <p class="text">{{ item.focus }}</p>
-
-      <label class="label">players:</label>
-      <p class="text">{{ item.player_base }}</p>
     </div>
     <hr />
-    <div class="actions">
-      <div class="rate">
-        <!-- <label class="label show">Your Rating</label> -->
-        <mat-icon
-          (click)="setRating(1)"
-          [ngClass]="{
-            star: true,
-            'star-action': true,
-            'star-active': rate >= 1 || item.user_rating >= 1
-          }"
-          (mouseover)="rate = 1"
-          (mouseleave)="rate = 0"
-          >star_rate</mat-icon
-        >
 
-        <mat-icon
-          (click)="setRating(2)"
-          [ngClass]="{
-            star: true,
-            'star-active': rate >= 2 || item.user_rating >= 2,
-            'star-action': true
-          }"
-          (mouseover)="rate = 2"
-          (mouseleave)="rate = 0"
-          >star_rate</mat-icon
-        >
-        <mat-icon
-          (click)="setRating(3)"
-          [ngClass]="{
-            star: true,
-            'star-action': true,
-            'star-active': rate >= 3 || item.user_rating >= 3
-          }"
-          (mouseover)="rate = 3"
-          (mouseleave)="rate = 0"
-          >star_rate</mat-icon
-        >
-        <mat-icon
-          (click)="setRating(4)"
-          [ngClass]="{
-            star: true,
-            'star-action': true,
-            'star-active': rate >= 4 || item.user_rating >= 4
-          }"
-          (mouseover)="rate = 4"
-          (mouseleave)="rate = 0"
-          >star_rate</mat-icon
-        >
-        <mat-icon
-          (click)="setRating(5)"
-          [ngClass]="{
-            star: true,
-            'star-action': true,
-            'star-active': rate >= 5 || item.user_rating >= 5
-          }"
-          (mouseover)="rate = 5"
-          (mouseleave)="rate = 0"
-          >star_rate</mat-icon
-        >
-      </div>
+    <div class="rate">
+      <label class="label show">your rating:</label>
+      <mat-icon
+        (click)="setRating(1)"
+        [ngClass]="{
+          star: true,
 
-      <a routerLink="profile/tickets" class="action website">Create Ticket</a>
+          'star-active': rate >= 1 || item.user_rating >= 1
+        }"
+        (mouseover)="rate = 1"
+        (mouseleave)="rate = 0"
+        >star_rate</mat-icon
+      >
+
+      <mat-icon
+        (click)="setRating(2)"
+        [ngClass]="{
+          star: true,
+          'star-active': rate >= 2 || item.user_rating >= 2,
+        }"
+        (mouseover)="rate = 2"
+        (mouseleave)="rate = 0"
+        >star_rate</mat-icon
+      >
+      <mat-icon
+        (click)="setRating(3)"
+        [ngClass]="{
+          star: true,
+          'star-active': rate >= 3 || item.user_rating >= 3
+        }"
+        (mouseover)="rate = 3"
+        (mouseleave)="rate = 0"
+        >star_rate</mat-icon
+      >
+      <mat-icon
+        (click)="setRating(4)"
+        [ngClass]="{
+          star: true,
+
+          'star-active': rate >= 4 || item.user_rating >= 4
+        }"
+        (mouseover)="rate = 4"
+        (mouseleave)="rate = 0"
+        >star_rate</mat-icon
+      >
+      <mat-icon
+        (click)="setRating(5)"
+        [ngClass]="{
+          star: true,
+
+          'star-active': rate >= 5 || item.user_rating >= 5
+        }"
+        (mouseover)="rate = 5"
+        (mouseleave)="rate = 0"
+        >star_rate</mat-icon
+      >
     </div>
   </div>
 </div>

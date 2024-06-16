@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, Input } from '@angular/core';
+import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
 import { ServerModel } from '../../../../../models/server.model';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
@@ -30,7 +30,7 @@ import { AuthenticationService } from '../../../../../services/authentication.se
   //   ]),
   // ],
 })
-export class ServerCardComponent {
+export class ServerCardComponent implements OnInit {
   @Input() item: ServerModel;
   @Input() rating: number;
   public rate = 0;
@@ -48,6 +48,14 @@ export class ServerCardComponent {
       this.hover = true;
     }
   }
+
+  ngOnInit(): void {
+    this.item.release_date = this.item.release_date
+      .split('-')
+      .reverse()
+      .join('.');
+  }
+
   linkToWebsite(link: string) {
     window.open(link, '_blank');
   }

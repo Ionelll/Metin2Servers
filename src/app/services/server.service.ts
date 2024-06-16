@@ -11,14 +11,28 @@ export class ServerService {
   private Servers = new BehaviorSubject<ServerModel[]>([]);
   private filteredServers = new Subject<ServerModel[]>();
   private premiumServers = new BehaviorSubject<ServerModel[]>([]);
+  private server = new Subject<ServerModel>();
   getServers() {
     return this.Servers.asObservable();
   }
   getFilteredServers() {
     return this.filteredServers.asObservable();
   }
+  getServer() {
+    return this.server.asObservable();
+  }
   reloadServers() {
     this.filteredServers.next(this.Servers.value);
+  }
+
+  setServer(server_id: string) {
+    this.http
+      .get<{ count: number; data: ServerModel[] }>(
+        `https://metinsbe-production.up.railway.app/api/server/servers?server_id=${server_id}`
+      )
+      .subscribe((res) => {
+        this.server.next(res.data[0]);
+      });
   }
   setServers() {
     this.http
@@ -71,7 +85,6 @@ export class ServerService {
         );
       });
     }
-    console.log(servers);
     const sortedServers = this.sortBy(servers, sortBy);
     if (order === 'Ascending') sortedServers.reverse();
     this.filteredServers.next(sortedServers);

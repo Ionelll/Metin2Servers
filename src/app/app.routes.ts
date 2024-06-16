@@ -9,6 +9,7 @@ import { MyServerComponent } from './components/dashboard-components/my-server/m
 import { ShareEventComponent } from './components/dashboard-components/share-event/share-event.component';
 import { TicketsComponent } from './components/dashboard-components/tickets/tickets.component';
 import { ResetPasswordComponent } from './pages/reset-password/reset-password.component';
+import { PresentationComponent } from './components/dashboard-components/presentation-input/presentation.component';
 
 export const routes: Routes = [
   {
@@ -26,6 +27,12 @@ export const routes: Routes = [
     component: SignupComponent,
     data: { animation: 'SignupPage' },
   },
+  {
+    path: 'presentation/:server_id',
+    component: PresentationComponent,
+    data: { animation: 'PresentationPage' },
+  },
+
   {
     path: 'profile',
     component: ProfilePageComponent,

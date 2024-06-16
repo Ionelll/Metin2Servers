@@ -8,7 +8,7 @@ body {
   box-sizing: border-box;
   background-image: url("./assets/5128465.jpg");
   background-size: cover;
-  background-position: center;
+  background-position: center top;
 
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -21,39 +21,42 @@ html {
 }
 
 :root {
-  --primary: #555555;
+  --primary: #fafafa;
   --input: rgb(102, 102, 102);
   --button: #558e59fa;
   --button-text: #86ffc7;
   --danger: red;
   --success: green;
   --logo: #ffc757;
-  --action-active: #ffc757;
-  --action: #fffde7;
+  --action-active: #2900ff;
+  --action: #474554;
   --text: #141414;
-
+  --border: #7d8a96;
   --header-background: #565656;
   --action-background-active: #ece1ad44;
   --gold-gradient: #ff8611;
 }
 
 .input {
-  background-color: rgba(0, 0, 0, 0.653);
-  // font-family: "Poppins", sans-serif;
+  all: unset;
+  background-color: rgb(255, 255, 255);
+  color: black;
+  font-weight: 400;
+  grid-column: 2/4;
   letter-spacing: 1px;
-  font-size: 1.1em;
-  font-weight: 200;
-  color: var(--text);
+  font-size: 1em;
   outline: none;
-  border: none;
   padding: 0.5em 0.5em;
-  border-radius: 8px;
+  // border-radius: 8px;
+  border: 0.4px solid black;
 }
+
 input::placeholder {
   font-size: 12px;
   letter-spacing: 0;
   font-weight: 400;
   font-style: italic;
+  color: rgb(0, 0, 0);
 }
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
@@ -82,7 +85,7 @@ select option:disabled {
 }
 .label {
   color: var(--text);
-  text-align: center;
+  // text-align: center;
   font-size: 0.8em;
   font-weight: 300;
   text-wrap: nowrap;
@@ -109,11 +112,12 @@ select option:disabled {
 .link {
   all: unset;
   color: var(--action);
-  font-size: 1em;
-  text-shadow: 1px 1px 0 2px black;
-  letter-spacing: 1px;
-  font-family: "Google-regular", sans-serif;
 
+  font-size: calc(16px + 0.3vw);
+  // text-shadow: -4px 3px 0px black;
+  letter-spacing: 1px;
+  font-family: "Poppins", sans-serif;
+  -webkit-text-stroke: 0.2px black;
   transition-duration: 0.5s;
   font-weight: 400;
   text-align: center;
@@ -201,11 +205,11 @@ select option:disabled {
     background: linear-gradient(
       to right bottom,
       rgb(0 0 0 / 0%) 30%,
-      rgb(229 229 229 / 8%) 32%,
-      rgb(255 255 255 / 4%) 35%,
+      rgb(229 229 229 / 12%) 32%,
+      rgb(255 255 255 / 8%) 35%,
       rgb(255 255 255 / 0%) 55%,
-      rgb(255 255 255 / 8%) 57%,
-      rgb(255 255 255 / 4%) 59%,
+      rgb(255 255 255 / 12%) 57%,
+      rgb(255 255 255 / 8%) 59%,
       rgb(255 255 255 / 0%)
     );
   }
@@ -213,11 +217,11 @@ select option:disabled {
     background: linear-gradient(
       to right bottom,
       rgb(0 0 0 / 0%) 30%,
-      rgb(229 229 229 / 8%) 33%,
-      rgb(255 255 255 / 4%) 36%,
+      rgb(229 229 229 / 12%) 33%,
+      rgb(255 255 255 / 8%) 36%,
       rgb(255 255 255 / 0%) 56%,
-      rgb(255 255 255 / 8%) 58%,
-      rgb(255 255 255 / 4%) 60%,
+      rgb(255 255 255 / 12%) 58%,
+      rgb(255 255 255 / 8%) 60%,
       rgb(255 255 255 / 0%)
     );
   }
@@ -225,11 +229,11 @@ select option:disabled {
     background: linear-gradient(
       to right bottom,
       rgb(0 0 0 / 0%) 30%,
-      rgb(229 229 229 / 8%) 34%,
-      rgb(255 255 255 / 4%) 37%,
+      rgb(229 229 229 / 12%) 34%,
+      rgb(255 255 255 / 8%) 37%,
       rgb(255 255 255 / 0%) 57%,
-      rgb(255 255 255 / 8%) 59%,
-      rgb(255 255 255 / 4%) 61%,
+      rgb(255 255 255 / 12%) 59%,
+      rgb(255 255 255 / 8%) 61%,
       rgb(255 255 255 / 0%)
     );
   }
@@ -237,11 +241,11 @@ select option:disabled {
     background: linear-gradient(
       to right bottom,
       rgb(0 0 0 / 0%) 30%,
-      rgb(229 229 229 / 8%) 35%,
-      rgb(255 255 255 / 4%) 38%,
+      rgb(229 229 229 / 12%) 35%,
+      rgb(255 255 255 / 8%) 38%,
       rgb(255 255 255 / 0%) 58%,
-      rgb(255 255 255 / 8%) 60%,
-      rgb(255 255 255 / 4%) 62%,
+      rgb(255 255 255 / 12%) 60%,
+      rgb(255 255 255 / 8%) 62%,
       rgb(255 255 255 / 0%)
     );
   }
@@ -249,11 +253,11 @@ select option:disabled {
     background: linear-gradient(
       to right bottom,
       rgb(0 0 0 / 0%) 30%,
-      rgb(229 229 229 / 8%) 36%,
-      rgb(255 255 255 / 4%) 39%,
+      rgb(229 229 229 / 12%) 36%,
+      rgb(255 255 255 / 8%) 39%,
       rgb(255 255 255 / 0%) 59%,
-      rgb(255 255 255 / 8%) 61%,
-      rgb(255 255 255 / 4%) 63%,
+      rgb(255 255 255 / 12%) 61%,
+      rgb(255 255 255 / 8%) 63%,
       rgb(255 255 255 / 0%)
     );
   }
@@ -261,11 +265,11 @@ select option:disabled {
     background: linear-gradient(
       to right bottom,
       rgb(0 0 0 / 0%) 30%,
-      rgb(229 229 229 / 8%) 37%,
-      rgb(255 255 255 / 4%) 40%,
+      rgb(229 229 229 / 12%) 37%,
+      rgb(255 255 255 / 8%) 40%,
       rgb(255 255 255 / 0%) 60%,
-      rgb(255 255 255 / 8%) 62%,
-      rgb(255 255 255 / 4%) 64%,
+      rgb(255 255 255 / 12%) 62%,
+      rgb(255 255 255 / 8%) 64%,
       rgb(255 255 255 / 0%)
     );
   }
@@ -273,11 +277,11 @@ select option:disabled {
     background: linear-gradient(
       to right bottom,
       rgb(0 0 0 / 0%) 30%,
-      rgb(229 229 229 / 8%) 38%,
-      rgb(255 255 255 / 4%) 41%,
+      rgb(229 229 229 / 12%) 38%,
+      rgb(255 255 255 / 8%) 41%,
       rgb(255 255 255 / 0%) 61%,
-      rgb(255 255 255 / 8%) 63%,
-      rgb(255 255 255 / 4%) 65%,
+      rgb(255 255 255 / 12%) 63%,
+      rgb(255 255 255 / 8%) 65%,
       rgb(255 255 255 / 0%)
     );
   }
@@ -285,11 +289,11 @@ select option:disabled {
     background: linear-gradient(
       to right bottom,
       rgb(0 0 0 / 0%) 30%,
-      rgb(229 229 229 / 8%) 39%,
-      rgb(255 255 255 / 4%) 42%,
+      rgb(229 229 229 / 12%) 39%,
+      rgb(255 255 255 / 8%) 42%,
       rgb(255 255 255 / 0%) 62%,
-      rgb(255 255 255 / 8%) 64%,
-      rgb(255 255 255 / 4%) 66%,
+      rgb(255 255 255 / 12%) 64%,
+      rgb(255 255 255 / 8%) 66%,
       rgb(255 255 255 / 0%)
     );
   }
@@ -297,11 +301,11 @@ select option:disabled {
     background: linear-gradient(
       to right bottom,
       rgb(0 0 0 / 0%) 30%,
-      rgb(229 229 229 / 8%) 40%,
-      rgb(255 255 255 / 4%) 43%,
+      rgb(229 229 229 / 12%) 40%,
+      rgb(255 255 255 / 8%) 43%,
       rgb(255 255 255 / 0%) 63%,
-      rgb(255 255 255 / 8%) 65%,
-      rgb(255 255 255 / 4%) 67%,
+      rgb(255 255 255 / 12%) 65%,
+      rgb(255 255 255 / 8%) 67%,
       rgb(255 255 255 / 0%)
     );
   }
@@ -309,11 +313,11 @@ select option:disabled {
     background: linear-gradient(
       to right bottom,
       rgb(0 0 0 / 0%) 30%,
-      rgb(229 229 229 / 8%) 41%,
-      rgb(255 255 255 / 4%) 44%,
+      rgb(229 229 229 / 12%) 41%,
+      rgb(255 255 255 / 8%) 44%,
       rgb(255 255 255 / 0%) 64%,
-      rgb(255 255 255 / 8%) 66%,
-      rgb(255 255 255 / 4%) 68%,
+      rgb(255 255 255 / 12%) 66%,
+      rgb(255 255 255 / 8%) 68%,
       rgb(255 255 255 / 0%)
     );
   }
@@ -321,11 +325,11 @@ select option:disabled {
     background: linear-gradient(
       to right bottom,
       rgb(0 0 0 / 0%) 30%,
-      rgb(229 229 229 / 8%) 42%,
-      rgb(255 255 255 / 4%) 45%,
+      rgb(229 229 229 / 12%) 42%,
+      rgb(255 255 255 / 8%) 45%,
       rgb(255 255 255 / 0%) 65%,
-      rgb(255 255 255 / 8%) 67%,
-      rgb(255 255 255 / 4%) 69%,
+      rgb(255 255 255 / 12%) 67%,
+      rgb(255 255 255 / 8%) 69%,
       rgb(255 255 255 / 0%)
     );
   }
@@ -335,11 +339,11 @@ select option:disabled {
     background: linear-gradient(
       to right bottom,
       rgb(0 0 0 / 0%) 30%,
-      rgb(229 229 229 / 8%) 42%,
-      rgb(255 255 255 / 4%) 45%,
+      rgb(229 229 229 / 12%) 42%,
+      rgb(255 255 255 / 8%) 45%,
       rgb(255 255 255 / 0%) 65%,
-      rgb(255 255 255 / 8%) 67%,
-      rgb(255 255 255 / 4%) 69%,
+      rgb(255 255 255 / 12%) 67%,
+      rgb(255 255 255 / 8%) 69%,
       rgb(255 255 255 / 0%)
     );
   }
@@ -347,11 +351,11 @@ select option:disabled {
     background: linear-gradient(
       to right bottom,
       rgb(0 0 0 / 0%) 30%,
-      rgb(229 229 229 / 8%) 41%,
-      rgb(255 255 255 / 4%) 44%,
+      rgb(229 229 229 / 12%) 41%,
+      rgb(255 255 255 / 8%) 44%,
       rgb(255 255 255 / 0%) 64%,
-      rgb(255 255 255 / 8%) 66%,
-      rgb(255 255 255 / 4%) 68%,
+      rgb(255 255 255 / 12%) 66%,
+      rgb(255 255 255 / 8%) 68%,
       rgb(255 255 255 / 0%)
     );
   }
@@ -359,11 +363,11 @@ select option:disabled {
     background: linear-gradient(
       to right bottom,
       rgb(0 0 0 / 0%) 30%,
-      rgb(229 229 229 / 8%) 40%,
-      rgb(255 255 255 / 4%) 43%,
+      rgb(229 229 229 / 12%) 40%,
+      rgb(255 255 255 / 8%) 43%,
       rgb(255 255 255 / 0%) 63%,
-      rgb(255 255 255 / 8%) 65%,
-      rgb(255 255 255 / 4%) 67%,
+      rgb(255 255 255 / 12%) 65%,
+      rgb(255 255 255 / 8%) 67%,
       rgb(255 255 255 / 0%)
     );
   }
@@ -371,11 +375,11 @@ select option:disabled {
     background: linear-gradient(
       to right bottom,
       rgb(0 0 0 / 0%) 30%,
-      rgb(229 229 229 / 8%) 39%,
-      rgb(255 255 255 / 4%) 42%,
+      rgb(229 229 229 / 12%) 39%,
+      rgb(255 255 255 / 8%) 42%,
       rgb(255 255 255 / 0%) 62%,
-      rgb(255 255 255 / 8%) 64%,
-      rgb(255 255 255 / 4%) 66%,
+      rgb(255 255 255 / 12%) 64%,
+      rgb(255 255 255 / 8%) 66%,
       rgb(255 255 255 / 0%)
     );
   }
@@ -383,11 +387,11 @@ select option:disabled {
     background: linear-gradient(
       to right bottom,
       rgb(0 0 0 / 0%) 30%,
-      rgb(229 229 229 / 8%) 38%,
-      rgb(255 255 255 / 4%) 41%,
+      rgb(229 229 229 / 12%) 38%,
+      rgb(255 255 255 / 8%) 41%,
       rgb(255 255 255 / 0%) 61%,
-      rgb(255 255 255 / 8%) 63%,
-      rgb(255 255 255 / 4%) 65%,
+      rgb(255 255 255 / 12%) 63%,
+      rgb(255 255 255 / 8%) 65%,
       rgb(255 255 255 / 0%)
     );
   }
@@ -395,11 +399,11 @@ select option:disabled {
     background: linear-gradient(
       to right bottom,
       rgb(0 0 0 / 0%) 30%,
-      rgb(229 229 229 / 8%) 37%,
-      rgb(255 255 255 / 4%) 40%,
+      rgb(229 229 229 / 12%) 37%,
+      rgb(255 255 255 / 8%) 40%,
       rgb(255 255 255 / 0%) 60%,
-      rgb(255 255 255 / 8%) 62%,
-      rgb(255 255 255 / 4%) 64%,
+      rgb(255 255 255 / 12%) 62%,
+      rgb(255 255 255 / 8%) 64%,
       rgb(255 255 255 / 0%)
     );
   }
@@ -407,11 +411,11 @@ select option:disabled {
     background: linear-gradient(
       to right bottom,
       rgb(0 0 0 / 0%) 30%,
-      rgb(229 229 229 / 8%) 36%,
-      rgb(255 255 255 / 4%) 39%,
+      rgb(229 229 229 / 12%) 36%,
+      rgb(255 255 255 / 8%) 39%,
       rgb(255 255 255 / 0%) 59%,
-      rgb(255 255 255 / 8%) 61%,
-      rgb(255 255 255 / 4%) 63%,
+      rgb(255 255 255 / 12%) 61%,
+      rgb(255 255 255 / 8%) 63%,
       rgb(255 255 255 / 0%)
     );
   }
@@ -419,11 +423,11 @@ select option:disabled {
     background: linear-gradient(
       to right bottom,
       rgb(0 0 0 / 0%) 30%,
-      rgb(229 229 229 / 8%) 35%,
-      rgb(255 255 255 / 4%) 38%,
+      rgb(229 229 229 / 12%) 35%,
+      rgb(255 255 255 / 8%) 38%,
       rgb(255 255 255 / 0%) 58%,
-      rgb(255 255 255 / 8%) 60%,
-      rgb(255 255 255 / 4%) 62%,
+      rgb(255 255 255 / 12%) 60%,
+      rgb(255 255 255 / 8%) 62%,
       rgb(255 255 255 / 0%)
     );
   }
@@ -431,11 +435,11 @@ select option:disabled {
     background: linear-gradient(
       to right bottom,
       rgb(0 0 0 / 0%) 30%,
-      rgb(229 229 229 / 8%) 34%,
-      rgb(255 255 255 / 4%) 37%,
+      rgb(229 229 229 / 12%) 34%,
+      rgb(255 255 255 / 8%) 37%,
       rgb(255 255 255 / 0%) 57%,
-      rgb(255 255 255 / 8%) 59%,
-      rgb(255 255 255 / 4%) 61%,
+      rgb(255 255 255 / 12%) 59%,
+      rgb(255 255 255 / 8%) 61%,
       rgb(255 255 255 / 0%)
     );
   }
@@ -443,11 +447,11 @@ select option:disabled {
     background: linear-gradient(
       to right bottom,
       rgb(0 0 0 / 0%) 30%,
-      rgb(229 229 229 / 8%) 33%,
-      rgb(255 255 255 / 4%) 36%,
+      rgb(229 229 229 / 12%) 33%,
+      rgb(255 255 255 / 8%) 36%,
       rgb(255 255 255 / 0%) 56%,
-      rgb(255 255 255 / 8%) 58%,
-      rgb(255 255 255 / 4%) 60%,
+      rgb(255 255 255 / 12%) 58%,
+      rgb(255 255 255 / 8%) 60%,
       rgb(255 255 255 / 0%)
     );
   }
@@ -455,11 +459,11 @@ select option:disabled {
     background: linear-gradient(
       to right bottom,
       rgb(0 0 0 / 0%) 30%,
-      rgb(229 229 229 / 8%) 32%,
-      rgb(255 255 255 / 4%) 35%,
+      rgb(229 229 229 / 12%) 32%,
+      rgb(255 255 255 / 8%) 35%,
       rgb(255 255 255 / 0%) 55%,
-      rgb(255 255 255 / 8%) 57%,
-      rgb(255 255 255 / 4%) 59%,
+      rgb(255 255 255 / 12%) 57%,
+      rgb(255 255 255 / 8%) 59%,
       rgb(255 255 255 / 0%)
     );
   }

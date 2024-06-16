@@ -15,6 +15,7 @@ import { ChildrenOutletContexts } from '@angular/router';
 import { AuthenticationService } from './services/authentication.service';
 import { ServerService } from './services/server.service';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
+import { MatIconRegistry } from '@angular/material/icon';
 
 @Component({
   selector: 'app-root',
@@ -62,7 +63,8 @@ export class AppComponent implements OnInit {
     private contexts: ChildrenOutletContexts,
     private router: Router,
     private authService: AuthenticationService,
-    private serverService: ServerService
+    private serverService: ServerService,
+    private matIconReg: MatIconRegistry
   ) {
     this.loading = true;
   }
@@ -74,6 +76,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.matIconReg.setDefaultFontSetClass('material-symbols-outlined');
     const token = localStorage.getItem('token');
     this.serverService.setServers();
     this.serverService.getServers().subscribe((res) => {

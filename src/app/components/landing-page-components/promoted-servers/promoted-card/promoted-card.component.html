@@ -1,6 +1,4 @@
 <a class="container" href="{{ server.website }}" target="_blank">
-  <img [src]="server.banner" alt="logo" class="logo" />
-
   <div class="details">
     <div class="rating">
       <mat-icon [ngClass]="{ star: true, 'star-active': server.rating >= 1 }"
@@ -47,4 +45,5 @@
       }
     </div>
   </div>
+  <img [src]="server.banner" alt="logo" class="logo" />
 </a>

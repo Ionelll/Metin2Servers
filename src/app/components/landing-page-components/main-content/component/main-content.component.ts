@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { UserModel } from '../../../../models/user.model';
 import { AuthenticationService } from '../../../../services/authentication.service';
 import { Subscription } from 'rxjs';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-main-content',
@@ -20,6 +21,7 @@ import { Subscription } from 'rxjs';
     CommonModule,
     FilterModalComponent,
     FormsModule,
+    MatIconModule,
   ],
   templateUrl: './main-content.component.html',
   styleUrl: './main-content.component.scss',
@@ -86,6 +88,7 @@ export class MainContentComponent implements OnInit, OnDestroy {
   goTop() {
     window.scrollTo(0, 0);
   }
+
   ngOnDestroy(): void {
     this.authSub.unsubscribe();
     this.filteredSub.unsubscribe();

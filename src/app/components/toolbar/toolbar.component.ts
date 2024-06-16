@@ -26,12 +26,17 @@ export class ToolbarComponent implements OnInit, OnDestroy {
     private router: Router
   ) {
     this.router.events.subscribe((res) => {
-      if (res instanceof NavigationEnd) this.currentRoute = res.url;
+      if (res instanceof NavigationEnd && res.url === '/profile/server') {
+        console.log(res.url);
+        this.currentRoute = true;
+      } else {
+        this.currentRoute = false;
+      }
     });
   }
 
   private subs = new Subscription();
-  public currentRoute: string = '';
+  public currentRoute: boolean;
   public media = window.innerWidth;
   public user: boolean;
   public hasServer: boolean;

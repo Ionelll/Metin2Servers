@@ -4,11 +4,12 @@
   overflow: hidden;
   width: 100%;
   height: 100%;
-  background-image: url("../../../assets/login-background.jpg");
-  background-attachment: fixed;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: right top;
+
+  // background-image: url("../../../assets/login-background.jpg");
+  // background-attachment: fixed;
+  // background-size: cover;
+  // background-repeat: no-repeat;
+  // background-position: right top;
 }
 .content {
   width: 40vw;
@@ -16,30 +17,36 @@
   height: fit-content;
   display: flex;
   flex-direction: column;
-  background-color: rgba(0, 0, 0, 0.699);
-  border-radius: 15px;
+  background-color: rgba(255, 255, 255, 0.76);
   padding: 1rem 3rem;
+  backdrop-filter: blur(25px);
+  // box-shadow: inset 19px -20px 102px 11px rgb(0 0 0 / 17%),
+  //   inset -19px 20px 20px 13px rgb(255 255 255);
+  border: 2px solid black;
+  border-radius: 16px;
 }
 .ng-invalid:not(form) {
-  border-bottom: 1px solid red;
+  border: 1px solid red;
 }
 .ng-invalid:not(form)::placeholder {
   color: rgba(255, 0, 0, 0.825);
 }
+
+.ng-valid:not(form) {
+  border: 1px solid green;
+}
 .ng-untouched:not(form) {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.592);
+  border: 1px solid var(--border);
 }
 .ng-untouched:not(form)::placeholder {
-  color: rgba(255, 255, 255, 0.67);
+  color: black;
 }
-.ng-valid:not(form) {
-  border-bottom: 1px solid green;
-}
+
 .login-form {
   display: flex;
   flex-direction: column;
   row-gap: 2rem;
-  padding: 2rem;
+  padding: 2rem 0;
   justify-content: center;
   margin: 1rem 0 3rem 0;
 }

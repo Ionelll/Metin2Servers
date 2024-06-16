@@ -2,8 +2,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-
   align-items: center;
+  -webkit-text-stroke: 0.8px black;
   cursor: pointer;
   div {
     display: flex;
@@ -13,23 +13,17 @@
 .m,
 .number {
   font-family: "Metin", sans-serif;
-  font-size: calc(24px + 1vw);
+  font-size: calc(20px + 1vw);
   color: var(--logo);
-  margin: auto;
-  // -webkit-text-stroke: 2px black;
+  margin: 0;
 }
-// .servers {
-//   font-family: "Poppins", sans-serif;
-// }
-
 .servers {
   font-family: "Permanent Marker", cursive;
-  font-size: calc(16px + 0.1vw);
+  font-size: calc(15px + 0.3vw);
   margin: 0;
-
-  color: var(--logo);
   margin-top: -10px;
   margin-left: -10px;
+  color: var(--logo);
 }
 .number {
   color: red;

@@ -21,7 +21,7 @@
 .actions {
   display: flex;
   justify-content: start;
-  background-color: rgba(0, 0, 0, 0.653);
+  // background-color: rgba(0, 0, 0, 0.653);
   border-radius: 7px;
 }
 .input {
@@ -31,7 +31,6 @@
 .input::placeholder {
   font-family: "Poppins", sans-serif;
   font-size: 16px;
-  color: rgb(204, 204, 204);
 }
 
 .filters-container {
@@ -56,15 +55,16 @@
 .back-top-container {
   position: fixed;
   bottom: 2rem;
-  right: 0.5rem;
+  right: 2rem;
   z-index: 1000;
-  background-color: var(--primary);
+  background-color: var(--border);
   border-radius: 50%;
 }
 .back-top {
+  border-radius: 50%;
+
   display: none;
   padding: 0;
-  color: var(--action-active);
 }
 .back-top-active {
   display: flex;
@@ -72,8 +72,9 @@
   flex-direction: column;
   padding: 1rem;
 }
-.icon-top {
-  transform: scale(1.5);
+.icon {
+  font-variation-settings: "wght" 700, "GRAD" 200, "opsz" 48;
+  transform: scale(1.3);
 }
 
 @media screen and (max-width: 889px) {

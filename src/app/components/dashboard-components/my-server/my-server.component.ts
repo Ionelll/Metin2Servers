@@ -16,11 +16,19 @@ import { MatIconModule } from '@angular/material/icon';
 import { ServerService } from '../../../services/server.service';
 import { Subscription } from 'rxjs';
 import { PaymentInfo } from '../../../models/payment-info.model';
+import { PresentationComponent } from '../presentation-input/presentation.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-my-server',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, FormsModule, MatIconModule],
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    FormsModule,
+    MatIconModule,
+    PresentationComponent,
+  ],
   templateUrl: './my-server.component.html',
   styleUrl: './my-server.component.scss',
 })
@@ -29,7 +37,8 @@ export class MyServerComponent implements OnInit, OnDestroy {
     private paymentService: PaymentService,
     private authService: AuthenticationService,
     private errorService: ErrorService,
-    private serverService: ServerService
+    private serverService: ServerService,
+    private router: Router
   ) {
     this.media = window.innerWidth;
   }
@@ -61,7 +70,8 @@ export class MyServerComponent implements OnInit, OnDestroy {
   });
 
   redirectPayment() {
-    this.paymentService.redirectToPayment();
+    if (this.is_premium) this.paymentService.redirectToPayment();
+    else window.open(this.paymentInfo?.management_url, '_blanck');
   }
   ngOnInit(): void {
     this.userSub = this.authService.getUser().subscribe((res) => {

@@ -1,4 +1,15 @@
 <div class="container">
+  <a class="promote-container" *ngIf="serverId" (click)="redirectPayment()">
+    <div class="promote-text">
+      <ul>
+        <li>Expand Your Player Base</li>
+        <li>Build Your Gaming Community</li>
+        <li>Attract More Players</li>
+      </ul>
+    </div>
+    <p class="subscription" *ngIf="!is_premium">Promote your Server</p>
+    <p class="subscription" *ngIf="is_premium">Manage Subscription</p>
+  </a>
   <form class="form-container" [formGroup]="server">
     <div class="img-container" (click)="fileinput.click()">
       <img src="{{ activeImage }}" alt="" class="logo" *ngIf="activeImage" />
@@ -13,21 +24,7 @@
         (change)="onFileChange($event); logoChanged = true"
       />
     </div>
-    <div class="promote-container" *ngIf="serverId">
-      <button
-        (click)="redirectPayment()"
-        class="button subscription"
-        *ngIf="!is_premium"
-      >
-        Promote your Server
-      </button>
-      <a
-        class="button subscription"
-        *ngIf="is_premium"
-        href="{{ paymentInfo?.management_url }}"
-        >Manage Subscription</a
-      >
-    </div>
+
     <p class="label">name:</p>
     <input
       type="text"
@@ -81,18 +78,18 @@
     <p class="label">release date:</p>
     <input
       class="input"
-      [type]="dateType"
+      type="date"
       placeholder="release date"
       formControlName="release_date"
       (focus)="dateType = 'date'"
     />
-    <p class="label">player base:</p>
+    <!-- <p class="label">player base:</p>
     <input
       type="number"
       class="input"
       placeholder="player base"
       formControlName="player_base"
-    />
+    /> -->
     <p class="label lang">languages:</p>
     <div class="lang-container">
       <div class="international-container">
@@ -138,4 +135,5 @@
     </div>
     <button class="button save" (click)="saveServer()">Save</button>
   </form>
+  <app-presentation></app-presentation>
 </div>
