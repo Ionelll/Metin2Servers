@@ -1,0 +1,63 @@
+<div class="container" *ngIf="showSidebar" @slide>
+  <div class="actions-no-user">
+    <a routerLink="signup" class="link" *ngIf="!loggedIn">
+      <mat-icon>person_add</mat-icon>
+      <div class="text">signup</div>
+    </a>
+    <a routerLink="login" class="link" *ngIf="!loggedIn">
+      <mat-icon>login</mat-icon>
+      <div class="text">login</div>
+    </a>
+  </div>
+  <button class="link logout" *ngIf="loggedIn" (click)="logout()">
+    <mat-icon>power_settings_new</mat-icon>
+    <div class="text">logout</div>
+  </button>
+  <div class="actions" *ngIf="loggedIn">
+    <!-- <app-logo routerLink="/" class="logo"></app-logo> -->
+
+    <a routerLink="/" class="link" (click)="showSidebar = !showSidebar"
+      ><mat-icon>home</mat-icon>
+      <div class="text">home</div>
+    </a>
+    <a routerLink="security" class="link" (click)="showSidebar = !showSidebar"
+      ><mat-icon>person</mat-icon>
+      <div class="text">account</div></a
+    >
+    <a
+      routerLink="my-server"
+      class="link"
+      *ngIf="userHasServer"
+      (click)="showSidebar = !showSidebar"
+      ><mat-icon>sort</mat-icon>
+      <div class="text">my server</div></a
+    >
+    <a
+      routerLink="server"
+      class="link"
+      *ngIf="!userHasServer"
+      (click)="showSidebar = !showSidebar"
+      ><mat-icon>sort</mat-icon>
+      <div class="text">add a server</div></a
+    >
+  </div>
+
+  <button
+    class="link close"
+    *ngIf="showSidebar && media < 700"
+    (click)="showSidebar = !showSidebar"
+  >
+    X
+    <div class="text">close</div>
+  </button>
+</div>
+<div class="burger-container">
+  <!-- <app-logo routerLink="/" *ngIf="media < 1000"></app-logo> -->
+  <button
+    class="action burger"
+    (click)="showSidebar = !showSidebar"
+    *ngIf="media < 700 && !showSidebar"
+  >
+    <mat-icon>menu</mat-icon>
+  </button>
+</div>

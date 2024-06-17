@@ -1,4 +1,11 @@
-<div [ngClass]="{ container: true, fixed: currentRoute }" id="toolbar">
+<div
+  [ngClass]="{
+    container: true,
+    fixed: currentRoute && media > 700,
+    bottom: media < 700
+  }"
+  id="toolbar"
+>
   <a routerLink="/" class="logo">
     <app-logo></app-logo>
   </a>

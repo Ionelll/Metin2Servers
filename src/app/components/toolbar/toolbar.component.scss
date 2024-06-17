@@ -1,7 +1,8 @@
 .container {
   background-color: var(--primary);
   padding: 0.8rem 0;
-
+  position: relative;
+  z-index: 1000;
   width: 100%;
   display: grid;
   grid-template-columns: 0.5fr auto 0.5fr 0.2fr;
@@ -11,6 +12,18 @@
 .fixed {
   position: fixed;
   top: 0;
+  background-color: var(--primary);
+  padding: 0.8rem 0;
+
+  width: 100%;
+  display: grid;
+  grid-template-columns: 0.5fr auto 0.5fr 0.2fr;
+  justify-content: center;
+  align-items: center;
+}
+.bottom {
+  position: fixed;
+  bottom: 0;
   background-color: var(--primary);
   padding: 0.8rem 0;
 
@@ -53,7 +66,10 @@
   flex-direction: column;
   align-items: center;
   .text {
-    font-size: 12px;
+    font-size: 14px;
+    letter-spacing: 1px;
     font-family: "Google-thin", sans-serif;
   }
+}
+@media screen and (max-width: 1000px) {
 }

@@ -16,6 +16,7 @@ import { AuthenticationService } from './services/authentication.service';
 import { ServerService } from './services/server.service';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { MatIconRegistry } from '@angular/material/icon';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 
 @Component({
   selector: 'app-root',
@@ -26,6 +27,7 @@ import { MatIconRegistry } from '@angular/material/icon';
     NavigationComponent,
     SnackbarComponent,
     ToolbarComponent,
+    SidebarComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
