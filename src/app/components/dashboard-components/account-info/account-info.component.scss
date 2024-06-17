@@ -7,13 +7,15 @@
   justify-content: center;
 }
 .content {
-  border-radius: 15px;
-  background-color: var(--primary);
+  border: 0.5px solid var(--border);
+  backdrop-filter: blur(25px);
   gap: 1rem;
-  margin: auto 0;
+  margin: auto;
+  width: 40vw;
   display: grid;
+  align-items: center;
   grid-template-columns: 0.3fr 1.5fr 0.3fr;
-  padding: 0.5rem 2rem 2rem 2rem;
+  padding: 2rem 4rem;
 }
 .title {
   grid-row: 1;
@@ -28,10 +30,18 @@
   font-weight: 400;
   background-color: white;
   color: black;
+  width: 100%;
 }
 .change-actions {
+  justify-content: space-between;
+  align-items: center;
   display: flex;
   gap: 1rem;
+  grid-column: 1/4;
+}
+.button {
+  margin-top: 1rem;
+  grid-column: 3;
 }
 .old {
   border-bottom: 1px solid white;

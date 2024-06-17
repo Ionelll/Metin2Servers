@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 import { style, transition, trigger, animate } from '@angular/animations';
 import { ServerService } from '../../../../../services/server.service';
 import { AuthenticationService } from '../../../../../services/authentication.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-server-card',
@@ -36,6 +37,8 @@ export class ServerCardComponent implements OnInit {
   public rate = 0;
   public hover: boolean;
   public media: boolean;
+  public showRating = false;
+  private sub = new Subscription();
 
   constructor(
     private serverService: ServerService,
@@ -54,6 +57,10 @@ export class ServerCardComponent implements OnInit {
       .split('-')
       .reverse()
       .join('.');
+
+    this.sub = this.authService.checkLoggedin().subscribe((res) => {
+      this.showRating = res;
+    });
   }
 
   linkToWebsite(link: string) {

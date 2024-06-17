@@ -96,7 +96,7 @@ select option:disabled {
   all: unset;
   cursor: pointer;
   margin: auto 0;
-
+  text-wrap: nowrap;
   padding: 0.7rem 2rem;
   color: var(--button-text);
   background-color: var(--button);

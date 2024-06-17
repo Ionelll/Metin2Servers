@@ -66,9 +66,9 @@
       <label class="label">focus:</label>
       <p class="text">{{ item.focus }}</p>
     </div>
-    <hr />
+    <hr *ngIf="showRating" />
 
-    <div class="rate">
+    <div class="rate" *ngIf="showRating">
       <label class="label show">your rating:</label>
       <mat-icon
         (click)="setRating(1)"

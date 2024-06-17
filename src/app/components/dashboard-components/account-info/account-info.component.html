@@ -34,26 +34,26 @@
       *ngIf="edit_password"
     />
     <button
-      class="action"
+      class="button"
       *ngIf="!edit_password"
       (click)="edit_password = !edit_password"
     >
-      <mat-icon>edit</mat-icon>
+      Change password
     </button>
     <div class="change-actions">
       <button
-        class="action"
-        *ngIf="edit_password"
-        (click)="savePassword(); edit_password = !edit_password"
-      >
-        <mat-icon>save</mat-icon>
-      </button>
-      <button
-        class="action"
+        class="button cancel"
         *ngIf="edit_password"
         (click)="edit_password = !edit_password"
       >
-        <mat-icon>close</mat-icon>
+        Cancel
+      </button>
+      <button
+        class="button"
+        *ngIf="edit_password"
+        (click)="savePassword(); edit_password = !edit_password"
+      >
+        Save
       </button>
     </div>
   </div>

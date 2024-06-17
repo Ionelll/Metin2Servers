@@ -10,6 +10,7 @@ import { ShareEventComponent } from './components/dashboard-components/share-eve
 import { TicketsComponent } from './components/dashboard-components/tickets/tickets.component';
 import { ResetPasswordComponent } from './pages/reset-password/reset-password.component';
 import { PresentationInputComponent } from './components/dashboard-components/presentation-input/presentation.component';
+import { PresentationComponent } from './pages/presentation/presentation.component';
 
 export const routes: Routes = [
   {
@@ -29,7 +30,7 @@ export const routes: Routes = [
   },
   {
     path: 'presentation/:server_id',
-    component: PresentationInputComponent,
+    component: PresentationComponent,
     data: { animation: 'PresentationPage' },
   },
 
