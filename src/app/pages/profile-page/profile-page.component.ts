@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from '../../services/authentication.service';
-import { UserModel } from '../../models/user.model';
-import { SidebarComponent } from '../../components/dashboard-components/sidebar/sidebar.component';
 import { RouterOutlet } from '@angular/router';
+import { MyServerComponent } from '../../components/dashboard-components/my-server/my-server.component';
+import { PresentationInputComponent } from '../../components/dashboard-components/presentation-input/presentation.component';
 import {
   trigger,
   transition,
@@ -16,7 +16,7 @@ import { ChildrenOutletContexts } from '@angular/router';
 @Component({
   selector: 'app-profile-page',
   standalone: true,
-  imports: [SidebarComponent, RouterOutlet],
+  imports: [RouterOutlet, MyServerComponent, PresentationInputComponent],
   templateUrl: './profile-page.component.html',
   styleUrl: './profile-page.component.scss',
   animations: [

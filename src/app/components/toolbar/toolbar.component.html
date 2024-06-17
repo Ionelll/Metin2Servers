@@ -18,8 +18,6 @@
       *ngIf="!user && media > 700"
       >Signup
     </a>
-    <a routerLink="profile/security" class="link" *ngIf="user || media < 700">
-    </a>
   </div>
   <div class="actions-logged" *ngIf="user && media > 700">
     <a
@@ -31,27 +29,18 @@
       <mat-icon class="icon">home</mat-icon>
       <div class="text">home</div>
     </a>
-    <a
-      routerLink="profile/server"
-      class="link"
-      *ngIf="hasServer"
-      routerLinkActive="active"
-      [routerLinkActiveOptions]="{ exact: true }"
-      ><mat-icon class="icon">sort</mat-icon>
-      <div class="text">my server</div></a
-    >
-    <a routerLink="profile/security" class="link" routerLinkActive="active"
+    <a routerLink="security" class="link" routerLinkActive="active"
       ><mat-icon class="icon"> person </mat-icon>
       <div class="text">account</div>
     </a>
-
     <a
-      routerLink="profile/server"
+      routerLink="my-server"
       class="link"
-      *ngIf="!hasServer"
       routerLinkActive="active"
       [routerLinkActiveOptions]="{ exact: true }"
-      >Add a server</a
+      ><mat-icon class="icon">sort</mat-icon>
+      <div class="text" *ngIf="hasServer">my server</div>
+      <div class="text" *ngIf="!hasServer">add a server</div></a
     >
 
     <!-- <a

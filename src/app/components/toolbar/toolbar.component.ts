@@ -56,6 +56,7 @@ export class ToolbarComponent implements OnInit, OnDestroy {
   }
   logout() {
     this.authService.logout();
+    this.router.navigateByUrl('/');
   }
   ngOnDestroy(): void {
     this.subs.unsubscribe();

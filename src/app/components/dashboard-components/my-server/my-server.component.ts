@@ -16,7 +16,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { ServerService } from '../../../services/server.service';
 import { Subscription } from 'rxjs';
 import { PaymentInfo } from '../../../models/payment-info.model';
-import { PresentationComponent } from '../presentation-input/presentation.component';
+import { PresentationInputComponent } from '../presentation-input/presentation.component';
 import { Router } from '@angular/router';
 
 @Component({
@@ -27,7 +27,7 @@ import { Router } from '@angular/router';
     ReactiveFormsModule,
     FormsModule,
     MatIconModule,
-    PresentationComponent,
+    PresentationInputComponent,
   ],
   templateUrl: './my-server.component.html',
   styleUrl: './my-server.component.scss',

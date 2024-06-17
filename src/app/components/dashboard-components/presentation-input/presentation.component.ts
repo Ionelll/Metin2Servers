@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-presentation',
+  selector: 'app-presentation-input',
   standalone: true,
   imports: [],
   templateUrl: './presentation.component.html',
   styleUrl: './presentation.component.scss',
 })
-export class PresentationComponent {
+export class PresentationInputComponent {
   save() {}
 }

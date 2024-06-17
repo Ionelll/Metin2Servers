@@ -9,7 +9,7 @@ import { MyServerComponent } from './components/dashboard-components/my-server/m
 import { ShareEventComponent } from './components/dashboard-components/share-event/share-event.component';
 import { TicketsComponent } from './components/dashboard-components/tickets/tickets.component';
 import { ResetPasswordComponent } from './pages/reset-password/reset-password.component';
-import { PresentationComponent } from './components/dashboard-components/presentation-input/presentation.component';
+import { PresentationInputComponent } from './components/dashboard-components/presentation-input/presentation.component';
 
 export const routes: Routes = [
   {
@@ -29,38 +29,32 @@ export const routes: Routes = [
   },
   {
     path: 'presentation/:server_id',
-    component: PresentationComponent,
+    component: PresentationInputComponent,
     data: { animation: 'PresentationPage' },
   },
 
   {
-    path: 'profile',
+    path: 'my-server',
     component: ProfilePageComponent,
     canActivate: [AuthGuard],
-    children: [
-      {
-        path: 'security',
-        component: AccountInfoComponent,
-        data: { animation: 'AccountPage' },
-      },
-      {
-        path: 'server',
-        component: MyServerComponent,
-        data: { animation: 'ServerPage' },
-      },
-      {
-        path: 'events',
-        component: ShareEventComponent,
-        data: { animation: 'EventsPage' },
-      },
-      {
-        path: 'tickets',
-        component: TicketsComponent,
-        data: { animation: 'TicketsPage' },
-      },
-    ],
-    data: { animation: 'ProfilePage' },
   },
+  {
+    path: 'security',
+    component: AccountInfoComponent,
+    data: { animation: 'AccountPage' },
+  },
+
+  // {
+  //   path: 'events',
+  //   component: ShareEventComponent,
+  //   data: { animation: 'EventsPage' },
+  // },
+  // {
+  //   path: 'tickets',
+  //   component: TicketsComponent,
+  //   data: { animation: 'TicketsPage' },
+  // },
+
   {
     path: 'reset-password/:uid/:auth',
     component: ResetPasswordComponent,
