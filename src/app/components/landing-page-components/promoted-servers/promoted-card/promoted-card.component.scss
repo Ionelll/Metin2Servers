@@ -17,7 +17,7 @@
 }
 .container::after {
   content: "";
-  border-radius: 10px;
+  // border-radius: 10px;
   z-index: 100;
   position: absolute;
   top: 0;
@@ -58,7 +58,7 @@
 }
 
 .logo {
-  border-radius: 10px 10px 0 0;
+  // border-radius: 10px 10px 0 0;
   object-fit: cover;
   align-self: center;
   max-width: 100%;
@@ -77,7 +77,7 @@
   -webkit-text-stroke: 1px black;
 }
 .star-half {
-  background: linear-gradient(to left, var(--logo) 53%, white 47%);
+  background: linear-gradient(to right, var(--logo) 50%, white 50%);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;

@@ -7,8 +7,10 @@
         <li>Attract More Players</li>
       </ul>
     </div>
-    <p class="subscription" *ngIf="!is_premium">Promote your Server</p>
-    <p class="subscription" *ngIf="is_premium">Manage Subscription</p>
+    <button class="subscription" *ngIf="!is_premium">
+      Promote your Server
+    </button>
+    <button class="subscription" *ngIf="is_premium">Manage Subscription</button>
   </a>
   <form class="form-container" [formGroup]="server">
     <div class="img-container" (click)="fileinput.click()">

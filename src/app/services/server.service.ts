@@ -46,11 +46,11 @@ export class ServerService {
 
   setPremiumServers() {
     const sortedServers = this.filterBy(
+      'Rating',
       undefined,
       undefined,
       undefined,
-      undefined,
-      'Ascending',
+      'Descending',
       true
     );
 

@@ -114,13 +114,12 @@
   display: flex;
   align-items: center;
   // transform: scale(0.7);
-  font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 200;
-  font-size: 1em;
-  line-height: 1em;
+  font-variation-settings: "FILL" 1;
+
   -webkit-text-stroke: 0.4px black;
 }
 .star-half {
-  background: linear-gradient(to right, var(--logo) 53%, white 47%);
+  background: linear-gradient(to right, var(--logo) 50%, white 50%);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;

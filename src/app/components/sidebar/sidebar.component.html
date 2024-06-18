@@ -1,15 +1,29 @@
 <div class="container" *ngIf="showSidebar" @slide>
   <div class="actions-no-user">
-    <a routerLink="signup" class="link" *ngIf="!loggedIn">
+    <a
+      routerLink="signup"
+      class="link"
+      *ngIf="!loggedIn"
+      (click)="showSidebar = !showSidebar"
+    >
       <mat-icon>person_add</mat-icon>
       <div class="text">signup</div>
     </a>
-    <a routerLink="login" class="link" *ngIf="!loggedIn">
+    <a
+      routerLink="login"
+      class="link"
+      *ngIf="!loggedIn"
+      (click)="showSidebar = !showSidebar"
+    >
       <mat-icon>login</mat-icon>
       <div class="text">login</div>
     </a>
   </div>
-  <button class="link logout" *ngIf="loggedIn" (click)="logout()">
+  <button
+    class="link logout"
+    *ngIf="loggedIn"
+    (click)="logout(); showSidebar = !showSidebar"
+  >
     <mat-icon>power_settings_new</mat-icon>
     <div class="text">logout</div>
   </button>
@@ -33,7 +47,7 @@
       <div class="text">my server</div></a
     >
     <a
-      routerLink="server"
+      routerLink="my-server"
       class="link"
       *ngIf="!userHasServer"
       (click)="showSidebar = !showSidebar"

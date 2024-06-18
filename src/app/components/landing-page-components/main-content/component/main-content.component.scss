@@ -54,10 +54,11 @@
 }
 .back-top-container {
   position: fixed;
-  bottom: 2rem;
-  right: 2rem;
+  bottom: 6rem;
+  right: 1rem;
   z-index: 1000;
-  background-color: var(--border);
+  background-color: white;
+  border: 2px solid var(--border);
   border-radius: 50%;
 }
 .back-top {

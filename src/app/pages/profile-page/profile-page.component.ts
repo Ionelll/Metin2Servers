@@ -12,11 +12,17 @@ import {
   animate,
 } from '@angular/animations';
 import { ChildrenOutletContexts } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-profile-page',
   standalone: true,
-  imports: [RouterOutlet, MyServerComponent, PresentationInputComponent],
+  imports: [
+    RouterOutlet,
+    MyServerComponent,
+    PresentationInputComponent,
+    CommonModule,
+  ],
   templateUrl: './profile-page.component.html',
   styleUrl: './profile-page.component.scss',
   animations: [
