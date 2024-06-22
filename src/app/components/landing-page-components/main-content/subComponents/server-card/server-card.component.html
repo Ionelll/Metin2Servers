@@ -1,5 +1,5 @@
 <div class="container" (mouseleave)="mouseLeave()" (mouseover)="hover = true">
-  <div class="rating-container" routerLink="/presentation/{{ item.server_id }}">
+  <a class="rating-container" href="{{ link }}" target="_blank">
     <div class="rating">
       <mat-icon
         [ngClass]="{
@@ -38,17 +38,17 @@
       >
     </div>
     <p class="label no-votes">From: {{ item.no_votes }} votes</p>
-  </div>
-  <div class="img-container" routerLink="/presentation/{{ item.server_id }}">
+  </a>
+  <a class="img-container" href="{{ link }}" target="_blank">
     <img class="banner" [src]="item.banner" alt="" />
-  </div>
+  </a>
   <div class="footer">
-    <p class="title" routerLink="/presentation/{{ item.server_id }}">
+    <a class="title" href="{{ link }}" target="_blank">
       {{ item.name }}
-    </p>
+    </a>
 
     <hr />
-    <div class="details" routerLink="/presentation/{{ item.server_id }}">
+    <a class="details" href="{{ link }}" target="_blank">
       <label class="label">start date:</label>
       <p class="text">{{ item.release_date }}</p>
       <label class="label"> category:</label>
@@ -65,7 +65,7 @@
       <p class="text">{{ item.max_level }}</p>
       <label class="label">focus:</label>
       <p class="text">{{ item.focus }}</p>
-    </div>
+    </a>
     <hr *ngIf="showRating" />
 
     <div class="rate" *ngIf="showRating">

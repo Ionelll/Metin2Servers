@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
 import { style, transition, trigger, animate } from '@angular/animations';
 import { ServerService } from '../../../../../services/server.service';
 import { AuthenticationService } from '../../../../../services/authentication.service';
-import { Subscription } from 'rxjs';
+import { Subject, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-server-card',
@@ -39,6 +39,7 @@ export class ServerCardComponent implements OnInit {
   public media: boolean;
   public showRating = false;
   private sub = new Subscription();
+  public link: string;
 
   constructor(
     private serverService: ServerService,
@@ -58,13 +59,14 @@ export class ServerCardComponent implements OnInit {
       .reverse()
       .join('.');
 
-    this.sub = this.authService.checkLoggedin().subscribe((res) => {
-      this.showRating = res;
-    });
-  }
-
-  linkToWebsite(link: string) {
-    window.open(link, '_blank');
+    this.sub.add(
+      this.authService.checkLoggedin().subscribe((res) => {
+        this.showRating = res;
+      })
+    );
+    if (this.item.presentation)
+      this.link = '/presentation/' + this.item.server_id;
+    else this.link = this.item.website;
   }
 
   mouseLeave() {

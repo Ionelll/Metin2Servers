@@ -3,8 +3,73 @@
     <div class="header">
       <img [src]="server?.banner" alt="banner" class="banner" />
       <p class="title">{{ server?.name }}</p>
-      <a href="{{ server?.website }}" class="link">{{ server?.website }}</a>
-      <button class="copy">copy link <mat-icon>content_copy</mat-icon></button>
+
+      <div class="website">
+        <a href="{{ server?.website }}" class="link">{{ server?.website }}</a>
+        <button class="link action" (click)="copyLink()">
+          <mat-icon class="icon">content_copy</mat-icon>
+          <div class="text">copy link</div>
+        </button>
+      </div>
+    </div>
+    <div class="body">
+      <p class="presentation">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur aperiam
+        temporibus sunt obcaecati quasi. Impedit excepturi accusantium enim? A
+        omnis totam quam ex quos quae, voluptatum rem soluta nemo eos quibusdam
+        eligendi mollitia, praesentium, placeat atque quaerat provident.
+        Laboriosam consequatur enim et recusandae dolorem quia culpa ab dolore
+        beatae dignissimos sapiente, a vero sunt minima iusto optio impedit
+        doloremque asperiores, voluptatum architecto. Ad minima reiciendis
+        deserunt soluta suscipit quis nisi non sapiente dolorum, corrupti
+        voluptas in aliquam. Assumenda dolorum doloribus vitae laborum
+        perspiciatis amet incidunt eveniet ab iusto aspernatur atque sed
+        explicabo minima quia, hic iste ipsum deserunt sint quas voluptas sit
+        impedit fugit quod. Sapiente facilis eligendi necessitatibus officia
+        obcaecati eaque sunt deleniti provident consectetur iusto, praesentium
+        enim vitae repellendus hic quisquam assumenda quasi adipisci cum harum!
+        Cupiditate reiciendis saepe, voluptatem fuga aut eius nemo culpa, nihil
+        velit atque beatae assumenda neque nostrum voluptatibus accusantium quia
+        odit provident dolor consequatur, quos ipsum. Saepe, aspernatur eius
+        optio hic ad tenetur at fugit! Dolor doloribus nihil, explicabo commodi
+        dolorum quam odit, accusamus illum voluptate debitis magni repudiandae
+        neque dicta cumque doloremque aut, atque odio nesciunt aperiam.
+        Reiciendis soluta non officiis! Possimus doloremque minus tempora,
+        quisquam eveniet, cumque assumenda iste officiis deleniti dignissimos
+        delectus inventore obcaecati, quod nostrum expedita porro esse dolor ea
+        culpa. Aspernatur, consequatur nemo omnis modi, fuga nobis eveniet nisi
+        doloribus optio earum vel voluptatibus molestiae expedita maiores,
+        tempore et! Voluptatem provident natus totam doloremque magnam animi
+        odio rem, explicabo nemo voluptatum facere officia assumenda excepturi
+        fugiat eius repellat cum architecto reprehenderit. Ipsam saepe quasi
+        vero aspernatur omnis odit libero blanditiis distinctio veritatis eaque
+        a possimus aperiam, beatae quibusdam molestiae hic praesentium culpa
+        laudantium asperiores, ea sunt aut inventore quisquam adipisci. Cumque a
+        ipsam obcaecati nam iure suscipit, quisquam natus voluptatum esse dolor
+        voluptate accusantium. Modi minima amet optio dicta consequuntur. Quidem
+        deleniti dolorem nostrum, libero laborum id modi corrupti, saepe,
+        architecto commodi suscipit unde dignissimos exercitationem fuga dolore
+        non at perferendis! Accusamus non cum dolore id voluptatem perferendis
+        accusantium commodi ullam, hic deserunt, cupiditate omnis iusto maxime
+        officia amet in soluta doloribus! Distinctio dicta atque consequatur eos
+        hic fuga est, rerum praesentium, quod nobis quisquam nulla natus
+        aspernatur soluta cupiditate similique pariatur sed eum mollitia
+        veritatis consectetur iusto. Quisquam similique libero doloremque
+        veritatis saepe deleniti! Voluptatibus deleniti molestias eum natus
+        totam rem dignissimos provident cumque commodi. Sint eveniet
+        praesentium, maxime consectetur vero temporibus dolorem deserunt
+        veritatis inventore minus sapiente nisi pariatur dolor, qui nam quos
+        impedit quae quam voluptas cumque ullam tempore suscipit? Natus
+        consequuntur quas, vitae accusantium unde reprehenderit sapiente? Velit
+        sit tenetur voluptatibus, illo incidunt, ipsa asperiores porro
+        provident, iure nostrum at nisi aliquid sed quas impedit sunt harum!
+        Consequuntur ab repellat atque quod voluptate nisi nemo ratione quo
+        dignissimos, in laborum optio eveniet ipsa eos laboriosam fugit possimus
+        sint ullam, aliquid beatae vitae eius repellendus molestiae. Similique
+        maiores veniam harum reiciendis vero, quae ut error aut accusamus
+        veritatis assumenda repellendus enim ex voluptatem, necessitatibus dicta
+        placeat dolores atque a, id nam. Natus praesentium minus quam!'
+      </p>
     </div>
   </div>
 </div>

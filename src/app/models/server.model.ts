@@ -14,4 +14,5 @@ export interface ServerModel {
   focus?: string;
   is_premium?: boolean;
   user_rating?: number;
+  presentation?: string;
 }
