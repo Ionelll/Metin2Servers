@@ -35,6 +35,7 @@ export class ServerCardComponent implements OnInit {
   @Input() item: ServerModel;
   @Input() rating: number;
   public rate = 0;
+  public userRating: number;
   public hover: boolean;
   public media: boolean;
   public showRating = false;

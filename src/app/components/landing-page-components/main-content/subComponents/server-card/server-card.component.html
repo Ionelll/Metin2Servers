@@ -70,60 +70,72 @@
 
     <div class="rate" *ngIf="showRating">
       <label class="label show">your rating:</label>
-      <mat-icon
-        (click)="setRating(1)"
-        [ngClass]="{
-          star: true,
+      <div class="rate-stars">
+        <mat-icon
+          (mouseenter)="userRating = item.user_rating; item.user_rating = 0"
+          (mouseleave)="item.user_rating = userRating"
+          (click)="setRating(1)"
+          [ngClass]="{
+            star: true,
 
-          'star-active': rate >= 1 || item.user_rating >= 1
-        }"
-        (mouseover)="rate = 1"
-        (mouseleave)="rate = 0"
-        >star_rate</mat-icon
-      >
+            'star-active': rate >= 1 || item.user_rating >= 1
+          }"
+          (mouseover)="rate = 1"
+          (mouseleave)="rate = 0"
+          >star_rate</mat-icon
+        >
 
-      <mat-icon
-        (click)="setRating(2)"
-        [ngClass]="{
+        <mat-icon
+          (mouseenter)="userRating = item.user_rating; item.user_rating = 0"
+          (mouseleave)="item.user_rating = userRating"
+          (click)="setRating(2)"
+          [ngClass]="{
           star: true,
           'star-active': rate >= 2 || item.user_rating >= 2,
         }"
-        (mouseover)="rate = 2"
-        (mouseleave)="rate = 0"
-        >star_rate</mat-icon
-      >
-      <mat-icon
-        (click)="setRating(3)"
-        [ngClass]="{
-          star: true,
-          'star-active': rate >= 3 || item.user_rating >= 3
-        }"
-        (mouseover)="rate = 3"
-        (mouseleave)="rate = 0"
-        >star_rate</mat-icon
-      >
-      <mat-icon
-        (click)="setRating(4)"
-        [ngClass]="{
-          star: true,
+          (mouseover)="rate = 2"
+          (mouseleave)="rate = 0"
+          >star_rate</mat-icon
+        >
+        <mat-icon
+          (mouseenter)="userRating = item.user_rating; item.user_rating = 0"
+          (mouseleave)="item.user_rating = userRating"
+          (click)="setRating(3)"
+          [ngClass]="{
+            star: true,
+            'star-active': rate >= 3 || item.user_rating >= 3
+          }"
+          (mouseover)="rate = 3"
+          (mouseleave)="rate = 0"
+          >star_rate</mat-icon
+        >
+        <mat-icon
+          (mouseenter)="userRating = item.user_rating; item.user_rating = 0"
+          (mouseleave)="item.user_rating = userRating"
+          (click)="setRating(4)"
+          [ngClass]="{
+            star: true,
 
-          'star-active': rate >= 4 || item.user_rating >= 4
-        }"
-        (mouseover)="rate = 4"
-        (mouseleave)="rate = 0"
-        >star_rate</mat-icon
-      >
-      <mat-icon
-        (click)="setRating(5)"
-        [ngClass]="{
-          star: true,
+            'star-active': rate >= 4 || item.user_rating >= 4
+          }"
+          (mouseover)="rate = 4"
+          (mouseleave)="rate = 0"
+          >star_rate</mat-icon
+        >
+        <mat-icon
+          (mouseenter)="userRating = item.user_rating; item.user_rating = 0"
+          (mouseleave)="item.user_rating = userRating"
+          (click)="setRating(5)"
+          [ngClass]="{
+            star: true,
 
-          'star-active': rate >= 5 || item.user_rating >= 5
-        }"
-        (mouseover)="rate = 5"
-        (mouseleave)="rate = 0"
-        >star_rate</mat-icon
-      >
+            'star-active': rate >= 5 || item.user_rating >= 5
+          }"
+          (mouseover)="rate = 5"
+          (mouseleave)="rate = 0"
+          >star_rate</mat-icon
+        >
+      </div>
     </div>
   </div>
 </div>

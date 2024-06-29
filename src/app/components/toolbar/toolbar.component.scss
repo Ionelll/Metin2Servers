@@ -58,8 +58,22 @@
 .active {
   color: var(--action-active);
 }
-.logout:hover {
+.logout {
   color: red;
+  .icon {
+    transition-duration: 0.2s;
+  }
+  .text {
+    transition-duration: 0.2s;
+  }
+}
+.logout:hover {
+  .text {
+    text-shadow: rgba(255, 0, 0, 0.548) 0px 0px 3px;
+  }
+  .icon {
+    text-shadow: rgba(255, 0, 0, 1) 0px 0px 3px;
+  }
 }
 .link {
   display: flex;

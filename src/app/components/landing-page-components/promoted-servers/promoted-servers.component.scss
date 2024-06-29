@@ -1,9 +1,7 @@
 .container {
   display: flex;
-  padding: 2rem;
-  padding-top: 8rem;
-  margin-top: 5rem;
-  gap: 2rem;
+  padding: 10rem 1rem 2rem 2rem;
+
   background-image: url("../../../../assets/hand_painted_japanese_themed_landscape_design_0507.png");
   // background-color: #5f0803;
   background-position: center bottom;
@@ -12,42 +10,12 @@
 }
 .grid {
   justify-content: center;
-  align-items: center;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(20rem, 0.2fr));
-
-  row-gap: 7rem;
-  column-gap: 3rem;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 19rem));
+  grid-auto-rows: min-content;
+  padding-top: 4rem;
+  gap: 2rem;
   width: 100%;
-  align-items: center;
-
-  position: relative;
-}
-.border {
-  height: 5rem;
-}
-.border-top-right {
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-.border-top-left {
-  position: absolute;
-  top: 0;
-  left: 0;
-  transform: scaleX(-1);
-}
-.border-bottom-right {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  transform: scaleY(-1);
-}
-.border-bottom-left {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  transform: scale(-1);
 }
 
 .shaman {

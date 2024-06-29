@@ -3,7 +3,7 @@
   margin: 0;
   // background-color: white;
   transition-duration: 0.5s;
-  border: 0.5px solid var(--border);
+  // border: 0.5px solid var(--border);
   cursor: pointer;
   display: flex;
   flex-direction: column;
@@ -12,15 +12,14 @@
   // text-align: center;
   // background-color: #141414;
   backdrop-filter: blur(15px);
-  box-shadow: inset 7px 0px 18px 0px rgba(0, 0, 0, 0.17),
-    inset -4px 6px 20px 7px rgb(255 255 255 / 64%), -1px 1px 2px;
+  box-shadow: 0px 0px 10px -4px;
   // border-radius: 16px;
   &:hover {
     // border: 4px solid rgba(255, 255, 255, 0.525);
     // transform: scale(1.0009);
     transform: translateY(-2px);
-    box-shadow: inset 1px -6px 18px 0px rgba(0, 0, 0, 0),
-      inset -4px 6px 20px 7px rgb(255 255 255 / 64%), -1px 1px 10px;
+    // box-shadow: inset 1px -6px 18px 0px rgba(0, 0, 0, 0),
+    //   inset -4px 6px 20px 7px rgb(255 255 255 / 64%), -1px 1px 10px;
     background-color: rgba(255, 255, 255, 0.685);
   }
 }
@@ -74,9 +73,12 @@
   all: unset;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 0.2rem;
+  width: fit-content;
+  margin: auto;
+  row-gap: 0.2rem;
+  column-gap: 3rem;
   align-items: center;
-  padding: 1rem;
+  padding: 0.2rem;
   // justify-items: center;
 }
 .title {
@@ -88,12 +90,12 @@
 .text {
   color: var(--text);
   font-weight: 400;
-  font-family: "Poppins", sans-serif;
+  // font-family: "Poppins", sans-serif;
   text-align: start;
   margin: 0;
   display: flex;
   backface-visibility: hidden;
-  font-size: 1em;
+  font-size: 0.9em;
 }
 .rating-container {
   all: unset;
@@ -105,7 +107,7 @@
 .rating {
   display: flex;
   flex-direction: row-reverse;
-  justify-content: flex-end;
+  gap: 2px;
 }
 .no-votes {
   font-size: 12px;
@@ -115,10 +117,12 @@
 .star {
   color: white;
   display: flex;
+  width: fit-content;
   align-items: center;
   // transform: scale(0.7);
-  font-variation-settings: "FILL" 1;
 
+  font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 100, "opsz" 24;
+  font-size: 0.9em;
   -webkit-text-stroke: 0.4px black;
 }
 .star-half {
@@ -132,9 +136,13 @@
 }
 .rate {
   display: flex;
+  justify-content: space-evenly;
+  gap: 0.2rem;
   align-items: center;
-  justify-content: center;
-  padding: 0.5rem 0;
+  padding: 0.2rem 1rem;
+}
+.rate-stars {
+  display: flex;
 }
 .actions {
   display: flex;
@@ -148,8 +156,8 @@
 }
 hr {
   width: 100%;
-  height: 1px;
-  background-color: var(--action);
+  height: 0.5px;
+  background-color: var(--border);
   border: none;
   outline: none;
   margin: 0;
